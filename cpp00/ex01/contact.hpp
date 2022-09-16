@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/16 13:23:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/16 13:25:51 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <string>
 
 class Contact {       
-    public:            
+    private:            
         std::string firstname;       
         std::string lastname;  
         std::string phonenumber;
         std::string darkestsecret;
-    private:
+   public:
 
     //constructer
 
