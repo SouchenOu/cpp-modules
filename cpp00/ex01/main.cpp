@@ -14,6 +14,7 @@
 #include <iostream>
 #include<string>
 #include"PhoneBook.hpp"
+#include"contact.hpp"
 
 void ADD_func(PhoneBook &contact_elem)
 {
@@ -35,12 +36,15 @@ void ADD_func(PhoneBook &contact_elem)
         getline(std::cin,darkestSecret);
 
         contact_elem.setPhoneBook(firstName,lastName,nickName,PhoneNumber,darkestSecret);
-
-        
 }
 void SEARCH_func()
-{
-
+{;
+    std::Contact cnt = contact_elem.getPhoneBook()
+    std::cout<< "|"; std::cout<< "index"; 
+    std::cout<< "|";std::cout<< "First name";
+    std::cout<< "|";std::cout<< "Last name";
+    std::cout<< "|";std::cout<< "nick name";
+    std::cout<< "|";
 
 }
 void EXIT_func()
