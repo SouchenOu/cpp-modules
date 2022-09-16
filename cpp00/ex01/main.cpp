@@ -13,24 +13,30 @@
 
 #include <iostream>
 #include<string>
+#include"PhoneBook.hpp"
 
-void ADD_func()
+void ADD_func(PhoneBook &contact_elem)
 {
     std::string firstName;
     std::string lastName;
+    std::string nickName;
     std::string PhoneNumber;
     std::string darkestSecret;
 
-        std::cout << "Enter yout first name:\n";
+        std::cout << "Enter your first name:\n";
         getline(std::cin,firstName);
-        std::cout << "Enter yout lastName:\n";
+        std::cout << "Enter your lastName:\n";
         getline(std::cin,lastName);
-        std::cout << "Enter yout PhoneNumber:\n";
+        std::cout << "Enter your NickName:\n";
+        getline(std::cin,nickName);
+        std::cout << "Enter your PhoneNumber:\n";
         getline(std::cin,PhoneNumber);
-        std::cout << "Enter yout darkestSecret:\n";
+        std::cout << "Enter your darkestSecret:\n";
         getline(std::cin,darkestSecret);
 
+        contact_elem.setPhoneBook(firstName,lastName,nickName,PhoneNumber,darkestSecret);
 
+        
 }
 void SEARCH_func()
 {
@@ -45,16 +51,17 @@ void EXIT_func()
 int main()
 {
     std::string choice;
+    PhoneBook contact_elem;
     while(1)
     {
-        std::cout << "Our libirary:";
+        std::cout << "Our Library:\n";
         std::cout << "1: ADD:    enregistrer un nouveau contact\n";
         std::cout << "2: SEARCH: affiche le contact demandé\n";
         std::cout << "3: EXIT:   quitte le program\n";
         std::cout << "Enter your choice now: -> ";
         getline(std::cin,choice);
-        if(choice.compare("ADD"))
-            ADD_func();
+        if(choice.compare("ADD") == 0)
+            ADD_func(contact_elem);
         if(choice.compare("SEARCH"))
             SEARCH_func();
         if(choice.compare("EXIT"))

@@ -1,14 +1,15 @@
-NAME = megaphone
+NAME = Library
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-FILES =  contact.cpp contact.hpp PhoneBook.cpp PhoneBook.hpp main.cpp
+FILES =  contact.cpp PhoneBook.cpp main.cpp
+HED = contact.hpp PhoneBook.hpp
 
 all : $(NAME)
 
-$(NAME):
+$(NAME): $(FILES) $(HED)
 		c++ $(FLAGS) $(FILES) -o $(NAME) 
 	
 

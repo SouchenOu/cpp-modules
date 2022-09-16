@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/16 13:25:51 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/16 14:37:19 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ class Contact {
     private:            
         std::string firstname;       
         std::string lastname;  
+        std::string  nickname;
         std::string phonenumber;
         std::string darkestsecret;
    public:
@@ -24,30 +25,35 @@ class Contact {
     //constructer
 
     Contact(){}
-    Contact(std::string firstname, std::string lastname, std::string phonenumber, std::string darkestsecret)
+    Contact(std::string Firstname, std::string Lastname,std::string  Nickname, std::string Phonenumber, std::string Darkestsecret)
     {
-        firstname=firstname;
-        lastname=lastname;
-        phonenumber=phonenumber;
-        darkestsecret=darkestsecret;
+        firstname=Firstname;
+        lastname=Lastname;
+        nickname=Nickname;
+        phonenumber=Phonenumber;
+        darkestsecret=Darkestsecret;
     }
     //setters
-    void setFirstName(std::string firstname)
+    void setFirstName(std::string Firstname)
     {
-        firstname=firstname;
+        firstname=Firstname;
     
     }
-    void setLastName(std::string lastname)
+    void setLastName(std::string Lastname)
     {
-        lastname=lastname;
+        lastname=Lastname;
     }
-    void setPhonenumber(std::string phonenumber)
+    void setNickName(std::string Nickname)
     {
-        phonenumber=phonenumber;
+        nickname=Nickname;
     }
-    void setDarkestsecret(std::string firstname)
+    void setPhonenumber(std::string Phonenumber)
     {
-        darkestsecret=darkestsecret;
+        phonenumber=Phonenumber;
+    }
+    void setDarkestsecret(std::string Darkestsecret)
+    {
+        darkestsecret=Darkestsecret;
     }
     //getters
     std::string getFirstName(void)
@@ -57,6 +63,10 @@ class Contact {
     std::string getLastname(void)
     {
         return lastname;
+    }
+    std::string getNickName(void)
+    {
+        return nickname;
     }
     std::string getPhonenumber(void)
     {
