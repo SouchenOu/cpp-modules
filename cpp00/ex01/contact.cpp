@@ -6,8 +6,61 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/16 13:12:56 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/18 17:21:29 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "PhoneBook.hpp"
+Contact::Contact(){}
+Contact::Contact(std::string Firstname, std::string Lastname,std::string  Nickname, std::string Phonenumber, std::string Darkestsecret)
+    {
+        firstname=Firstname;
+        lastname=Lastname;
+        nickname=Nickname;
+        phonenumber=Phonenumber;
+        darkestsecret=Darkestsecret;
+    }
+    //setters
+    void Contact::setFirstName(std::string Firstname)
+    {
+        firstname=Firstname;
+    
+    }
+    void Contact::setLastName(std::string Lastname)
+    {
+        lastname=Lastname;
+    }
+    void Contact::setNickName(std::string Nickname)
+    {
+        nickname=Nickname;
+    }
+    void Contact::setPhonenumber(std::string Phonenumber)
+    {
+        phonenumber=Phonenumber;
+    }
+    void Contact::setDarkestsecret(std::string Darkestsecret)
+    {
+        darkestsecret=Darkestsecret;
+    }
+    //getters
+    std::string Contact::getFirstName(void)
+    {
+        return firstname;
+    }
+    std::string Contact::getLastname(void)
+    {
+        return lastname;
+    }
+    std::string Contact::getNickName(void)
+    {
+        return nickname;
+    }
+    std::string Contact::getPhonenumber(void)
+    {
+        return phonenumber;
+    }
+    std::string Contact::getDarkestsecret(void)
+    {
+        return Contact::darkestsecret;
+    }
