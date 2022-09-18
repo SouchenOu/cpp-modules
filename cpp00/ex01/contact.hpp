@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 15:31:58 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/18 16:23:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,11 @@ class Contact {
         std::string  nickname;
         std::string phonenumber;
         std::string darkestsecret;
-        std::string tab[6];
    public:
 
     //constructer
 
-    Contact(){
-        int i =0;
-        for(i=0;i<5;i++)
-        {
-            tab[i] = std::string();
-        }
-    }
+    Contact(){}
     Contact(std::string Firstname, std::string Lastname,std::string  Nickname, std::string Phonenumber, std::string Darkestsecret)
     {
         firstname=Firstname;

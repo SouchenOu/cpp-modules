@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 14:00:57 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/18 16:25:09 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class PhoneBook {       
     public:   
         Contact MyContact[8];
+        std::string tab[10][11];
         int index;
     public:
     PhoneBook(){index=0;}
