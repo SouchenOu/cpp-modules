@@ -25,43 +25,60 @@ void ADD_func(PhoneBook &contact_elem)
     std::string darkestSecret;
     Contact c;
     int i;
+  
     i = 0;
+   
         std::cout << "Enter your first name:\n";
-        getline(std::cin,firstName);
+        getline(std::cin,c.tab[i]);
+        firstName = c.tab[i];
+        i++;
         std::cout << "Enter your lastName:\n";
-        getline(std::cin,lastName);
+        getline(std::cin,c.tab[i]);
+        i++;
         std::cout << "Enter your NickName:\n";
-        getline(std::cin,nickName);
+        getline(std::cin,c.tab[i]);
+        i++;
         std::cout << "Enter your PhoneNumber:\n";
-        getline(std::cin,PhoneNumber);
+        getline(std::cin,c.tab[i]);
+        i++;
         std::cout << "Enter your darkestSecret:\n";
-        getline(std::cin,darkestSecret);
-
+        getline(std::cin,c.tab[i]);
+         
+         std::cout << c.tab[0];
         contact_elem.setPhoneBook(firstName,lastName,nickName,PhoneNumber,darkestSecret);
-        std::cout << contact_elem.MyContact->firstname;
-        std::cout << "\n";
-        std::cout << contact_elem.index;
-        std::cout << "\n";
+        std::cout << c.firstname; 
+        for(i=0;i<5;i++)
+        {
+            std::cout << c.tab[i];
+            std::cout<< "\n";
+        }
         //std::string test = getFirstName();
         //std::cout<< test;
 }
-void SEARCH_func(PhoneBook &Contact)
+void SEARCH_func(Contact c)
 {
     int i;
+    int j;
     i = 0;
+    j=0;
+     for(i=0;i<5;i++)
+    {
+        std::cout << c.tab[i];
+        std::cout<< "\n";
+    }
+    PhoneBook contact;
+    std::cout << "here\n";
     std::cout<< "|"; std::cout<< "index"; 
     std::cout<< "|";std::cout<< "First name";
     std::cout<< "|";std::cout<< "Last name";
     std::cout<< "|";std::cout<< "nick name";
     std::cout<< "|"; std::cout<< "\n";
-    for(i=0;i< Contact.index; i++)
+    for(i=0;i< contact.index; i++)
     {
-        std::cout << Contact.MyContact->firstname;
-        std::cout << Contact.MyContact->lastname;
-        std::cout << Contact.MyContact->nickname;
-        std::cout << Contact.MyContact->phonenumber;
-        std::cout << Contact.MyContact->darkestsecret;
-        std::cou << "\n";
+        for(j=0;j<5;j++)
+        {
+            std::cout << "|";std::cout << c.tab[j];std::cout << "    |";
+        }
     }
     
 
@@ -75,6 +92,7 @@ int main()
 {
     std::string choice;
     PhoneBook contact_elem;
+    Contact c;
     while(1)
     {
         std::cout << "\nOur Library:\n";
@@ -86,7 +104,7 @@ int main()
         if(choice.compare("ADD") == 0)
             ADD_func(contact_elem);
         if(choice.compare("SEARCH") == 0)
-            SEARCH_func(contact_elem);
+            SEARCH_func(c);
         if(choice.compare("EXIT"))
             EXIT_func();
 
