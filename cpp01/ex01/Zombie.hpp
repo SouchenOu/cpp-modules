@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 14:06:45 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/19 14:14:43 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
 
-Zombie *newZombie( std::string name)
-{
-    Zombie *newZ;
-    newZ = new Zombie;
-    newZ->Zombie::setZombie(name);
-    return newZ;
-    
-}
-void randomChump( std::string name )
-{
-    Zombie newZo;
-
-    newZo.setZombie(name);
-    newZo.announce();
-}
-
-int main()
-{
-    Zombie* oneOfThem = newZombie("Foo");
-     Zombie* oneOfThem2 = newZombie("zomb2");
-    oneOfThem->announce();
-    oneOfThem2->announce();
-    randomChump("zomb3");
-    randomChump("zomb4");
-    delete oneOfThem;
-    return (1);
-}
+class Zombie {       
+    private:            
+       std::string nom;
+       int N;
+   public:
+   Zombie();
+   ~Zombie();
+   //setter
+   void setZombieName(std::string Nom);
+    void setZombieN(int N);
+   //getter
+   std::string getZombieName();
+   int getZombieN();
+   void announce( void );
+   Zombie* zombieHorde( int N, std::string name );
+};

@@ -6,37 +6,28 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 14:06:45 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/19 14:20:17 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie *newZombie( std::string name)
-{
-    Zombie *newZ;
-    newZ = new Zombie;
-    newZ->Zombie::setZombie(name);
-    return newZ;
-    
-}
-void randomChump( std::string name )
-{
-    Zombie newZo;
-
-    newZo.setZombie(name);
-    newZo.announce();
-}
-
 int main()
 {
-    Zombie* oneOfThem = newZombie("Foo");
-     Zombie* oneOfThem2 = newZombie("zomb2");
-    oneOfThem->announce();
-    oneOfThem2->announce();
-    randomChump("zomb3");
-    randomChump("zomb4");
-    delete oneOfThem;
-    return (1);
+    Zombie *test;
+    Zombie  z;
+    int i;
+    i = 0;
+    //test.setZombieName("ouchen");
+    //test.announce();
+    test=z.zombieHorde(15, "soukaina");
+    while(i <= 15)
+    {
+        test->announce();
+        i++;
+    }
+    
+    delete [] test;
+    return 1;
 }
