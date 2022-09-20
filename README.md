@@ -71,7 +71,7 @@ Howeve, when & is used in a declaration (including function formal parameters), 
 -----------------------------------------------------------------------
 
 *The difference between reference and pointers:
-------------------------------
+-----------------------------------------------
 
 1--Pointers: A pointer is a variable that holds the memory address of another variable. A pointer needs to be dereferenced with the * operator to access the memory location it points to. 
 
@@ -139,4 +139,42 @@ The above example illustrates how reference works, but does not show its typical
                 *pNumber *= *pNumber;      // Explicit de-referencing to get the value pointed-to
                 
             }
+3---3:  Passing the Function's Return Value:
 
+/* Passing back return value using reference (TestPassByReferenceReturn.cpp) */
+            #include <iostream>
+            using namespace std;
+ 
+            int & squareRef(int &);
+            int * squarePtr(int *);
+ 
+            int main() 
+            {
+                int number1 = 8;
+                cout <<  "In main() &number1: " << &number1 << endl;  // 0x22ff14
+                int & result = squareRef(number1);
+                cout <<  "In main() &result: " << &result << endl;  // 0x22ff14
+                cout << result << endl;   // 64
+                cout << number1 << endl;  // 64
+ 
+                int number2 = 9;
+                cout <<  "In main() &number2: " << &number2 << endl;  // 0x22ff10
+                int * pResult = squarePtr(&number2);
+                cout <<  "In main() pResult: " << pResult << endl;  // 0x22ff10
+                cout << *pResult << endl;   // 81
+                cout << number2 << endl;    // 81
+            }
+ 
+            int & squareRef(int & rNumber) 
+            {
+                cout <<  "In squareRef(): " << &rNumber << endl;  // 0x22ff14
+                rNumber *= rNumber;
+                return rNumber;
+            }
+ 
+            int * squarePtr(int * pNumber) 
+            {
+                cout <<  "In squarePtr(): " << pNumber << endl;  // 0x22ff10
+                *pNumber *= *pNumber;
+                return pNumber;
+            }
