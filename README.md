@@ -86,3 +86,33 @@ The above example illustrates how reference works, but does not show its typical
 
 
 3--&& Memory Address: A pointer has its own memory address and size on the stack, whereas a reference shares the same memory address with the original variable but also takes up some space on the stack.
+
+
+
+*Pass-By-Reference into Functions with Reference Arguments vs. Pointer Arguments:
+---------------------------------------------------------------------------------
+
+Pass-by-Value:
+
+               /* Pass-by-value into function (TestPassByValue.cpp) */
+               #include <iostream>
+               using namespace std;
+ 
+               int square(int);
+ 
+               int main() {
+               int number = 8;
+               cout <<  "In main(): " << &number << endl;  // 0x22ff1c
+               cout << number << endl;         // 8
+               cout << square(number) << endl; // 64
+               cout << number << endl;         // 8 - no change
+               }
+ 
+                int square(int n) {  // non-const
+                cout <<  "In square(): " << &n << endl;  // 0x22ff00
+                n *= n;           // clone modified inside the function
+                return n;
+                }
+
+
+
