@@ -4,6 +4,29 @@
 + Some useful informations:
 ----------------------------
 
+*Indirection or Dereferencing Operator (*)
+
+The indirection operator (or dereferencing operator) (*) operates on a pointer, and returns the value stored in the address kept in the pointer variable. For example, if pNumber is an int pointer, *pNumber returns the int value "pointed to" by pNumber.
+
+---For example,
+
+--------------------------------------------------------------------
+int number = 88;
+
+int * pNumber = &number;  // Declare and assign the address of variable number to pointer pNumber (0x22ccec)
+
+cout << pNumber<< endl;   // Print the content of the pointer variable, which contain an address (0x22ccec)
+
+cout << *pNumber << endl; // Print the value "pointed to" by the pointer, which is an int (88)
+
+*pNumber = 99;            // Assign a value to where the pointer is pointed to, NOT to the pointer variable
+
+cout << *pNumber << endl; // Print the new value "pointed to" by the pointer (99)
+
+cout << number << endl;   // The value of variable number changes as well (99)
+
+-----------------------------------------------------------------------
+
 *The difference between reference and pointers:
 ------------------------------
 
