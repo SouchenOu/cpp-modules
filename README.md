@@ -10,6 +10,8 @@ The indirection operator (or dereferencing operator) (*) operates on a pointer, 
 
 ---For example,
 
+
+
 --------------------------------------------------------------------
 int number = 88;
 
