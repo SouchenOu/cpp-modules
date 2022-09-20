@@ -92,7 +92,7 @@ The above example illustrates how reference works, but does not show its typical
 *Pass-By-Reference into Functions with Reference Arguments vs. Pointer Arguments:
 ---------------------------------------------------------------------------------
 
-Pass-by-Value:
+1---1: Pass-by-Value:
 
                /* Pass-by-value into function (TestPassByValue.cpp) */
                #include <iostream>
@@ -100,19 +100,43 @@ Pass-by-Value:
  
                int square(int);
  
-               int main() {
-               int number = 8;
-               cout <<  "In main(): " << &number << endl;  // 0x22ff1c
-               cout << number << endl;         // 8
-               cout << square(number) << endl; // 64
-               cout << number << endl;         // 8 - no change
+               int main() 
+               {
+                  int number = 8;
+                  cout <<  "In main(): " << &number << endl;  // 0x22ff1c
+                  cout << number << endl;         // 8
+                  cout << square(number) << endl; // 64
+                  cout << number << endl;         // 8 - no change
                }
  
-                int square(int n) {  // non-const
-                cout <<  "In square(): " << &n << endl;  // 0x22ff00
-                n *= n;           // clone modified inside the function
-                return n;
+                int square(int n) 
+                {  // non-const
+                    cout <<  "In square(): " << &n << endl;  // 0x22ff00
+                    n *= n;           // clone modified inside the function
+                    return n;
                 }
 
+2---2:Pass-by-Reference with Pointer Arguments:
 
+            /* Pass-by-reference using pointer (TestPassByPointer.cpp) */
+            #include <iostream>
+            using namespace std;
+ 
+            void square(int *);
+ 
+            int main() 
+            {
+                int number = 8;
+                cout <<  "In main(): " << &number << endl;  // 0x22ff1c
+                cout << number << endl;   // 8
+                square(&number);          // Explicit referencing to pass an address
+                cout << number << endl;   // 64
+            }
+ 
+            void square(int * pNumber) 
+            {  // Function takes an int pointer (non-const)
+                cout <<  "In square(): " << pNumber << endl;  // 0x22ff1c
+                *pNumber *= *pNumber;      // Explicit de-referencing to get the value pointed-to
+                
+            }
 
