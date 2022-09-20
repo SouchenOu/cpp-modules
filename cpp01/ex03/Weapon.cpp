@@ -6,13 +6,22 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 16:41:21 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/20 18:12:48 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Weapon.hpp"
 
+
+
+
+//constructers
+Weapon::Weapon(){}
+Weapon::Weapon(std::string type)
+{
+    this->type=type;  
+}
 //setters
 void Weapon::setType(std::string type)
 {
@@ -20,7 +29,12 @@ void Weapon::setType(std::string type)
 }
 //getters
 
-std::string Weapon::getType()
+/*std::string Weapon::getType()
 {
     return this->type;  
+}*/
+
+const std::string &Weapon::getType(void) const
+{
+    return (this->type);
 }

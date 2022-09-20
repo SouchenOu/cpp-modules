@@ -6,10 +6,12 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 16:42:51 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/20 18:16:23 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#pragma once
 #include <iostream>
 #include "Weapon.hpp"
 
@@ -18,8 +20,12 @@ class HumanB {
            Weapon wb;
            std::string name;         
    public:
-   //getters
-   std::string getName();
-   
+     //constructeur
+    HumanB();
+    HumanB(std::string name);
+    void  setWeapon(Weapon &x);
+    //getters
+    std::string getName();
+    void attack();
 
 };
