@@ -6,17 +6,16 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 09:06:40 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/22 12:51:00 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Harl.hpp"
 #include <iostream>
 
- Harl:: Harl(void)
+/*Harl:: Harl(void)
 {
-}
+}*/
 
  Harl::~ Harl(void)
 {
@@ -24,9 +23,10 @@
 
 void  Harl::complain(std::string level)
 {
-	std::string levels[4] = {"DEBUG","INFO","WARNING","ERROR"
-	};
-	void (Harl::*fun[4])(void) = {&Harl::debug,&Harl::info,&Harl::warning,&Harl::error
+	std::string levels[4] = {"DEBUG","INFO","WARNING","ERROR"};
+	void (Harl::*fun[4])(void) = {
+		
+		&Harl::debug,&Harl::info,&Harl::warning,&Harl::error
 	};
 	for (int i = 0; i < 4; i++)
 	{
