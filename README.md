@@ -230,4 +230,64 @@ The above example illustrates how reference works, but does not show its typical
                     // non-const reference
                     return number * number;
             }
+            
+            
+            
+  *****Les fichier en c++:
+  -------------------------
+  
+  
+• La classe ofstream :
+----------------------
+
+Il s'agit d'un fichier ouvert en écriture : pour créer un tel fichier il suffit d'appeler le constructeur qui a en paramètre
+
+le nom du fichier : par exemple ofstream f("toto.txt");.
+
+Pour savoir si le fichier a bien été ouvert en écriture la méthode is_open() renvoie true si le fichier est effectivement
+ouvert.
+
+Programmation C++ (débutant)/Les fichiers 6
+
+Pour écrire dans le fichier on utilise l'opérateur << sans oublier d'écrire des séparateurs dans le fichier texte.
+
+• La classe ifstream :
+----------------------
+
+Il s'agit d'un fichier ouvert en lecture : pour créer un tel fichier il suffit d'appeler le constructeur qui a en paramètre le
+
+nom du fichier : par exemple ifstream f("toto.txt");.
+
+Pour savoir si le fichier a bien été ouvert en lecture la méthode is_open() renvoie true si le fichier est effectivement
+ouvert.
+
+Pour lire dans le fichier on utilise l'opérateur >>.
+
+
+
+
+String find: 
+------------
+
+is used to find the first occurrence of sub-string in the specified string being called upon. It returns the index of
+the first occurrence of the substring in the string from given starting position. The default value of starting position is 0.
+
+Function Template:
+
+size_t find (const string& str, size_t pos = 0);
+size_t find (const char* s, size_t pos = 0);
+
+
+npos is a constant static member value with the greatest possible value for an element of type size_t.
+
+To put it simply, think of npos as no-position. As a return value, it is usually used to indicate that no matches were found in the string. Thus, if it returns true, matches were found at no positions (i.e., no matches).
+
+  
+  
+  
+  
+  
+  
+  
+  
   
