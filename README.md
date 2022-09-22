@@ -1,5 +1,13 @@
 # cpp-modules
 
+// Tout les informations sur Construction, destruction, initialisation et recopie :
+
+https://www.iro.umontreal.ca/~pift1166/cours/ift1166/communs/Cours/2P/C14-1166.pdf
+
+
+
+
+
 ****************************
 🌱 Some useful informations:
 ****************************
