@@ -232,9 +232,9 @@ The above example illustrates how reference works, but does not show its typical
             }
             
             
-            
-  *****Les fichier en c++:
-  -------------------------
+------------------------------------------------------------------------------------------------------------------
+*****Les fichier en c++:
+------------------------------------------------------------------------------------------------------------------
   
   
 • La classe ofstream :
@@ -283,6 +283,12 @@ npos is a constant static member value with the greatest possible value for an e
 To put it simply, think of npos as no-position. As a return value, it is usually used to indicate that no matches were found in the string. Thus, if it returns true, matches were found at no positions (i.e., no matches).
 
   
+  
+  ----------------------------------------------------------------------------------------------------------------------------------
+  
+  ---------Pour bien comprendre Pointeurs et références de fonctions:
+  
+https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A9rences_de_fonctions#:~:text=Pour%20d%C3%A9clarer%20un%20pointeur%20de,(*identificateur)(param%C3%A8tres)%3B
   
   
   
