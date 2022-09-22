@@ -289,6 +289,22 @@ To put it simply, think of npos as no-position. As a return value, it is usually
   ---------Pour bien comprendre Pointeurs et références de fonctions:
   
 https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A9rences_de_fonctions#:~:text=Pour%20d%C3%A9clarer%20un%20pointeur%20de,(*identificateur)(param%C3%A8tres)%3B
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Surcharge de l’opérateur d’affectation en C++:
+----------------------------------------------
+
+Dans ce tutoriel nous allons découvrir comment surcharger l’opérateur d’affectation (opérateur =) qui permet de copier la valeur d’un objet, tout comme le constructeur de copie.
+
+Surcharger l’opérateur d’affectation est assez simple. Il doit être surchargé en tant que fonction membre.
+ 
+
+Syntaxe:
+ReturnType operator = (const ClassName &)
+
   
   
   
