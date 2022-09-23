@@ -313,8 +313,12 @@ Surcharger l’opérateur d’affectation est assez simple. Il doit être surcha
 Syntaxe:
 ReturnType operator = (const ClassName &)
  
----------------------------------------------------------------------------------------------------------------------------------
-*************************************************Virgule fixe************************************
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+  *************************************************Virgule fixe************************************
+  
+  
 Il suffit de définir la position de la virgule et on sait instantanément la valeur du nombre. Par exemple, pour un nombre stocké sur un octet, soit huit bits, si on définit arbitrairement la position de la virgule juste avant après le quatrième bit, alors on sait que 0110 1001 = 0110,1001.
 
 C’est extrêmement simple. Cette manière de faire s’appelle virgule fixe, car la position de la virgule est connue d’avance. L’inconvénient de cette méthode est que, pour un nombre avec peu de chiffres après la virgule, on perd un espace de stockage significatif. Si le nombre en question est 0110 1000, on perd trois bits “inutilement”.
@@ -324,6 +328,8 @@ La virgule fixe est tout de même utilisée. Sur les processeurs à faible coût
 
   
   ++++Virgule flottante++++
+  
+  
 Pour palier à ce problème de perte d’espace induit par la virgule fixe, on utilise la méthode d’écriture à virgule flottante. Cette écriture représente les nombres de la manière suivante : signe × mantisse × baseexposant. La position de la virgule est fixée dans la mantisse. Par la suite, on la fait flotter en faisant varier l’exposant.
 
 C’est exactement comme dans les notations scientifique et ingénieur. Ainsi, pour une même taille de stockage de quatre chiffres par exemple, on peut stocker aussi bien 1234 que 1,234 ou encore 0,1234, il suffit d’indiquer grâce à l’exposant où se place la virgule.
@@ -338,4 +344,26 @@ C’est exactement comme dans les notations scientifique et ingénieur. Ainsi, p
 base	-	base as floating point value
 exponent	-	exponent as floating point value
   
+-------------------------------------------------------------------------------------------------------------------------------
   
+  *************************************Surcharge des opérateurs d’insertion de flux (<>) en C++*********************************
+  
+En C++, l’opérateur d’insertion de flux « << » est utilisé pour la sortie et l’opérateur d’extraction « >> » est utilisé pour l’entrée. 
+  
+Nous devons connaître les éléments suivants avant de commencer à surcharger ces opérateurs. 
+  
+1) cout est un objet de la classe ostream et cin est un objet de la classe istream 
+  
+2) Ces opérateurs doivent être surchargés en tant que fonction globale. Et si on veut leur permettre d’accéder aux données 
+privées des membres de la classe, il faut les faire ami. 
+  
+Pourquoi ces opérateurs doivent être surchargés comme globaux ? 
+  
+Dans la surcharge d’opérateur, si un opérateur est surchargé en tant que membre, alors il doit être un membre de l’objet sur le
+  
+côté gauche de l’opérateur. Par exemple, considérons l’instruction « ob1 + ob2 » (soit ob1 et ob2 des objets de deux classes 
+différentes). Pour que cette instruction soit compilée, nous devons surcharger ‘+’ dans une classe de ‘ob1’ ou faire de ‘+’ une fonction globale. 
+  
+Les opérateurs ‘<<‘ et ‘>>’ sont appelés comme ‘cout << ob1’ et ‘cin >> ob1’. Donc, si nous voulons en faire une méthode membre,ils doivent être membres des classes ostream et istream, ce qui n’est pas une bonne option la plupart du temps. Par conséquent, ces opérateurs sont surchargés en tant que fonctions globales avec deux paramètres, cout et objet de classe définie par l’utilisateur.
+  
+Voici un programme C++ complet pour démontrer la surcharge des opérateurs <>.
