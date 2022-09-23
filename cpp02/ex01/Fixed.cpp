@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 16:19:35 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/23 17:22:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ using std::cout;
 Fixed::Fixed()
 {
     this->a = 0;
-    cout << "Default constructor called\n";
+    cout << "\n";
 }
 
-/*Fixed::Fixed(float number)
+Fixed::Fixed(float number)
 {
     a =  (int)(number * powf(2, b));
 }
@@ -29,7 +29,7 @@ Fixed::Fixed()
 Fixed::~Fixed()
 {
     cout << "Destructor called\n";
-}*/
+}
 
 Fixed::Fixed(const Fixed &var)
 {
@@ -37,7 +37,7 @@ Fixed::Fixed(const Fixed &var)
     cout << "Copy constructor called\n";
 }
 
-/*int Fixed::getRawBits( void ) const
+int Fixed::getRawBits( void ) const
 {
     cout << "getRawBits member function called\n";
     return (this->a);
@@ -71,4 +71,4 @@ int Fixed::toInt( void ) const
 std::ostream &operator<<(std::ostream &out, Fixed const &var)
 {
     return out << (float)var.toFloat();
-}*/
+}

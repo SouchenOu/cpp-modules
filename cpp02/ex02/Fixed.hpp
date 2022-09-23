@@ -6,23 +6,13 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 16:31:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/23 17:43:28 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-Fixed operator+ (const Fixed &a, const Fixed &b);
-Fixed operator- (const Fixed &a, const Fixed &b);
-Fixed operator/ (const Fixed &a, const Fixed &b);
-Fixed operator* (const Fixed &a, const Fixed &b);
-bool operator> (const Fixed& first, const Fixed& second);
-bool operator>=(const Fixed& first, const Fixed& second);
-bool operator<=(const Fixed& first, const Fixed& second);
-bool operator< (const Fixed& first, const Fixed& second);
-bool operator==(const Fixed& first, const Fixed& second);
-bool operator!=(const Fixed& first, const Fixed& second);
-std::ostream &operator<<(std::ostream &out, const Fixed &var);
+
 
 class Fixed
 {
