@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 18:41:08 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/23 18:50:11 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,4 @@ void ClapTrap::takeDamage(unsigned int amount)
 std::string ClapTrap::getname(void) const
 {
     return (this->name);
-}
-
-int    ClapTrap::get_Hitpoint(void) const
-{
-    return (this->Hit_points);
-}
-int    ClapTrap::get_Energypoints(void) const
-{
-    return (this->Energy_points);
-}
-int    ClapTrap::get_Attackdamage(void) const
-{
-    return (this->Attack_damage);
 }
