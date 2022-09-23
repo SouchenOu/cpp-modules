@@ -9,7 +9,7 @@ https://www.iro.umontreal.ca/~pift1166/cours/ift1166/communs/Cours/2P/C14-1166.p
 🌱 Some useful informations:
 ****************************
 
-*In C++, there are three access specifiers:
+📫 In C++, there are three access specifiers:
 
 public - members are accessible from outside the class
 
@@ -48,7 +48,7 @@ Howeve, when & is used in a declaration (including function formal parameters), 
 -----For example:
 
 -------------------------------------------------------------------------------------------
-/* Test reference declaration and initialization (TestReferenceDeclaration.cpp) */
+📫 Test reference declaration and initialization (TestReferenceDeclaration.cpp) */
 
                     #include <iostream>
   
@@ -101,7 +101,7 @@ Howeve, when & is used in a declaration (including function formal parameters), 
 
 -----------------------------------------------------------------------
 
-*The difference between reference and pointers:
+📫The difference between reference and pointers:
 -----------------------------------------------
 
 1--Pointers: A pointer is a variable that holds the memory address of another variable. A pointer needs to be dereferenced with the * operator to access the memory location it points to. 
@@ -120,7 +120,7 @@ The above example illustrates how reference works, but does not show its typical
 
 
 
-*Pass-By-Reference into Functions with Reference Arguments vs. Pointer Arguments:
+📫Pass-By-Reference into Functions with Reference Arguments vs. Pointer Arguments:
 ---------------------------------------------------------------------------------
 
 1---1: Pass-by-Value:
@@ -264,7 +264,7 @@ The above example illustrates how reference works, but does not show its typical
             
             
 ------------------------------------------------------------------------------------------------------------------
-*******************************************Les fichier en c++:*******************************************
+📫*******************************************Les fichier en c++:*******************************************
 ------------------------------------------------------------------------------------------------------------------
   
   
@@ -315,9 +315,9 @@ To put it simply, think of npos as no-position. As a return value, it is usually
 
   
   
-  ----------------------------------------------------------------------------------------------------------------------------------
+  --------------------------------------------------------------------------------------------------------------------
   
-  ---------Pour bien comprendre Pointeurs et références de fonctions:
+  📫 Pour bien comprendre Pointeurs et références de fonctions:
   
 https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A9rences_de_fonctions#:~:text=Pour%20d%C3%A9clarer%20un%20pointeur%20de,(*identificateur)(param%C3%A8tres)%3B
 
@@ -325,7 +325,7 @@ https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-************************************Surcharge de l’opérateur d’affectation en C++:************************************
+📫************************************Surcharge de l’opérateur d’affectation en C++:************************************
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Dans ce tutoriel nous allons découvrir comment surcharger l’opérateur d’affectation (opérateur =) qui permet de copier la valeur d’un objet, tout comme le constructeur de copie.
@@ -339,7 +339,7 @@ ReturnType operator = (const ClassName &)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-  *************************************************Virgule fixe************************************
+  📫*************************************************Virgule fixe************************************📫
   
  https://www.developpez.net/forums/d1168230/c-cpp/c/debuter/conversion-virgule-fixe-virgule-flottante/
   
@@ -371,7 +371,7 @@ exponent	-	exponent as floating point value
   
 -------------------------------------------------------------------------------------------------------------------------------
   
-  *************************************Surcharge des opérateurs d’insertion de flux (<>) en C++*********************************
+ 📫*************************************Surcharge des opérateurs d’insertion de flux (<>) en C++******************************📫
   
 En C++, l’opérateur d’insertion de flux « << » est utilisé pour la sortie et l’opérateur d’extraction « >> » est utilisé pour l’entrée. 
   
@@ -432,8 +432,7 @@ Voici un programme C++ complet pour démontrer la surcharge des opérateurs <>.
 
 
 
-------------------------------------------------------------------------------
-
-// To understand  Operator Overloading == and + , *, /, -......
+----------------------------------------------------------------------------------------------------------------------------------
+📫 To understand  Operator Overloading == and + , *, /, -......
 
 https://www.youtube.com/watch?v=ZcmQ5y7QyTc
