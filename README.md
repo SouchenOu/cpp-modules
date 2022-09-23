@@ -10,6 +10,7 @@ https://www.iro.umontreal.ca/~pift1166/cours/ift1166/communs/Cours/2P/C14-1166.p
 ****************************
 
 📫 In C++, there are three access specifiers:
+---------------------------------------------
 
 public - members are accessible from outside the class
 
@@ -48,7 +49,9 @@ Howeve, when & is used in a declaration (including function formal parameters), 
 -----For example:
 
 -------------------------------------------------------------------------------------------
+
 📫 Test reference declaration and initialization (TestReferenceDeclaration.cpp) */
+------------------------------------------------------------------------------------------
 
                     #include <iostream>
   
@@ -318,6 +321,7 @@ To put it simply, think of npos as no-position. As a return value, it is usually
   --------------------------------------------------------------------------------------------------------------------
   
   📫 Pour bien comprendre Pointeurs et références de fonctions:
+----------------------------------------------------------------
   
 https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A9rences_de_fonctions#:~:text=Pour%20d%C3%A9clarer%20un%20pointeur%20de,(*identificateur)(param%C3%A8tres)%3B
 
@@ -340,6 +344,7 @@ ReturnType operator = (const ClassName &)
 -------------------------------------------------------------------------------------------------------------------------------
 
   📫*************************************************Virgule fixe************************************📫
+   ----------------------------------------------------------------------------------------------------------------------------
   
  https://www.developpez.net/forums/d1168230/c-cpp/c/debuter/conversion-virgule-fixe-virgule-flottante/
   
@@ -372,6 +377,7 @@ exponent	-	exponent as floating point value
 -------------------------------------------------------------------------------------------------------------------------------
   
  📫*************************************Surcharge des opérateurs d’insertion de flux (<>) en C++******************************📫
+  ----------------------------------------------------------------------------------------------------------------------------
   
 En C++, l’opérateur d’insertion de flux « << » est utilisé pour la sortie et l’opérateur d’extraction « >> » est utilisé pour l’entrée. 
   
@@ -433,6 +439,8 @@ Voici un programme C++ complet pour démontrer la surcharge des opérateurs <>.
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
+      
 📫 To understand  Operator Overloading == and + , *, /, -......
+------------------------------------------------------------------------------------------
 
 https://www.youtube.com/watch?v=ZcmQ5y7QyTc
