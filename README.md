@@ -376,7 +376,7 @@ exponent	-	exponent as floating point value
   
 -------------------------------------------------------------------------------------------------------------------------------
   
- 📫*************************************Surcharge des opérateurs d’insertion de flux (<>) en C++******************************📫
+ 📫*************************************Surcharge des opérateurs d’insertion de flux (<>) en C++*******************📫
   ----------------------------------------------------------------------------------------------------------------------------
   
 En C++, l’opérateur d’insertion de flux « << » est utilisé pour la sortie et l’opérateur d’extraction « >> » est utilisé pour l’entrée. 
