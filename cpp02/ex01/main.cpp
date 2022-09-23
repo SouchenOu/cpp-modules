@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 14:02:20 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/23 16:19:04 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 int main( void ) {
     Fixed a;
-    Fixed const b(10);
-    Fixed const c(42.42);
-    Fixed const d( b );
-    a = Fixed( 1234.4321f );// copy assignment
+    //Fixed const b(10);
+   // Fixed const c(42.42);
+   // Fixed const d( b );
+    //a = Fixed( 1234.4321f );// copy assignment
     std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
-    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+   // std::cout << "b is " << b << std::endl;
+    //std::cout << "c is " << c << std::endl;
+   // std::cout << "d is " << d << std::endl;
+  //  std::cout << "a is " << a.toInt() << " as integer" << std::endl;
    // std::cout << "b is " << b.toInt() << " as integer" << std::endl;
    // std::cout << "c is " << c.toInt() << " as integer" << std::endl;
    // std::cout << "d is " << d.toInt() << " as integer" << std::endl;
