@@ -329,7 +329,7 @@ https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-📫************************************Surcharge de l’opérateur d’affectation en C++:************************************
+📫Surcharge de l’opérateur d’affectation en C++:
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Dans ce tutoriel nous allons découvrir comment surcharger l’opérateur d’affectation (opérateur =) qui permet de copier la valeur d’un objet, tout comme le constructeur de copie.
@@ -343,7 +343,7 @@ ReturnType operator = (const ClassName &)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-  📫*************************************************Virgule fixe************************************📫
+  📫Virgule fixe
    ----------------------------------------------------------------------------------------------------------------------------
   
  https://www.developpez.net/forums/d1168230/c-cpp/c/debuter/conversion-virgule-fixe-virgule-flottante/
@@ -376,7 +376,7 @@ exponent	-	exponent as floating point value
   
 -------------------------------------------------------------------------------------------------------------------------------
   
- 📫***********************Surcharge des opérateurs d’insertion de flux (<>) en C++*******************📫
+ 📫Surcharge des opérateurs d’insertion de flux (<>) en C++:
   ----------------------------------------------------------------------------------------------------------------------------
   
 En C++, l’opérateur d’insertion de flux « << » est utilisé pour la sortie et l’opérateur d’extraction « >> » est utilisé pour l’entrée. 
