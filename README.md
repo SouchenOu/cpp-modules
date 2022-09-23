@@ -322,6 +322,13 @@ C’est extrêmement simple. Cette manière de faire s’appelle virgule fixe, c
 La virgule fixe est tout de même utilisée. Sur les processeurs à faible coût – les microcontrôleurs – n’ayant que la capacité de traiter les entiers et virgules fixes, c’est l’unique solution. Par ailleurs, dans certaines situations, la virgule fixe permet d’augmenter la vitesse d’exécution ou d’améliorer l’exactitude des calculs.
 
 
+  
+  ++++Virgule flottante++++
+Pour palier à ce problème de perte d’espace induit par la virgule fixe, on utilise la méthode d’écriture à virgule flottante. Cette écriture représente les nombres de la manière suivante : signe × mantisse × baseexposant. La position de la virgule est fixée dans la mantisse. Par la suite, on la fait flotter en faisant varier l’exposant.
+
+C’est exactement comme dans les notations scientifique et ingénieur. Ainsi, pour une même taille de stockage de quatre chiffres par exemple, on peut stocker aussi bien 1234 que 1,234 ou encore 0,1234, il suffit d’indiquer grâce à l’exposant où se place la virgule.
+
+
 
 +The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero.
   
