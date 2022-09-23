@@ -300,10 +300,10 @@ https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Pointeurs_et_r%C3%A9f%C3%A
 
 
 
------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 
-Surcharge de l’opérateur d’affectation en C++:
-----------------------------------------------
+************************************Surcharge de l’opérateur d’affectation en C++:************************************
+---------------------------------------------------------------------------------------------------------------------------------
 
 Dans ce tutoriel nous allons découvrir comment surcharger l’opérateur d’affectation (opérateur =) qui permet de copier la valeur d’un objet, tout comme le constructeur de copie.
 
@@ -312,12 +312,23 @@ Surcharger l’opérateur d’affectation est assez simple. Il doit être surcha
 
 Syntaxe:
 ReturnType operator = (const ClassName &)
+ 
+---------------------------------------------------------------------------------------------------------------------------------
+*************************************************Virgule fixe************************************
+Il suffit de définir la position de la virgule et on sait instantanément la valeur du nombre. Par exemple, pour un nombre stocké sur un octet, soit huit bits, si on définit arbitrairement la position de la virgule juste avant après le quatrième bit, alors on sait que 0110 1001 = 0110,1001.
 
+C’est extrêmement simple. Cette manière de faire s’appelle virgule fixe, car la position de la virgule est connue d’avance. L’inconvénient de cette méthode est que, pour un nombre avec peu de chiffres après la virgule, on perd un espace de stockage significatif. Si le nombre en question est 0110 1000, on perd trois bits “inutilement”.
+
+La virgule fixe est tout de même utilisée. Sur les processeurs à faible coût – les microcontrôleurs – n’ayant que la capacité de traiter les entiers et virgules fixes, c’est l’unique solution. Par ailleurs, dans certaines situations, la virgule fixe permet d’augmenter la vitesse d’exécution ou d’améliorer l’exactitude des calculs.
+
+
+
++The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero.
   
-  
-  
-  
-  
-  
++float powf( float base, float exponent );
++The pow(), powf(), and powl() functions calculate the value of x to the power of y.
+
+base	-	base as floating point value
+exponent	-	exponent as floating point value
   
   
