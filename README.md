@@ -367,3 +367,39 @@ différentes). Pour que cette instruction soit compilée, nous devons surcharger
 Les opérateurs ‘<<‘ et ‘>>’ sont appelés comme ‘cout << ob1’ et ‘cin >> ob1’. Donc, si nous voulons en faire une méthode membre,ils doivent être membres des classes ostream et istream, ce qui n’est pas une bonne option la plupart du temps. Par conséquent, ces opérateurs sont surchargés en tant que fonctions globales avec deux paramètres, cout et objet de classe définie par l’utilisateur.
   
 Voici un programme C++ complet pour démontrer la surcharge des opérateurs <>.
+
+                 /*class Complex
+                  {
+                      private:
+                          int real, imag;
+                      public:
+                          Complex(int r = 0, int i =0)
+                          {  real = r;   imag = i; }
+                          friend ostream & operator << (ostream &out, const Complex &c);//l=operateur dextraction
+                            friend istream & operator >> (istream &in,  Complex &c);//operateur dinsertion
+                  };
+ 
+                    ostream & operator << (ostream &out, const Complex &c)
+                    {
+                         out << c.real;
+                         out << "+i" << c.imag << endl;
+                          return out;
+                    }
+ 
+                    istream & operator >> (istream &in,  Complex &c)
+                    {
+                        cout << "Enter Real Part ";
+                        in >> c.real;
+                        cout << "Enter Imaginary Part ";
+                        in >> c.imag;
+                        return in;
+                    }
+ 
+                    int main()
+                    {
+                      Complex c1;
+                      cin >> c1;
+                      cout << "The complex object is ";
+                      cout << c1;
+                      return 0;
+                    }*/
