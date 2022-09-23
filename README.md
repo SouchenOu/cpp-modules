@@ -318,6 +318,8 @@ ReturnType operator = (const ClassName &)
 
   *************************************************Virgule fixe************************************
   
+ https://www.developpez.net/forums/d1168230/c-cpp/c/debuter/conversion-virgule-fixe-virgule-flottante/
+  
   
 Il suffit de définir la position de la virgule et on sait instantanément la valeur du nombre. Par exemple, pour un nombre stocké sur un octet, soit huit bits, si on définit arbitrairement la position de la virgule juste avant après le quatrième bit, alors on sait que 0110 1001 = 0110,1001.
 
