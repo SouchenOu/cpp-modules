@@ -500,5 +500,17 @@ Example: To show the need of Virtual Base Class in C++
                    D object;
                    object.show();
             }
+      
+      
+            Compile Errors:
+
+                  prog.cpp: In function 'int main()':
+                  prog.cpp:29:9: error: request for member 'show' is ambiguous
+                  object.show();
+                        ^
+                  prog.cpp:8:8: note: candidates are: void A::show()
+                  void show()
+                        ^
+                  prog.cpp:8:8: note:                 void A::show()
 
 
