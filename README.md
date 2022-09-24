@@ -529,3 +529,52 @@ To resolve this ambiguity when class A is inherited in both class B and class C,
                   };
 
 
+3: 👨‍💻 Polymorphisme :
+      
+Le mot polymorphisme signifie avoir plusieurs formes. En général, le polymorphisme se produit lorsqu’il existe une hiérarchie de classes et qu’elles sont liées par héritage.
+
+Le polymorphisme en C++ signifie qu’un appel à une fonction membre entraînera l’exécution d’une fonction différente en fonction du type d’objet qui appelle la fonction.
+         #include <iostream>
+         using namespace std;
+         class Polygone 
+         {
+                  protected:
+                        int width, height;
+                  public:
+                        void update (int a, int b){ 
+                              width = a; 
+                              height = b; 
+                        }
+            };
+         class Rectangle: public Polygone 
+         {
+             public:
+                   int aire(){
+                        return width * height; 
+                   }
+          };
+      
+         class Triangle: public Polygone 
+         {
+            public:
+                  int aire()
+                  {
+                        return width * height/2; 
+                   }
+         };
+      
+            int main () 
+            {
+                  Rectangle r;
+                  Triangle t;
+                  Polygone * p1 = &r;
+                  Polygone * p2 = &t;
+                  p1->update(2,3);
+                  p2->update(2,3);
+      
+                  cout << r.aire() << endl;
+                  cout << t.aire() << endl;
+  
+                  return 0;
+            }
+      
