@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 09:46:23 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/23 20:36:18 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #include <iostream>
-#include "ClapTrap.hpp"
+#include <string>
 
-class FrapTrap : public ClapTrap{
-
+class ClapTrap
+{
+    private:
+        std::string name;
+        int     Hit_points;
+        int     Energy_points;
+        int     Attack_damage;
     public:
-    FrapTrap(std::string name);
-    ~FrapTrap();
-    void highFivesGuys(void);
+
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        std::string getname(void) const;
+        //Constrecters and destructers
+        ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(std::string name, int Energy, int HitPoint, int AttackPoint);
+        ~ClapTrap();
 };
