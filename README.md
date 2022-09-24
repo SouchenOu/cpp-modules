@@ -454,7 +454,7 @@ https://www.youtube.com/watch?v=ZcmQ5y7QyTc
 📈 ++C++ OPP::
 -------------
       
-1:👨‍💻     Inheritance:
+1:👨‍💻  Inheritance:
 
 In C++, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
 
@@ -466,4 +466,39 @@ To inherit from a class, use the : symbol.
 
 In the example below, the Car class (child) inherits the attributes and methods from the Vehicle class (parent):
       
-      
+2: 👨‍💻 virtual class:
+
+![Need-of-Containership-in-C](https://user-images.githubusercontent.com/87101785/192095284-3f241c40-4786-473e-9c3f-61b38bf2c3ed.jpeg)
+
+As we can see from the figure that data members/function of class A are inherited twice to class D. One through class B and second through class C. When any data / function member of class A is accessed by an object of class D, ambiguity arises as to which data/function member would be called? One inherited through B or the other inherited through C. This confuses compiler and it displays error.
+
+Example: To show the need of Virtual Base Class in C++
+
+            #include <iostream>
+            using namespace std;
+  
+            class A 
+            {
+                  public:
+                        void show()
+                        {           
+                              cout << "Hello form A \n";
+                        }
+            };
+  
+            class B : public A {
+            };
+  
+            class C : public A {
+            };
+  
+            class D : public B, public C {
+            };
+  
+            int main()
+            {
+                   D object;
+                   object.show();
+            }
+
+
