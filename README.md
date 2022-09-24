@@ -512,5 +512,20 @@ Example: To show the need of Virtual Base Class in C++
                   void show()
                         ^
                   prog.cpp:8:8: note:                 void A::show()
+      
+            How to resolve this issue?
+To resolve this ambiguity when class A is inherited in both class B and class C, it is declared as virtual base class by placing a keyword virtual as :
+
+                  Syntax for Virtual Base Classes:
+
+                  Syntax 1:
+                  class B : virtual public A 
+                  {
+                  };
+
+                  Syntax 2:
+                  class C : public virtual A
+                  {
+                  };
 
 
