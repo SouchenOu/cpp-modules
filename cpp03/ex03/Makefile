@@ -1,11 +1,11 @@
-NAME = FragTrap
+NAME = DiamondTrap
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-FILES =  ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
-HED = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+FILES =  ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+HED = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 all : $(NAME)
 

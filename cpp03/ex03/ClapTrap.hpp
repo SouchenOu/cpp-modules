@@ -6,10 +6,12 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 20:36:18 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 11:11:14 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#pragma once
 #include <iostream>
 #include <string>
 

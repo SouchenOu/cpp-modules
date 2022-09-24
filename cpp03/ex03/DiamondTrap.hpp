@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 11:15:26 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 12:33:30 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include <iostream>
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FrapTrap::FrapTrap(std::string name) : ClapTrap(name, 50, 100, 20) 
+class DiamondTrap : virtual public ClapTrap, public FrapTrap, public ScavTrap
 {
-    std::cout << "FrapTrap: constructer called!\n";
-}
+    private:
+        std::string name;
+    public:
+        void whoAmI();
+        DiamondTrap();
+        DiamondTrap(std::string name);
+        ~DiamondTrap();
+        void attack(std::string scar);
+};
 
-void    FrapTrap::highFivesGuys()
-{
-    std::cout << "FrapTrap " << this->getname() << " en mode Gate keeper.\n";
-}
-
-FrapTrap::~FrapTrap()
-{
-    std::cout << "FrapTrap: Destructer called!\n";
-}

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 20:36:57 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 11:30:32 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ ClapTrap::ClapTrap(std::string name)
     this->Energy_points = 10;
     this->Attack_damage = 0;
     this->name = name;
-    std::cout << "Default constructor called!\n";
+    std::cout << "ClapTrap : Default constructor called!\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called!\n";
+    std::cout << "clapTrap : Destructor called!\n";
 }
 
 void    ClapTrap::attack(const std::string& target)
