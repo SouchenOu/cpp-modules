@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 17:27:27 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 17:08:45 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include <iostream>
 
-class Animal
+#include <string>
+#include "Animal.hpp"
+class Cat : public Animal
 {
-    protected:
-        std::string type;
+    
     public:
-        Animal(std::string Type);
-        Animal(Animal &var);
-        Animal();
-        ~Animal();
-        Animal *operator=(Animal &x);
-        std::string getType(void) const;
-        void setType(std::string Type);
-        virtual void makeSound(void) const;
+        //constructers
+        Cat();  
+        Cat(std::string Type);
+        //Destructer
+        ~Cat();
+        // copy constructer
+        Cat(Cat &var);
+         //operateur d'affectation
+        Cat *operator=(Cat &var);
+        //makesound function
+        void makeSound(void) const;
 };

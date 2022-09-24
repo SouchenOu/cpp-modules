@@ -1,30 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 17:27:27 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 16:56:31 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include <iostream>
 
-class Animal
+#include <string>
+#include "Dog.hpp"
+
+Dog::Dog(std::string Type)  : Animal("Dog")
 {
-    protected:
-        std::string type;
-    public:
-        Animal(std::string Type);
-        Animal(Animal &var);
-        Animal();
-        ~Animal();
-        Animal *operator=(Animal &x);
-        std::string getType(void) const;
-        void setType(std::string Type);
-        virtual void makeSound(void) const;
-};
+    std::cout<< "Dog constructer!\n";
+    (void)Type;
+}
+
+Dog::Dog(Dog &var) : Animal("Dog")
+{
+    std::cout << "Dog copy constructer:!\n";
+    (void)var;
+}
+Dog *Dog::operator=(Dog &var)
+{
+    (void)var;
+    return (this);
+}
+Dog::Dog() : Animal("Dog")
+{
+    std::cout << "Dog default constructer!\n";
+}
+
+Dog::~Dog()
+{
+    std::cout<< "Dog Destructer!!\n";
+}
+
+void Dog::makeSound(void) const
+{
+    std::cout << "Howl  Howl  Howl !\n";
+}
