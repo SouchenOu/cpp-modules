@@ -6,16 +6,18 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 16:56:31 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/25 10:08:36 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <string>
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog(std::string Type)  : Animal("Dog")
 {
+    this->brain = new Brain();
     std::cout<< "Dog constructer!\n";
     (void)Type;
 }

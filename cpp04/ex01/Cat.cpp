@@ -6,14 +6,16 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 16:58:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/25 10:07:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat(std::string Type)  : Animal("Cat")
 {
+    this->brain = new Brain();
     std::cout << "Cat : constructer\n";
     (void)Type;
 }
