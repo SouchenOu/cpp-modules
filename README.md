@@ -578,3 +578,8 @@ Le polymorphisme en C++ signifie qu’un appel à une fonction membre entraîner
                   return 0;
             }
       
+4 : Classe abstraite:
+
+En C++, une classe avec une fonction virtuelle pure est appelée une classe abstraite. Par exemple, la fonction suivante est une fonction virtuelle pure:
+
+virtual void myFunction() = 0;
