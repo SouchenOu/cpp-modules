@@ -19,26 +19,31 @@ Dog::Dog(std::string Type)  : Animal("Dog")
 {
     this->brain = new Brain();
     std::cout<< "Dog constructer!\n";
+    std::cout << "Dog(\"" << type << "\") constructor called" << "\n";
     (void)Type;
 }
 
 Dog::Dog(Dog &var) : Animal("Dog")
 {
+	this->brain = new Brain();
     std::cout << "Dog copy constructer:!\n";
     (void)var;
 }
 Dog *Dog::operator=(Dog &var)
 {
+	this->brain = new Brain();
     (void)var;
     return (this);
 }
 Dog::Dog() : Animal("Dog")
 {
+	this->brain = new Brain();
     std::cout << "Dog default constructer!\n";
 }
 
 Dog::~Dog()
 {
+	delete this->brain;
     std::cout<< "Dog Destructer!!\n";
 }
 
