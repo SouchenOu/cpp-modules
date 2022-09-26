@@ -16,27 +16,29 @@
 Cat::Cat(std::string Type)  : Animal("Cat")
 {
     this->brain = new Brain();
-    std::cout << "Cat : constructer\n";
-    (void)Type;
+   	std::cout << "Cat(\"" << type << "\") constructor called" << "\n";
 }
 
 Cat::Cat(Cat &var) : Animal("Cat")
 {
-    std::cout<< "Cat : Copy constructer\n";
-    (void)var;
+    std::cout << "Cat copy constructor called on " << var.type << std::endl;
+
 }
 Cat *Cat::operator=(Cat &var)
 {
+	this->brain = new Brain();
     (void)var;
     return (this);
 }
 Cat::Cat() : Animal("Cat")
 {
+	 this->brain = new Brain();
     std::cout << "Cat : Default constructer!\n";
 }
 
 Cat::~Cat()
 {
+	delete this->brain;
     std::cout << "Cat : destructer\n";
 }
 
