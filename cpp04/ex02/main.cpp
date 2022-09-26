@@ -20,13 +20,13 @@
 	
 int main()
 {
-	 const Animal* ANI1 = new Cat();
-    const Animal* ANI2 = new Dog();
-    std::cout << ANI1->getType() << " " << "\n";
-    std::cout << ANI2->getType() << " " <<  "\n";
-    ANI1->makeSound();
-    ANI2->makeSound();
 
-    return 0;
+	const Animal* ANI1 = new Cat();
+    	const Animal* ANI2 = new Dog();
+    	std::cout << ANI1->getType() << "\n";
+    	std::cout << ANI2->getType() <<  "\n";
+    	ANI1->makeSound();
+    	ANI2->makeSound();
+    	return 0;
 
 }
