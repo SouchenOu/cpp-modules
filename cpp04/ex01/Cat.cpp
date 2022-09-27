@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/25 10:07:50 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/27 10:04:33 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Cat::Cat(std::string Type)  : Animal("Cat")
 {
     this->brain = new Brain();
-   	std::cout << "Cat(\"" << type << "\") constructor called" << "\n";
+   	std::cout << "Cat(\"" << Type << "\") constructor called" << "\n";
 }
 
 Cat::Cat(Cat &var) : Animal("Cat")

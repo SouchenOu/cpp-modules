@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:03:01 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/24 18:10:38 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
-class Cat : public Animal
+#include <iostream>
+
+class WrongAnimal
 {
-    private:
-        Brain *brain;
+    protected:
+        std::string type;
     public:
-        //constructers
-        Cat();  
-        Cat(std::string Type);
-        //Destructer
-        ~Cat();
-        // copy constructer
-        Cat(Cat &var);
-         //operateur d'affectation
-        Cat *operator=(Cat &var);
-        //makesound function
+        WrongAnimal(std::string Type);
+        WrongAnimal(WrongAnimal &var);
+        WrongAnimal();
+        ~WrongAnimal();
+        WrongAnimal *operator=(WrongAnimal &x);
+        std::string getType(void) const;
+        void setType(std::string Type);
         void makeSound(void) const;
 };

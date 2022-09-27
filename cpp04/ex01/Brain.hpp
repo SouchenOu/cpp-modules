@@ -6,11 +6,11 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 19:50:15 by souchen          ###   ########.fr       */
+/*   Updated: 2022/09/27 10:04:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#pragma once
 #include <string>
 
 class Brain

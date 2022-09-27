@@ -1,10 +1,10 @@
-NAME = Brain
+NAME = Bureaucrat
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-FILES =  Bureaucrat.cpp
+FILES =  Bureaucrat.cpp main.cpp
 HED = Bureaucrat.hpp
 
 all : $(NAME)
@@ -18,7 +18,7 @@ clean:
 	
 
 fclean: clean
-]
+
 re: fclean all
 
 .PHONY: all clean fclean re
