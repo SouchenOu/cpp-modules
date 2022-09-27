@@ -584,7 +584,7 @@ En C++, une classe avec une fonction virtuelle pure est appelée une classe abst
 
 virtual void myFunction() = 0;
 
-5:Standard exceptions:
+5: 👨‍ Standard exceptions:
 
 The C++ Standard library provides a base class specifically designed to declare objects to be thrown as exceptions. It is called std::exception and is defined in the <exception> header. This class has a virtual member function called what that returns a null-terminated character sequence (of type char *) and that can be overwritten in derived classes to contain some sort of description of the exception.
 
