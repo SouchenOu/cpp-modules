@@ -9,26 +9,24 @@ class Form
 	private:
 
 		const std::string	_name;
-		bool				signed;
-		const unsigned int	gradeSign;
-		const unsigned int	gradeExec;
+		bool				signedOuNon;
+		const int	gradeSign;
+		const int	gradeExecute;
 	public:
 		// Constructor
 		Form(const std::string& name);
-		Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExec);
+		Form(const std::string& name, const int gradeSign, const int gradeExecute);
 		Form(const Form& var);
-
-		// Assignment operator overload
-		Form& operator=(const Form& var);
-
 		// Destructor
 		~Form();
 
+		// Assignment operator overload
+		Form& operator=(const Form& var);
 		// Getters
 		unsigned int getGradeSign() const;
-		unsigned int getGradeExec() const;
+		unsigned int getGradeExecute() const;
 		std::string getName() const;
-		bool isSigned() const;
+		bool getSignedOuNon() const;
 
 		void beSigned(const Bureaucrat& candidate);
 

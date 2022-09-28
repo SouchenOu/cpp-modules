@@ -6,16 +6,16 @@ Form::Form(const std::string& name)
 	this->name = name;
 	this->signed = false;
 	this->gradeSign = 1;
-	this->gradeExec = 1;
+	this->gradeExecute = 1;
 	
 }
 
-Form::Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExec)
-	: name(name), signed(false), gradeSign(gradeSign), gradeExec(gradeExec)
+Form::Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExecute)
+	: name(name), signed(false), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
-	if (gradeSign < 1 || gradeExec < 1)
+	if (gradeSign < 1 || gradeExecute < 1)
 		throw Form::GradeTooHighException();
-	else if (gradeSign > 150 || gradeExec > 150)
+	else if (gradeSign > 150 || gradeExecute > 150)
 		throw Form::GradeTooLowException();
 }
 
@@ -39,9 +39,9 @@ unsigned int Form::getGradeSign() const
 	return this->gradeSign;
 }
 
-unsigned int Form::getGradeExec() const
+unsigned int Form::getGradeExecute() const
 {
-	return this->gradeExec;
+	return this->gradeExecute;
 }
 
 std::string Form::getName() const
@@ -49,17 +49,17 @@ std::string Form::getName() const
 	return this->name;
 }
 
-bool Form::isSigned() const
+bool Form::getSignedOuNon() const
 {
-	return this->signed;
+	return this->signedOuNon;
 }
 
 void Form::beSigned(const Bureaucrat& candidate)
 {
-	if (!this->signed)
+	if (!this->signedOuNon)
 	
 		if (candidate.getGrade() <= this->gradeSign)
-			this-signed = true;
+			this-signedOuNon = true;
 		else
 			throw Form::GradeTooLowException();
 	}
@@ -70,6 +70,6 @@ void Form::beSigned(const Bureaucrat& candidate)
 std::ostream& operator<<(std::ostream& out, const Form& var)
 {
 	out << "Form " << var.getName() << ": ";
-	out << "{signed: " << std::boolalpha << var.isSigned() << ", gradeSign: " << var.getGradeSign() << ", gradeExec: " << var.getGradeExec() << "}";
-	return o;
+	out << "signed: " << std::boolalpha << var.getSignedOuNon() << ", gradeSign: " << var.getGradeSign() << ", gradeExec: " << var.getGradeExecute() << "\n";
+	return out;
 }

@@ -2,20 +2,20 @@
 
 int main()
 {
-	Bureaucrat Employé("Ahmed", 10);
+	Bureaucrat Employe("Ahmed", 10);
 	Bureaucrat student("souchen", 100);
 
 	try
 	{
-		std::cout << Employé << std::endl;
+		std::cout << Employe << std::endl;
 		std::cout << student << std::endl;
-		Employé.incrementGrade();
+		Employe.incrementGrade();
 		student.decrementGrade();
-		std::cout << Employé<< std::endl;
+		std::cout << Employe<< std::endl;
 		std::cout << student << std::endl;
-		Employé.incrementGrade();
+		Employe.incrementGrade();
 		student.decrementGrade();
-		std::cout << Employé << std::endl;
+		std::cout << Employe << std::endl;
 		std::cout <<student << std::endl;
 	}
 	catch(const std::exception& e)
