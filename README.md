@@ -49,6 +49,10 @@ This namespace is present in the iostream.h header file.
 
 Below is the code snippet in C++ showing content written inside iostream.h.
 
+* What is class :
+
+a class is a template for objects, and an object is an instance of a class.
+
 *Indirection or Dereferencing Operator (*)
 
 The indirection operator (or dereferencing operator) (*) operates on a pointer, and returns the value stored in the address kept in the pointer variable. For example, if pNumber is an int pointer, *pNumber returns the int value "pointed to" by pNumber.
