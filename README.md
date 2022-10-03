@@ -35,6 +35,19 @@ protected - members cannot be accessed from outside the class, however, they can
             return 0;
        }
 
+*using namespace std:
+
+The std namespace
+
+All C++ standard library types and functions are declared in the std namespace or namespaces nested inside std.
+
+It is known that “std” (abbreviation for the standard) is a namespace whose members are used in the program.
+
+So the members of the “std” namespace are cout, cin, endl, etc.
+
+This namespace is present in the iostream.h header file.
+
+Below is the code snippet in C++ showing content written inside iostream.h.
 
 *Indirection or Dereferencing Operator (*)
 
