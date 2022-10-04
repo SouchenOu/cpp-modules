@@ -35,7 +35,8 @@ protected - members cannot be accessed from outside the class, however, they can
             return 0;
        }
 
-*using namespace std:
+📫*using namespace std:
+----------------------
 
 The std namespace
 
@@ -49,17 +50,45 @@ This namespace is present in the iostream.h header file.
 
 Below is the code snippet in C++ showing content written inside iostream.h.
 
-* What is class :
+📫* What is class :
+-------------------
 
 a class is a template for objects, and an object is an instance of a class.
 
 When the individual objects are created, they inherit all the variables and functions from the class.
 
-*Indirection or Dereferencing Operator (*)
+📫Constructors:
+
+A constructor in C++ is a special method that is automatically called when an object of a class is created.
+
+To create a constructor, use the same name as the class, followed by parentheses ():
+
+
+                  Example:
+
+                  class MyClass 
+                  {     
+                        // The class
+                        public:          // Access specifier
+                        MyClass() 
+                        {
+                               // Constructor
+                              cout << "Hello World!";
+                        }
+                  };
+
+int main() {
+  MyClass myObj;    // Create an object of MyClass (this will call the constructor)
+  return 0;
+}
+
+📫*Indirection or Dereferencing Operator (*)
+-------------------------------------------
 
 The indirection operator (or dereferencing operator) (*) operates on a pointer, and returns the value stored in the address kept in the pointer variable. For example, if pNumber is an int pointer, *pNumber returns the int value "pointed to" by pNumber.
 
-* operator &
+📫* operator &
+-------------
 
 The meaning of symbol & is different in an expression and in a declaration. When it is used in an expression, & denotes the address-of operator, which returns the address of a variable, e.g., if number is an int variable, &number returns the address of the variable number (this has been described in the above section).
 
