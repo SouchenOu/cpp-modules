@@ -535,22 +535,22 @@ In the example below, the Car class (child) inherits the attributes and methods 
                   class Employee 
                   {
                         protected: // Protected access specifier
-                        int salary;
+                              int salary;
                   };
 
                   // Derived class
                   class Programmer: public Employee 
                   {
                         public:
-                        int bonus;
-                        void setSalary(int s) 
-                        {
-                              salary = s;
-                        }
-                        int getSalary() 
-                        {
-                              return salary;
-                        }
+                              int bonus;
+                              void setSalary(int s) 
+                              {
+                                    salary = s;
+                              }
+                              int getSalary() 
+                              {
+                                    return salary;
+                              }
                   };
 
                   int main() 
