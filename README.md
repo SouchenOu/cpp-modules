@@ -628,52 +628,42 @@ To resolve this ambiguity when class A is inherited in both class B and class C,
 
 4: 👨‍💻 Polymorphisme :
       
-Le mot polymorphisme signifie avoir plusieurs formes. En général, le polymorphisme se produit lorsqu’il existe une hiérarchie de classes et qu’elles sont liées par héritage.
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
 
-Le polymorphisme en C++ signifie qu’un appel à une fonction membre entraînera l’exécution d’une fonction différente en fonction du type d’objet qui appelle la fonction.
-         #include <iostream>
-         using namespace std;
-         class Polygone 
-         {
-                  protected:
-                        int width, height;
-                  public:
-                        void update (int a, int b){ 
-                              width = a; 
-                              height = b; 
-                        }
-            };
-         class Rectangle: public Polygone 
-         {
-             public:
-                   int aire(){
-                        return width * height; 
-                   }
-          };
-      
-         class Triangle: public Polygone 
-         {
-            public:
-                  int aire()
+Like we specified in the previous chapter; Inheritance lets us inherit attributes and methods from another class. Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.
+
+For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+
+
+                  // Base class
+                  class Animal 
                   {
-                        return width * height/2; 
-                   }
-         };
-      
-            int main () 
-            {
-                  Rectangle r;
-                  Triangle t;
-                  Polygone * p1 = &r;
-                  Polygone * p2 = &t;
-                  p1->update(2,3);
-                  p2->update(2,3);
-      
-                  cout << r.aire() << endl;
-                  cout << t.aire() << endl;
-  
-                  return 0;
-            }
+                        public:
+                              void animalSound() 
+                              {
+                                    cout << "The animal makes a sound \n";
+                              }
+                  };
+
+                  // Derived class
+                  class Pig : public Animal 
+                  {
+                        public:
+                              void animalSound() 
+                              {
+                                    cout << "The pig says: wee wee \n";
+                              }
+                  };
+
+                  // Derived class
+                  class Dog : public Animal 
+                  {
+                        public:
+                              void animalSound() 
+                              {
+                                    cout << "The dog says: bow wow \n";
+                              }
+                  };
       
 5 : 👨‍ Classe abstraite:
 
