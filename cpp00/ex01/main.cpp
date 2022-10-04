@@ -29,7 +29,7 @@ int main()
         std::cout << "Enter your choice now: -> ";
         getline(std::cin,choice);
         if(choice.compare("ADD") == 0)
-            contact_elem.ADD_func(contact_elem);
+            contact_elem.ADD_func(&contact_elem);
         if(choice.compare("SEARCH") == 0)
             contact_elem.SEARCH_func(contact_elem);
         if(choice.compare("EXIT")== 0)

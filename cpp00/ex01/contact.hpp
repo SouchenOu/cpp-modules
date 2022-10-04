@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 17:19:58 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/04 15:55:53 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Contact {
 
     //getters
     std::string getFirstName(void);
-    std::string getLastname(void);
+    std::string getLastName(void);
     std::string getNickName(void);
     std::string getPhoneNumber(void);
     std::string getDarkestSecret(void);

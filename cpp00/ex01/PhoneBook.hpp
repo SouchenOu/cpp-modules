@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 17:20:15 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/04 18:00:31 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class PhoneBook {
       	int	count;
         int index;
     public:
-    PhoneBook();
-    //setters
-    Contact getContact(int index) const;
-	int		getCount() const;
-	// Setters
-	void setPhoneBook(std::string firstname, std::string lastname,std::string nickname, std::string phonenumber, std::string darkestsecret);
-	void setContact(Contact contact);
-    void ADD_func(PhoneBook &contact_elem);
-    void SEARCH_func(PhoneBook Contact);
-    void EXIT_func();
+        PhoneBook();
+        //setters
+        Contact getContact(int index) const;
+	    int		getCount() const;
+	    // Setter
+	    void setContact(Contact contact);
+        //functions
+        void ADD_func(PhoneBook *contact_elem);
+        void SEARCH_func(PhoneBook Contact);
+        void EXIT_func();
 
 };

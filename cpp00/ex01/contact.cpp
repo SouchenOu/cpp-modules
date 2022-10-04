@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 17:21:29 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/04 15:56:13 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ Contact::Contact(std::string Firstname, std::string Lastname,std::string  Nickna
     }
     std::string Contact::getDarkestSecret(void)
     {
-        return Contact::darkestSecret;
+        return darkestsecret;
     }

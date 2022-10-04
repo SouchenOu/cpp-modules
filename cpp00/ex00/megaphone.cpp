@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/15 19:00:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/04 15:31:46 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     i = 1;
     if(argc == 1)
     {
-        std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE"; 
+        std::cout << " * LOUD AND UNBEARABLE FEEDBACK NOISE *"; 
     }
     else{
         while(argv[i] != NULL)
