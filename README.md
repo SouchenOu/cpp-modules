@@ -58,6 +58,9 @@ a class is a template for objects, and an object is an instance of a class.
 When the individual objects are created, they inherit all the variables and functions from the class.
 
 📫Constructors:
+--------------
+
+1: constructor sans parameters:
 
 A constructor in C++ is a special method that is automatically called when an object of a class is created.
 
@@ -77,10 +80,15 @@ To create a constructor, use the same name as the class, followed by parentheses
                         }
                   };
 
-int main() {
-  MyClass myObj;    // Create an object of MyClass (this will call the constructor)
-  return 0;
-}
+                  int main() 
+                  {
+                        MyClass myObj;    // Create an object of MyClass (this will call the constructor)
+                        return 0;
+                  }
+                  
+2: constructor with parameters:
+
+When we call the constructor (by creating an object of the class), we pass parameters to the constructor, which will set the value of the corresponding attributes to the same:
 
 📫*Indirection or Dereferencing Operator (*)
 -------------------------------------------
