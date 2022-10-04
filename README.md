@@ -508,9 +508,13 @@ https://www.youtube.com/watch?v=ZcmQ5y7QyTc
       
       
 📈 ++C++ OPP::
--------------
+------------
       
-1:👨‍💻  Inheritance:
+ 1:👨‍ Encapsulation:
+      
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must declare class variables/attributes as private (cannot be accessed from outside the class). If you want others to read or modify the value of a private member, you can provide public get and set methods.
+      
+2:👨‍💻  Inheritance:
 
 In C++, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
 
@@ -522,7 +526,7 @@ To inherit from a class, use the : symbol.
 
 In the example below, the Car class (child) inherits the attributes and methods from the Vehicle class (parent):
       
-2: 👨‍💻 virtual class:
+3: 👨‍💻 virtual class:
 
 ![Need-of-Containership-in-C](https://user-images.githubusercontent.com/87101785/192095284-3f241c40-4786-473e-9c3f-61b38bf2c3ed.jpeg)
 
@@ -585,7 +589,7 @@ To resolve this ambiguity when class A is inherited in both class B and class C,
                   };
 
 
-3: 👨‍💻 Polymorphisme :
+4: 👨‍💻 Polymorphisme :
       
 Le mot polymorphisme signifie avoir plusieurs formes. En général, le polymorphisme se produit lorsqu’il existe une hiérarchie de classes et qu’elles sont liées par héritage.
 
@@ -634,13 +638,13 @@ Le polymorphisme en C++ signifie qu’un appel à une fonction membre entraîner
                   return 0;
             }
       
-4 : 👨‍ Classe abstraite:
+5 : 👨‍ Classe abstraite:
 
 En C++, une classe avec une fonction virtuelle pure est appelée une classe abstraite. Par exemple, la fonction suivante est une fonction virtuelle pure:
 
 virtual void myFunction() = 0;
 
-5: 👨‍ Standard exceptions:
+6: 👨‍ Standard exceptions:
 
 The C++ Standard library provides a base class specifically designed to declare objects to be thrown as exceptions. It is called std::exception and is defined in the <exception> header. This class has a virtual member function called what that returns a null-terminated character sequence (of type char *) and that can be overwritten in derived classes to contain some sort of description of the exception.
 
