@@ -14,8 +14,22 @@
 #include "PhoneBook.hpp"
 #include <iomanip>
 
-PhoneBook::PhoneBook(){index=0;}
-    //setters
+PhoneBook::PhoneBook(){index=0, count = 0;}
+
+int	Phonebook::getCount() const
+{
+	return this->count;
+}
+
+void Phonebook::setContact(Contact contact)
+{
+	this->contacts[this->index] = contact;
+	count = (count < 8) ? count + 1 : count;
+	this->index = (this->index + 1) % 8;
+	return;
+}
+
+    //setter
 void PhoneBook::setPhoneBook(std::string firstname, std::string lastname,std::string nickname, std::string phonenumber, std::string darkestsecret)
 {
     MyContact[index].setFirstName(firstname);
@@ -27,57 +41,81 @@ void PhoneBook::setPhoneBook(std::string firstname, std::string lastname,std::st
     std::cout << "\n";
      
 }
-void PhoneBook::ADD_func(PhoneBook &contact_elem)
+void PhoneBook::ADD_func(PhoneBook *phoneBokk)
 {
-    std::string firstName;
-    std::string lastName;
-    std::string nickName;
-    std::string PhoneNumber;
-    std::string darkestSecret;
     Contact c;
-    int i;
-    i = 0;
-        std::cout << "Enter your first name:\n";
-        getline(std::cin,firstName);
-        contact_elem.tab[contact_elem.index][0]= (firstName);
-        std::cout << "Enter your lastName:\n";
-        getline(std::cin,lastName);
-        contact_elem.tab[contact_elem.index][1]= (lastName);
-        std::cout << "Enter your NickName:\n";
-        getline(std::cin,nickName);
-        contact_elem.tab[contact_elem.index][2]= (nickName);
-        std::cout << "Enter your PhoneNumber:\n";
-        getline(std::cin,PhoneNumber);
-        contact_elem.tab[contact_elem.index][3]= (PhoneNumber);
-        std::cout << "Enter your darkestSecret:\n";
-        getline(std::cin,darkestSecret);
-        contact_elem.tab[contact_elem.index][4]= (darkestSecret);
-        contact_elem.setPhoneBook(firstName,lastName,nickName,PhoneNumber,darkestSecret);    
+   	std::string str;
+    std::cout << "First name: ";
+	std::getline(std::cin, str);
+	c.setFirstName(str);
+	std::cout << "Last name: ";
+	std::getline(std::cin, str);
+	ct.setLastName(str);
+	std::cout << "Nickname: ";
+	std::getline(std::cin, str);
+	c.setNickName(str);
+	std::cout << "Phone number: ";
+	std::getline(std::cin, str);
+	c.setPhoneNumber(str);
+	std::cout << "Darkest secret: ";
+	std::getline(std::cin, str);
+	c.setSecret(str);
+	phonebook->setContact(c);  
         
 }
+std::string truncate(std::string str)
+{
+	if (str.size() >= 10)
+		return (str.substr(0, 9) + ".");
+	return (str);
+}
+
 void PhoneBook::SEARCH_func(PhoneBook Contact)
 {
-    int i;
-    int j;
-    i = 0;
-    j = 0;
-    //std::cout<< Contact.tab[0][0];
-    std::cout<< "|"; std::cout<< "index"; 
-    std::cout<< "|";std::cout<< "First name";
-    std::cout<< "|";std::cout<< "Last name";
-    std::cout<< "|";std::cout<< "nick name";
-    std::cout<< "|"; std::cout<< "\n";
-    for(i=0;i< Contact.index; i++)
-    {
-        std::cout << "|";
-            std::cout<< std::setw(strlen("index"));std::cout << i + 1;std::cout << "|";
-            std::cout<< std::setw(strlen("First name"));std::cout << Contact.tab[i][0];std::cout << "|";
-            std::cout<< std::setw(strlen("Last name"));std::cout << Contact.tab[i][1];std::cout << "|";
-            std::cout<< std::setw(strlen("nick name"));std::cout << Contact.tab[i][2];std::cout << "|";
-   
-        std::cout << "\n";
-    }
-    
+    int index;
+	int count;
+
+	count = phonebook->getCount();
+	std::cout << "***************************************************************************************************************************************" << std::endl;
+	std::cout << "$$" << std::setw(10) << std::right << "index";
+	std::cout << "$$" << std::setw(10) << std::right << "first name";
+	std::cout << "$$" << std::setw(10) << std::right << "last name";
+	std::cout << "$$" << std::setw(10) << std::right << "nickname" << std::endl;
+	std::cout << "***************************************************************************************************************************************" << std::endl;
+	for (int i=0; i < phonebook->getCount(); i++)
+	{
+		Contact contact;
+		contact = phonebook->getContact(i);
+		std::cout << "|" << std::setw(10) << i + 1;
+		std::cout << "|" << std::setw(10) << truncate(contact.getFirstName());
+		std::cout << "|" << std::setw(10) << truncate(contact.getLastName());
+		std::cout << "|" << std::setw(10) << truncate(contact.getNickName()) << "|" << std::endl;
+	}
+	std::cout << "*******************************************************************************************" << std::endl;
+	if (count > 0)
+	{
+		std::cout << "Please enter an index for relevant information: ";
+		while (!(std::cin >> index) || index > count || index < 1)
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
+		}
+		index--;
+		Contact tmp;
+		tmp = phonebook->getContact(index);
+		std::cout << std::endl;
+		std::cout << "First name - " << tmp.getFirstName() << std::endl;
+		std::cout << "Last name - " << tmp.getLastName() << std::endl;
+		std::cout << "Nickname - " << tmp.getNickName() << std::endl;
+		std::cout << "Phone number - " << tmp.getPhoneNumber() << std::endl;
+		std::cout << "Darkest secret - " << tmp.getSecret() << std::endl;
+	}
+	else
+	{
+		std::cout << "Table is empty!" << std::endl;
+	}
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 }
 void PhoneBook::EXIT_func()

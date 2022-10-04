@@ -34,16 +34,16 @@ class Contact {
     
     void setNickName(std::string Nickname);
     
-    void setPhonenumber(std::string Phonenumber);
+    void setPhoneNumber(std::string Phonenumber);
     
-    void setDarkestsecret(std::string Darkestsecret);
+    void setDarkestSecret(std::string Darkestsecret);
 
     //getters
     std::string getFirstName(void);
     std::string getLastname(void);
     std::string getNickName(void);
-    std::string getPhonenumber(void);
-    std::string getDarkestsecret(void);
+    std::string getPhoneNumber(void);
+    std::string getDarkestSecret(void);
     
     
 };

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/09/27 10:59:53 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string>
 #include <iostream>
 
@@ -7,7 +19,7 @@ class Bureaucrat
 	private:
 
 	std::string const	name;
-	unsigned int		grade;
+	int		grade;
 	public:
 		// Constructors
 		Bureaucrat();

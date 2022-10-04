@@ -1,15 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/09/27 11:04:39 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():name("souchen")
 {
-	name ="souchen"; 
 	grade=150;
-
 }
 
-Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
+Bureaucrat::Bureaucrat(std::string const name, int grade):name(name)
 {
-	this->name = name;
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else if (grade < 1)
@@ -32,7 +41,7 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-	if (this->_grade >= 150)
+	if (this->grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade++;

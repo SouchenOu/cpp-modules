@@ -17,12 +17,17 @@
 class PhoneBook {       
     private:   
         Contact MyContact[8];
-        std::string tab[10][11];
+       // std::string tab[10][11];
+      	int	count;
         int index;
     public:
     PhoneBook();
     //setters
-    void setPhoneBook(std::string firstname, std::string lastname,std::string nickname, std::string phonenumber, std::string darkestsecret);
+    Contact getContact(int index) const;
+	int		getCount() const;
+	// Setters
+	void setPhoneBook(std::string firstname, std::string lastname,std::string nickname, std::string phonenumber, std::string darkestsecret);
+	void setContact(Contact contact);
     void ADD_func(PhoneBook &contact_elem);
     void SEARCH_func(PhoneBook Contact);
     void EXIT_func();

@@ -35,11 +35,11 @@ Contact::Contact(std::string Firstname, std::string Lastname,std::string  Nickna
     {
         nickname=Nickname;
     }
-    void Contact::setPhonenumber(std::string Phonenumber)
+    void Contact::setPhoneNumber(std::string Phonenumber)
     {
         phonenumber=Phonenumber;
     }
-    void Contact::setDarkestsecret(std::string Darkestsecret)
+    void Contact::setDarkestSecret(std::string Darkestsecret)
     {
         darkestsecret=Darkestsecret;
     }
@@ -48,7 +48,7 @@ Contact::Contact(std::string Firstname, std::string Lastname,std::string  Nickna
     {
         return firstname;
     }
-    std::string Contact::getLastname(void)
+    std::string Contact::getLastName(void)
     {
         return lastname;
     }
@@ -56,11 +56,11 @@ Contact::Contact(std::string Firstname, std::string Lastname,std::string  Nickna
     {
         return nickname;
     }
-    std::string Contact::getPhonenumber(void)
+    std::string Contact::getPhoneNumber(void)
     {
         return phonenumber;
     }
-    std::string Contact::getDarkestsecret(void)
+    std::string Contact::getDarkestSecret(void)
     {
-        return Contact::darkestsecret;
+        return Contact::darkestSecret;
     }
