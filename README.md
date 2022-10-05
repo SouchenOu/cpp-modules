@@ -697,8 +697,9 @@ En C++, une classe avec une fonction virtuelle pure est appelée une classe abst
 
 virtual void myFunction() = 0;
 
-6: 👨‍ C++ Exceptions
-          
+6: 👨‍ C++ Exceptions:
+
+      +An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero.
 When executing C++ code, different errors can occur: coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
 
 When an error occurs, C++ will normally stop and generate an error message. The technical term for this is: C++ will throw an exception (throw an error).
