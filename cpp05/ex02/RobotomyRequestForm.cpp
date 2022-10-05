@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/10/05 12:35:19 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-	: Form("robotomy", target, 72, 45)
+	: Form("robotomy", 72, 45)
 {
 }
 
@@ -21,16 +33,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm()
-	: Form("robotomy", "default", 72, 45)
+	: Form("robotomy", 72, 45)
 {
 }
 
-void RobotomyRequestForm::action(const Bureaucrat& executor) const
-{
-	this->Form::execute(executor);
-	std::cout << "Makes some drilling noises" << std::endl;
-	if (rand() < RAND_MAX / 2)
-		std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
-	else
-		std::cout << "Robotomy on " << this->getTarget() << " has failed." << std::endl;
-}

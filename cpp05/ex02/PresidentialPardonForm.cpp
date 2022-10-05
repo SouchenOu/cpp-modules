@@ -1,18 +1,29 @@
-#include "PresidentialPardonForm.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/10/05 12:35:25 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
-	: Form("pardon", target, 25, 5)
+	: Form("pardon", 25, 5)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
-	: Form(other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& var)
+	: Form(var)
 {	
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& rhs)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& var)
 {
-	this->Form::operator=(rhs);
+	this->Form::operator=(var);
 	return *this;
 }
 
@@ -21,12 +32,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm()
-	: Form("pardon", "default", 25, 5)
+	: Form("pardon", 25, 5)
 {
 }
 
-void PresidentialPardonForm::action(const Bureaucrat& executor) const
-{
-	this->Form::execute(executor);
-	std::cout << this->getTarget() << "has been pardoned by Zafod Beeblebrox." << std::endl;
-}

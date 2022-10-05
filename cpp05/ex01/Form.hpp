@@ -1,3 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/10/05 12:12:05 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/10/05 12:09:20 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 #include <string>
 #include <iostream>
@@ -8,14 +31,14 @@ class Form
 {
 	private:
 
-		const std::string	_name;
-		bool				signedOuNon;
+		const std::string	name;
+		bool		signedOuNon;
 		const int	gradeSign;
 		const int	gradeExecute;
 	public:
 		// Constructor
-		Form(const std::string& name);
-		Form(const std::string& name, const int gradeSign, const int gradeExecute);
+		Form(const std::string name);
+		Form(const std::string name, const int gradeSign, const int gradeExecute);
 		Form(const Form& var);
 		// Destructor
 		~Form();
@@ -33,30 +56,21 @@ class Form
 		class GradeTooHighException : public std::exception
 		{
 			public:
-			const char* what() const throw()
-			{
-				return ("grade is too high");
-			}
+				const char* what() const throw()
+				{
+					return ("grade is too high");
+				}
 		};
 
 		class GradeTooLowException : public std::exception
 		{
+			
 			public:
-			const char* what() const throw()
-			{
-				return ("grade is too low");
-			}
+				const char* what() const throw()
+				{
+					return ("grade is too low");
+				}
 		};
-
-		class FormAlreadySignedException : public std::exception
-		{
-			public:
-			const char* what() const throw()
-			{
-				return ("form is already signed");
-			}
-		};
-
 };
 
-std::ostream& operator<<(std::ostream& o, const Form& rhs);
+std::ostream& operator<<(std::ostream& out, const Form& var);

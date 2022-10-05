@@ -1,18 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
+/*   Updated: 2022/10/05 12:13:53 by souchen          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string& name)
+Form::Form(const std::string name):name(name), gradeSign(1), gradeExecute(1)
 {
-	this->name = name;
-	this->signed = false;
-	this->gradeSign = 1;
-	this->gradeExecute = 1;
-	
+	this->signedOuNon =false;
 }
 
-Form::Form(const std::string& name, const unsigned int gradeSign, const unsigned int gradeExecute)
-	: name(name), signed(false), gradeSign(gradeSign), gradeExecute(gradeExecute)
+Form::Form(const std::string name, const int gradeSign, const int gradeExecute)
+	: name(name), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
+	this->signedOuNon =false;
 	if (gradeSign < 1 || gradeExecute < 1)
 		throw Form::GradeTooHighException();
 	else if (gradeSign > 150 || gradeExecute > 150)
@@ -20,8 +29,9 @@ Form::Form(const std::string& name, const unsigned int gradeSign, const unsigned
 }
 
 Form::Form(const Form& var)
-	: name(var.name), signed(var.signed), gradeSign(var.gradeSign), gradeExec(var.gradeExec)
+	: name(var.name), gradeSign(var.gradeSign), gradeExecute(var.gradeExecute)
 {
+	this->signedOuNon = var.signedOuNon;
 }
 
 Form& Form::operator=(const Form& var)
@@ -56,15 +66,14 @@ bool Form::getSignedOuNon() const
 
 void Form::beSigned(const Bureaucrat& candidate)
 {
-	if (!this->signedOuNon)
-	
+	if (this->signedOuNon == false)
+	{
 		if (candidate.getGrade() <= this->gradeSign)
-			this-signedOuNon = true;
-		else
+			this->signedOuNon = true;
+		else{
 			throw Form::GradeTooLowException();
+		}
 	}
-	else
-		throw Form::FormAlreadySignedException();
 }
 
 std::ostream& operator<<(std::ostream& out, const Form& var)
