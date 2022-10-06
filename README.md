@@ -413,6 +413,37 @@ Function pointers can be initialized with a function (and non-const function poi
 
                               return 0;
                         }
+
+📫 Calling a function using a function pointer
+
+The other primary thing you can do with a function pointer is use it to actually call the function. There are two ways to do this. The first is via explicit dereference:
+
+                  int foo(int x)
+                  {
+                        return x;
+                  }
+
+                  int main()
+                  {
+                        int (*fcnPtr)(int){ &foo }; // Initialize fcnPtr with function foo
+                        (*fcnPtr)(5); // call function foo(5) through fcnPtr.
+
+                        return 0;
+                  }
+                 The second way is via implicit dereference:
+
+                  int foo(int x)
+                  {
+                        return x;
+                  }
+
+                  int main()
+                  {
+                        int (*fcnPtr)(int){ &foo }; // Initialize fcnPtr with function foo
+                        fcnPtr(5); // call function foo(5) through fcnPtr.
+
+                        return 0;
+                  }     
       
 ------------------------------------------------------------------------------------------------------------------
 📫*******************************************Les fichier en c++:*******************************************
