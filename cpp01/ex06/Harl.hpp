@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 12:50:40 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/06 13:15:59 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Harl
 		void warning(void);
 		void error(void);
 	public:
-		Harl(void);
 		~Harl(void);
 		void complain(std::string level);
 };

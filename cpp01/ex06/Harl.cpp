@@ -6,17 +6,17 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 13:58:26 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/06 13:16:23 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
 
-Harl::Harl(void)
-{
-	
-}
+/*Pointers to member functions are not like regular pointers to functions, because member functions
+have a hidden "this" parameter, and so can only be called if you supply an object to play the role of
+"this", and use some special syntax to tell the compiler to set up the call using the hidden “this”
+parameter.*/
 
 Harl::~Harl(void)
 {

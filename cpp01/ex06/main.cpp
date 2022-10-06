@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 13:58:08 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/06 13:17:03 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,47 @@ int main(int argc, char **argv)
 		}
 	}
 }
+
+/*int somme(int i, int j)
+{
+    return i+j;
+}
+
+int multiplication(int i, int j)
+{
+    return i*j;
+}
+
+int quotient(int i, int j)
+{
+    return i/j;
+}
+
+int modulo(int i, int j)
+{
+    return i%j;
+}
+
+typedef int (*fptr)(int, int);
+fptr ftab[4];
+
+int main(void)
+{
+    int i,j,n;
+	i = 1;
+	j = 2;
+	n = 3;
+    ftab[0]=&somme;          // Initialise le tableau de pointeur 
+    ftab[1]=&multiplication; // de fonctions. 
+    ftab[2]=&quotient;
+    ftab[3]=&modulo;
+    if (n < 4 && n >= 0)
+       std::cout<<"\nRésultat :\n" << (*(ftab[n]))(i,j) ;
+    else
+        std::cout<<"\nMauvais numéro de fonction.\n";
+    return 0;
+}*/
+
+
 
 
