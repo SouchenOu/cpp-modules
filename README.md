@@ -382,6 +382,14 @@ Pointers to members can be declared and used as shown in the following example:
                               (xobject.*ptfptr) (20);
                         }
 
+      
+      ========Pointers to functions:
+
+      The syntax for creating a non-const function pointer is one of the ugliest things you will ever see in C++:
+
+// fcnPtr is a pointer to a function that takes no arguments and returns an integer
+int (*fcnPtr)();
+In the above snippet, fcnPtr is a pointer to a function that has no parameters and returns an integer. fcnPtr can point to any function that matches this type.
 ------------------------------------------------------------------------------------------------------------------
 📫*******************************************Les fichier en c++:*******************************************
 ------------------------------------------------------------------------------------------------------------------
