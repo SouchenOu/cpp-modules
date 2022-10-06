@@ -338,7 +338,7 @@ A reference shares the same memory address with the original variable but also t
 
 
 
-======Pointers to members (C++ only):
+📫 Pointers to members (C++ only):
 
 Pointers to members allow you to refer to nonstatic members of class objects. You cannot use a pointer to member to point to a static class member because the address of a static member is not associated with any particular object. To point to a static class member, you must use a normal pointer.
 
@@ -383,7 +383,7 @@ Pointers to members can be declared and used as shown in the following example:
                         }
 
       
-      ========Pointers to functions:
+📫 Pointers to functions:
 
       The syntax for creating a non-const function pointer is one of the ugliest things you will ever see in C++:
 
@@ -392,7 +392,7 @@ int (*fcnPtr)();
 In the above snippet, fcnPtr is a pointer to a function that has no parameters and returns an integer. fcnPtr can point to any function that matches this type.
       
       
-      +Assigning a function to a function pointer:
+📫Assigning a function to a function pointer:
 
 Function pointers can be initialized with a function (and non-const function pointers can be assigned a function). In the above example, we have used foo directly, and it has been converted to a function pointer. Like with pointers to variables, we can also use &foo to get a function pointer to foo.
 
