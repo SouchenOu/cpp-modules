@@ -334,7 +334,54 @@ A reference shares the same memory address with the original variable but also t
                     return number * number;
             }
             
-            
+
+
+
+
+======Pointers to members (C++ only):
+
+Pointers to members allow you to refer to nonstatic members of class objects. You cannot use a pointer to member to point to a static class member because the address of a static member is not associated with any particular object. To point to a static class member, you must use a normal pointer.
+
+You can use pointers to member functions in the same manner as pointers to functions. You can compare pointers to member functions, assign values to them, and use them to call member functions. Note that a member function does not have the same type as a nonmember function that has the same number and type of arguments and the same return type.
+
+Pointers to members can be declared and used as shown in the following example:
+
+
+
+                        #include <iostream>
+                        using namespace std;
+
+                        class X 
+                        {
+                              public:
+                              int a;
+                              void f(int b) 
+                              {
+                                    cout << "The value of b is "<< b << endl;
+                              }
+                        };
+
+                        int main() 
+                        {
+
+                              // declare pointer to data member
+                               int X::*ptiptr = &X::a;
+
+                              // declare a pointer to member function
+                              void (X::* ptfptr) (int) = &X::f;
+
+                              // create an object of class type X
+                              X xobject;
+
+                              // initialize data member
+                              xobject.*ptiptr = 10;
+
+                              cout << "The value of a is " << xobject.*ptiptr << endl;
+
+                              // call member function
+                              (xobject.*ptfptr) (20);
+                        }
+
 ------------------------------------------------------------------------------------------------------------------
 📫*******************************************Les fichier en c++:*******************************************
 ------------------------------------------------------------------------------------------------------------------
