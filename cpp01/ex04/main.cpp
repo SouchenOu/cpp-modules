@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 11:27:04 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/05 19:21:04 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ void replace(char **argv)
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
 
-	std::ifstream ifFile(filename);
-	if (ifFile.is_open()) // ou if(ifFile.good()) // Est ce que le fichier est effectivement overt ou bien no
+	std::ifstream ifFile(filename);// read acces
+	if (ifFile.is_open()) // ou if(ifFile.good()) // Est ce que le fichier est effectivement ouvert ou bien no
 	{
 		if (ifFile.peek() == std::ifstream::traits_type::eof()) // eof() : means endofline
 			std::cout << "Error: File is empty" << std::endl;
 		else
 		{
-			std::ofstream ofFile("file-replace.txt");
+			std::ofstream ofFile("file-replace.txt");//create and write
 			while (ifFile.good() && ofFile.good())
 			{
 				std::string line;
 				std::size_t found;
 				std::getline(ifFile, line);// read line by line 
-				found = line.find(s1, 0);
-				while (found != std::string::npos)
+				found = line.find(s1, 0);//found is a position of the first char in s1 at line
+				while (found != std::string::npos)//means until the end of the string.
 				{
 					line.erase(found, s1.length());
 					line.insert(found, s2);
@@ -49,7 +49,7 @@ void replace(char **argv)
 		}
 	}
 	else
-		std::cout << "Error: " << strerror(errno) << std::endl;
+		std::cout << "Error: " << "no such file or directory" << "\n";
 }
 
 int main(int argc, char **argv)
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 	if (argc == 4)
 		replace(argv);
 	else
-		std::cout << "Error: Usage: ./replace <filename> <string 1> <string 2>" << std::endl;
+		std::cout << "Error: Usage: ./file <filename> <String> <remplaceString>" << "\n";
 }
 
 

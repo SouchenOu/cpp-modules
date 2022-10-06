@@ -6,11 +6,12 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 12:35:25 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/05 12:39:09 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
 	: Form("pardon", 25, 5)
 {

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/18 20:40:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/05 14:22:53 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 //destructer
 Zombie::~Zombie()
-{}
+{
+    std::cout << this->getZombie() << " destructor." << "\n";
+}
 //constructer
 Zombie::Zombie(){}
 //setter
