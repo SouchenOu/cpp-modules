@@ -456,6 +456,14 @@ The differences between copy constructer and  assignment operators:
   assignment operators
       One memory location is used but different reference variables are pointing to the same location.
       
+      
+      Explanation: 
+      ---
+      
+      Here, t2 = t1;  calls the assignment operator, same as t2.operator=(t1); 
+      
+      Test t3 = t1;  calls the copy constructor, same as Test t3(t1);
+      
 ------------------------------------------------------------------------------------------------------------------
 📫*******************************************Les fichier en c++:*******************************************
 ------------------------------------------------------------------------------------------------------------------
