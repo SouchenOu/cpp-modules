@@ -444,6 +444,17 @@ The other primary thing you can do with a function pointer is use it to actually
 
                         return 0;
                   }     
+
+      
+      
+The differences between copy constructer and  assignment operators:
+      
+      
+      The Copy constructor and the assignment operators are used to initializing one object to another object. The main difference between them is that the copy constructor creates a separate memory block for the new object. But the assignment operator does not make new memory space. It uses the reference variable to point to the previous memory block.
+  copy constructer:
+      Both the objects uses separate memory locations.
+  assignment operators
+      One memory location is used but different reference variables are pointing to the same location.
       
 ------------------------------------------------------------------------------------------------------------------
 📫*******************************************Les fichier en c++:*******************************************
