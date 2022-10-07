@@ -578,7 +578,17 @@ C’est exactement comme dans les notations scientifique et ingénieur. Ainsi, p
 
 base	-	base as floating point value
 exponent	-	exponent as floating point value
-  
+ 
+ 
+ 
+To convert from floating-point to fixed-point, we follow this algorithm:
+
+Calculate x = floating_input * 2^(fractional_bits)
+
+27.3 * 2^10 = 27955.2
+Round x to the nearest whole number (e.g. round(x))
+
+27955
 -------------------------------------------------------------------------------------------------------------------------------
   
  📫Surcharge des opérateurs d’insertion de flux (<>) en C++:
