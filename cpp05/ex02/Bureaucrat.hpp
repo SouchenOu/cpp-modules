@@ -6,24 +6,24 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:59:53 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 17:41:53 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat
 {
 	
 	private:
-
 	std::string const	name;
 	int		grade;
 	public:
 		// Constructors
 		Bureaucrat();
-		Bureaucrat(std::string const name, unsigned int grade);
+		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(const Bureaucrat& var);
 			// Destructor
 		~Bureaucrat();
@@ -31,9 +31,11 @@ class Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat& var);	
 		// Getters
 		std::string const getName() const;
-		unsigned int getGrade() const;
+		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void executeForm(Form const & form);
+		void signForm(Form &x);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -53,4 +55,4 @@ class Bureaucrat
 		};
 
 };
-std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs);
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& var);

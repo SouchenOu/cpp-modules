@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 12:26:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 14:52:41 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 
 		// Assignment operator overload
-		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& var);
 
 		// Destructor
 		~PresidentialPardonForm();
 
-		void action(const Bureaucrat& executor) const;
+		void execute(const Bureaucrat& executor) const;
 };

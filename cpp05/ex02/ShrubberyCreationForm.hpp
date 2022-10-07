@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 12:13:35 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 14:50:55 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ShrubberyCreationForm : public Form
 		// Destructor
 		~ShrubberyCreationForm();
 
-		void action(const Bureaucrat& executor) const;
+		void execute(const Bureaucrat& executor) const;
 
 
 };

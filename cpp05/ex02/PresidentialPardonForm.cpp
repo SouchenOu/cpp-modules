@@ -6,14 +6,19 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 12:39:09 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 18:16:00 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+/*PresidentialPardonForm::PresidentialPardonForm()
 	: Form("pardon", 25, 5)
+{
+}*/
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+	: Form(target , "PresidentialPardon", 25, 5)
 {
 }
 
@@ -32,8 +37,14 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm()
-	: Form("pardon", 25, 5)
+
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
+    if (this->getsignedOuNon() == false)
+        throw NotSigned();
+    if (this->getGradeExecute() < executor.getGrade())
+        throw GradeTooLowException();
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox.\n";
 }
 

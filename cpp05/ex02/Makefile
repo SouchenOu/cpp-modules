@@ -1,37 +1,19 @@
-NAME		=	ElaborateForms
+NAME = SRP
 
-CC			=	clang++
-INCLUDES	=	includes
-CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
-RM			=	rm -rf
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS		=	srcs/Bureaucrat.cpp \
-				srcs/Form.cpp \
-				srcs/PresidentialPardonForm.cpp \
-				srcs/RobotomyRequestForm.cpp \
-				srcs/ShrubberyCreationForm.cpp \
-				main.cpp
+RM = rm -rf
 
-OBJS		=	$(SRCS:%.cpp=%.o)
+FILES =  Bureaucrat.cpp Form.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+HED = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-			@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
-			@echo "Linked into executable \033[38;2;39;154;186m$(NAME)\033[0m"
-
-.cpp.o:
-			@$(CC) $(CPPFLAGS) -c $< -o $(<:.cpp=.o)
-			@echo "Compiling $<."
-
+all : $(NAME)
+$(NAME): $(FILES) $(HED)
+		c++ $(FLAGS) $(FILES) -o $(NAME) 
+	
 clean:
-			@$(RM) $(OBJS)
-			@echo "Removed object files." 
-
-fclean:		clean
-			@$(RM) $(NAME)
-			@echo "Removed executable."
-
-re:			fclean all
-
-.PHONY:		fclean, all, re
+	$(RM) $(NAME)
+	
+fclean: clean
+re: fclean all
+.PHONY: all clean fclean re
