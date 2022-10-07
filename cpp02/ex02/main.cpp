@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 13:33:19 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 13:59:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ std::cout << a << std::endl;
 std::cout << a++ << std::endl;
 std::cout << a << std::endl;
 std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;//no need to creat object fixed because max function is de type static
 return 0;
 }
