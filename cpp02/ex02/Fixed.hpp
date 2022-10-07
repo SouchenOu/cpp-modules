@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 17:43:28 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 12:27:05 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,16 @@ class Fixed
         static Fixed &max(Fixed &x, Fixed &y);
         static const Fixed &max(Fixed const &x, Fixed const &y);
 };
+
+Fixed operator+ (const Fixed &a, const Fixed &b);
+Fixed operator- (const Fixed &a, const Fixed &b);
+Fixed operator/ (const Fixed &a, const Fixed &b);
+Fixed operator* (const Fixed &a, const Fixed &b);
+bool operator> (const Fixed& first, const Fixed& second);
+bool operator>=(const Fixed& first, const Fixed& second);
+bool operator<=(const Fixed& first, const Fixed& second);
+bool operator< (const Fixed& first, const Fixed& second);
+bool operator==(const Fixed& first, const Fixed& second);
+bool operator!=(const Fixed& first, const Fixed& second);
+std::ostream &operator<<(std::ostream &out, const Fixed &var);
 

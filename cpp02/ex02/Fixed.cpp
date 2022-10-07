@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 17:47:33 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 13:27:24 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,7 @@
 #include <iostream>
 #include <cmath>
 
-Fixed operator+ (const Fixed &a, const Fixed &b);
-Fixed operator- (const Fixed &a, const Fixed &b);
-Fixed operator/ (const Fixed &a, const Fixed &b);
-Fixed operator* (const Fixed &a, const Fixed &b);
-bool operator> (const Fixed& first, const Fixed& second);
-bool operator>=(const Fixed& first, const Fixed& second);
-bool operator<=(const Fixed& first, const Fixed& second);
-bool operator< (const Fixed& first, const Fixed& second);
-bool operator==(const Fixed& first, const Fixed& second);
-bool operator!=(const Fixed& first, const Fixed& second);
-std::ostream &operator<<(std::ostream &out, const Fixed &var);
+
 
 Fixed::Fixed() 
 {
@@ -105,7 +95,7 @@ bool operator==(const Fixed& first, const Fixed& second)
 }
 bool operator!=(const Fixed& first, const Fixed& second)
 {
-    return !(first.toFloat() == second.toFloat());
+    return (first.toFloat() != second.toFloat());
 }
 
 Fixed operator+ (const Fixed &a, const Fixed &b)
@@ -143,24 +133,25 @@ Fixed operator* (const Fixed &a, const Fixed &b)
 Fixed Fixed::operator++(void)//Prefix increment operator.
 {
     Fixed inc;
-    inc = ++a;
+    inc.a = ++a;
     return (inc);
 }
 Fixed Fixed::operator++(int)//Postfix increment operator.
 {
     Fixed incpost;
-    incpost=a++;
+    incpost.a = a++;
     return (incpost);
 }
 Fixed Fixed::operator--(void)// // Prefix decrement operator.
 {
-    Fixed dec(++a);
+    Fixed dec;
+    dec.a = ++a;
     return (dec);
 }
 Fixed Fixed::operator--(int)// Postfix decrement operator.
 {
     Fixed decpost;
-    decpost=a--;
+    decpost.a = a--;
     return (decpost);
 }
 

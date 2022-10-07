@@ -6,19 +6,14 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 20:13:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 08:39:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-/*class AE {
-    // ...
-public:
-    static const int c6 = 7;
-    static const int c7 = 31;
-};
-const int AE::c7;*/
+/*Cette manière de faire s’appelle virgule fixe, car la position 
+de la virgule est connue d’avance*/
 class Fixed
 {
     private:

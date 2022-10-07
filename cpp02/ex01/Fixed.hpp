@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 11:04:14 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/07 11:00:35 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Fixed
         static const int b = 8;
     public:
         Fixed();
-        Fixed(float number);
+        Fixed(const float number);
+        Fixed(int const number);
         Fixed(const Fixed &var);
         ~Fixed();
         Fixed *operator= (const Fixed &var);
