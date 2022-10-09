@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 20:44:34 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 21:38:30 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void replace(char **argv)
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
 
+	
 	std::ifstream ifFile(filename);// read acces
 	if (ifFile.is_open()) // ou if(ifFile.good()) // Est ce que le fichier est effectivement ouvert ou bien no
 	{
@@ -54,7 +55,7 @@ void replace(char **argv)
 
 int main(int argc, char **argv)
 {
-	if (argc == 4)
+	if (argc == 4 && strlen(argv[2]) != 0)
 		replace(argv);
 	else
 		std::cout << "Error: Usage: ./file <filename> <String> <remplaceString>" << "\n";
