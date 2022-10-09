@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/06 13:16:23 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 11:22:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void Harl::complain(std::string level)
 {
 	std::string levels[4] = {"DEBUG","INFO","WARNING","ERROR"
 	};
-	void (Harl::*fun[4])(void) = {// fun cest un pointeur de fonction
+	void (Harl::*fun[4])(void) = {// fun  pointer to member fonction
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
