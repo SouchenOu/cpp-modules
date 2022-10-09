@@ -917,4 +917,6 @@ A cast is a special operator that forces one data type to be converted into anot
 
 The most general cast supported by most of the C++ compilers is as follows −
 
-(type) expression 
+(type) expression .
+      
+*The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
