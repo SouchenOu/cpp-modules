@@ -922,3 +922,12 @@ The most general cast supported by most of the C++ compilers is as follows −
 *The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
 
 nanf() function is a library function of cmath header, it is used to get the NaN value of type float. It accepts an argument (which is an implementation-specific C String – to get NaN value we have to pass an empty string), it returns NaN value of type float.
+
+the difference between static cast and reinterpret_cast:
+
++++ Static Cast: This is the simplest type of cast which can be used. It is a compile time cast.It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones).
+
+reinterpret_cast is the most dangerous cast, and should be used very sparingly. It turns one type directly into another — such as casting the value from one pointer to another, or storing a pointer in an int, or all sorts of other nasty things. Largely, the only guarantee you get with reinterpret_cast is that normally if you cast the result back to the original type, you will get the exact same value (but not if the intermediate type is smaller than the original type). There are a number of conversions that reinterpret_cast cannot do, too. It's used primarily for particularly weird conversions and bit manipulations, like turning a raw data stream into actual data, or storing data in the low bits of a pointer to aligned data.
+
+It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
+It does not check if the pointer type and data pointed by the pointer is same or not.
