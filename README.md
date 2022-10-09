@@ -920,3 +920,5 @@ The most general cast supported by most of the C++ compilers is as follows −
 (type) expression .
       
 *The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
+
+nanf() function is a library function of cmath header, it is used to get the NaN value of type float. It accepts an argument (which is an implementation-specific C String – to get NaN value we have to pass an empty string), it returns NaN value of type float.
