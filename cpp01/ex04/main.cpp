@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 19:21:04 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 20:44:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void replace(char **argv)
 			std::cout << "Error: File is empty" << std::endl;
 		else
 		{
-			std::ofstream ofFile("file-replace.txt");//create and write
+			std::ofstream ofFile(argv[1] + (std::string) ".replace");//create and write
 			while (ifFile.good() && ofFile.good())
 			{
 				std::string line;

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 11:22:42 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 20:43:47 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void Harl::complain(std::string level)
 		&Harl::warning,
 		&Harl::error
 	};
-	for (int i = 0; i < 4; i++)
-	{
-		if (levels[i] == level)
-			(this->*fun[i])();
-	}
+	int tab = (
+		(level == "DEBUG") * 1 + (level == "INFO") * 2 + (level == "WARNING") * 3
+		+(level == "ERROR")
+	);
+	(this->*fun[tab])();
 }
 
 void Harl::debug(void)
 {
-	std::cout << " I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
 void Harl::info(void)
@@ -51,7 +51,7 @@ void Harl::info(void)
 
 void Harl::warning(void)
 {
-	std::cout << " I think I deserve to have some extra bacon for free. I�ve been coming for years whereas you started working here since last month.." << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I�ve been coming for years whereas you started working here since last month.." << std::endl;
 }
 
 void Harl::error(void)
