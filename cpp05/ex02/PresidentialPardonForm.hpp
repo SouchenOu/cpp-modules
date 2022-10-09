@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 14:52:41 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:52:00 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class PresidentialPardonForm : public Form
 
 		// Destructor
 		~PresidentialPardonForm();
-
+		//executor
 		void execute(const Bureaucrat& executor) const;
 };

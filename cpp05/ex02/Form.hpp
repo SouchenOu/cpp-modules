@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 18:14:01 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:50:45 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,24 @@ class Form
 					return ("grade is too low");
 				}
 		};
-    class NotSigned : public std::exception
-    {
-        public:
-            const char *what() const throw()
-			{
-				return ("Not participate\n");
-			}
-    };
+		class DejaSign : public std::exception
+		{
+			public:
+				const char* what() const throw()
+				{
+					return ("Deja sign\n");
+				}
+			
+		};
+		
+    	class NotSigned : public std::exception
+    	{
+        	public:
+            	const char *what() const throw()
+				{
+					return ("Not participate\n");
+				}
+    	};
 };
 
 std::ostream& operator<<(std::ostream& out, const Form& var);

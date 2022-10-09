@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 19:07:39 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:37:31 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void Form::beSigned(const Bureaucrat& candidate)
 		else{
 			throw Form::GradeTooLowException();
 		}
-	}
+	}else
+		throw Form::DejaSign();
 }
 
 std::ostream& operator<<(std::ostream& out, const Form& var)

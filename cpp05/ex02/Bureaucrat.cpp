@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 17:31:18 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:43:55 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,3 @@ void Bureaucrat::executeForm(Form const & form)
     
 }
 
-void Bureaucrat::signForm(Form &x)
-{
-    try
-    {
-       x.beSigned(*this);
-       std::cout << name << " signed " << x.getName() << "\n";
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << name << " couldn't sign " << x.getName() << "because " << e.what() << "\n";
-    }
-}

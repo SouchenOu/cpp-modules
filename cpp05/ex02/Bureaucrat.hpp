@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 17:41:53 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/09 09:49:36 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class Bureaucrat
 		void incrementGrade();
 		void decrementGrade();
 		void executeForm(Form const & form);
-		void signForm(Form &x);
 		class GradeTooHighException : public std::exception
 		{
 			public:
