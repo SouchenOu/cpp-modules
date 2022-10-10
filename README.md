@@ -911,7 +911,7 @@ The C++ Standard library provides a base class specifically designed to declare 
                  return 0;
             }
 
-+++++++. C++ Cast:
+👨+++++++. C++ Cast:
 
 A cast is a special operator that forces one data type to be converted into another. As an operator, a cast is unary and has the same precedence as any other unary operator.
 
@@ -919,15 +919,39 @@ The most general cast supported by most of the C++ compilers is as follows −
 
 (type) expression .
       
+ ===   C++ supports four types of casting:
+      
+      1.Static Cast
+      2. Dynamic Cast
+      3. Const Cast
+      4. Reinterpret Cast
+      
+-Static Cast: This is the simplest type of cast that can be used. It is a compile-time cast. It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones).
+
+-Dynamic Cast: A cast is an operator that converts data from one type to another type. In C++, dynamic casting is mainly used for safe downcasting at run time. To work on dynamic_cast there must be one virtual function in the base class. A dynamic_cast works only polymorphic base class because it uses this information to decide safe downcasting.
+
+                  Syntax:
+
+                        dynamic_cast <new_type>(Expression)      
+      
+-Downcasting: Casting a base class pointer (or reference) to a derived class pointer (or reference) is known as downcasting. In figure 1  casting from the Base class pointer/reference to the “derived class 1” pointer/reference showing downcasting (Base ->Derived class).
+     
+      <img width="804" alt="Screen Shot 2022-10-10 at 12 08 42 PM" src="https://user-images.githubusercontent.com/87101785/194852942-0191dba6-fa74-463e-a93c-495de765ca9b.png">
+
+-Upcasting: Casting a derived class pointer (or reference) to a base class pointer (or reference) is known as upcasting. In figure 1 Casting from Derived class 2 pointer/reference to the “Base class” pointer/reference showing Upcasting (Derived class 2 -> Base Class).
+
+-reinterpret_cast is the most dangerous cast, and should be used very sparingly. It turns one type directly into another — such as casting the value from one pointer to another, or storing a pointer in an int, or all sorts of other nasty things. Largely, the only guarantee you get with reinterpret_cast is that normally if you cast the result back to the original type, you will get the exact same value (but not if the intermediate type is smaller than the original type). There are a number of conversions that reinterpret_cast cannot do, too. It's used primarily for particularly weird conversions and bit manipulations, like turning a raw data stream into actual data, or storing data in the low bits of a pointer to aligned data.
+
+It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
+It does not check if the pointer type and data pointed by the pointer is same or not.
+
+      
+------NAN:
+      
 *The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
 
 nanf() function is a library function of cmath header, it is used to get the NaN value of type float. It accepts an argument (which is an implementation-specific C String – to get NaN value we have to pass an empty string), it returns NaN value of type float.
 
 the difference between static cast and reinterpret_cast:
 
-+++ Static Cast: This is the simplest type of cast which can be used. It is a compile time cast.It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones).
 
-reinterpret_cast is the most dangerous cast, and should be used very sparingly. It turns one type directly into another — such as casting the value from one pointer to another, or storing a pointer in an int, or all sorts of other nasty things. Largely, the only guarantee you get with reinterpret_cast is that normally if you cast the result back to the original type, you will get the exact same value (but not if the intermediate type is smaller than the original type). There are a number of conversions that reinterpret_cast cannot do, too. It's used primarily for particularly weird conversions and bit manipulations, like turning a raw data stream into actual data, or storing data in the low bits of a pointer to aligned data.
-
-It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
-It does not check if the pointer type and data pointed by the pointer is same or not.
