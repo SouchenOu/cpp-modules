@@ -936,7 +936,7 @@ The most general cast supported by most of the C++ compilers is as follows −
       
 -Downcasting: Casting a base class pointer (or reference) to a derived class pointer (or reference) is known as downcasting. In figure 1  casting from the Base class pointer/reference to the “derived class 1” pointer/reference showing downcasting (Base ->Derived class).
      
-      <img width="804" alt="Screen Shot 2022-10-10 at 12 08 42 PM" src="https://user-images.githubusercontent.com/87101785/194852942-0191dba6-fa74-463e-a93c-495de765ca9b.png">
+<img width="804" alt="Screen Shot 2022-10-10 at 12 08 42 PM" src="https://user-images.githubusercontent.com/87101785/194852942-0191dba6-fa74-463e-a93c-495de765ca9b.png">
 
 -Upcasting: Casting a derived class pointer (or reference) to a base class pointer (or reference) is known as upcasting. In figure 1 Casting from Derived class 2 pointer/reference to the “Base class” pointer/reference showing Upcasting (Derived class 2 -> Base Class).
 
