@@ -952,6 +952,12 @@ It does not check if the pointer type and data pointed by the pointer is same or
 
 nanf() function is a library function of cmath header, it is used to get the NaN value of type float. It accepts an argument (which is an implementation-specific C String – to get NaN value we have to pass an empty string), it returns NaN value of type float.
 
-the difference between static cast and reinterpret_cast:
+👨 C++ Class Templates:
 
+      Templates are powerful features of C++ which allows us to write generic programs. There are two ways we can implement templates:
+
+            =Function Templates
+            =Class Templates
+            
+            Similar to function templates, we can use class templates to create a single class to work with different data types.
 
