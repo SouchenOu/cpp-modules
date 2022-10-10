@@ -1,13 +1,14 @@
-NAME = swap
+NAME = Iter
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-FILES =  main.cpp 
+FILES =  main.cpp
+HED = iter.hpp
 
 all : $(NAME)
-$(NAME): $(FILES)
+$(NAME): $(FILES) $(HED)
 		c++ $(FLAGS) $(FILES) -o $(NAME) 
 	
 clean:
