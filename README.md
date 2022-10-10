@@ -945,7 +945,7 @@ The most general cast supported by most of the C++ compilers is as follows −
 It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
 It does not check if the pointer type and data pointed by the pointer is same or not.
 
-      
+  !== To understand dynamic-cast : https://www.ibm.com/docs/en/zos/2.3.0?topic=expressions-dynamic-cast-operator-c-only    
 ------NAN:
       
 *The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
