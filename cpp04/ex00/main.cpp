@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 18:28:18 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/10 11:32:35 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,20 @@ int main()
 {
   //const Animal* meta = new Animal();
   //const Animal mata;
-  Animal a;
+  //Animal a;
   Dog D1;
-  Dog j;
-  Cat i;
-  Animal *b = &D1;
+  //Dog j;
+  //Cat i;
+  //Animal *b = &D1;
+  Animal *b = new Dog();
   b->makeSound();//(*b).makeSound()
+  D1.makeSound();
   //j.makeSound();
-  const Animal *A= &j;  //const Animal* j = new Dog();---> This is object
-  //int *a=new(5) -----> This is variable
+  /*const Animal *A= &j;  //const Animal* A = new Dog();---> This is object
+  //int *a=new(5) -----> This is variable int a = 5
   //int b = 5;
   //int *a = &b;
-  const Animal *B = &i;  //const Animal* i = new Cat();
+  const Animal *B = &i;  //const Animal* B = new Cat();
   std::cout << j.getType() << " " << std::endl;
   std::cout << i.getType() << " " << std::endl;
   std::cout << A->getType() << " " << std::endl;
@@ -110,7 +112,7 @@ int main()
   WrongCat WrongCat1;
   const WrongAnimal *W1 = new WrongCat();// WrongCat *wa = &WrongCat1;
   W1->makeSound();
-  WrongCat1.makeSound();
+  WrongCat1.makeSound();*/
   return 0;
 }
 

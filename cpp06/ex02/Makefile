@@ -4,8 +4,8 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-FILES =  main.cpp Base.cpp
-HED = Base.hpp
+FILES =  main.cpp Base.cpp A.cpp B.cpp C.cpp info.cpp
+HED = Base.hpp A.hpp B.hpp C.hpp info.hpp
 
 all : $(NAME)
 $(NAME): $(FILES) $(HED)
