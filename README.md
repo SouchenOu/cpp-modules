@@ -679,6 +679,8 @@ Voici un programme C++ complet pour démontrer la surcharge des opérateurs <>.
 
 https://www.youtube.com/watch?v=ZcmQ5y7QyTc
 
+http://www.java2s.com/ref/cpp/cpp-operator-overload-array-class-overloads-assignment-operator-and-c.html
+
 ----------------------------------------------------------------------------------------------------------------------------------
 
       
