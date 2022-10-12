@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 18:14:33 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/12 11:47:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,24 @@
 
 
 // why i use here reference (can i use pointers!)
+
 int main()
 {
-    Weapon club1 = Weapon("crude spiked club");
-    HumanA bob("Bob", club1);
-    bob.attack();
-    club1.setType("some other type of club");
-    bob.attack();
-    
-    Weapon club2 = Weapon("crude spiked club");
-    HumanB jim("Jim");
-    jim.HumanB::setWeapon(club2);
-    jim.attack();
-    club2.setType("some other type of club");
-    jim.attack();
-    return 0;
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+        return 0;
 }
-
 
