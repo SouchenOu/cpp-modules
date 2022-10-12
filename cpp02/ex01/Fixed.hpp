@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 11:00:35 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/12 13:32:02 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ class Fixed
         int toInt( void ) const;
 };
 
-std::ostream &operator<<(std::ostream &x, const Fixed &name);
+std::ostream &operator<<(std::ostream &out, const Fixed &name);

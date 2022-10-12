@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/12 11:56:27 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/12 13:33:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ template <typename T> class Array
         Array(unsigned int size)
         {
             n = size;
-            array = new T(size);
+            array = new T[size];
         }
 
         unsigned int size()
@@ -49,7 +49,7 @@ template <typename T> class Array
                 return (*this);
             delete [] array;
             n = other.n;  
-            array = new T[array.n]; 
+            array = new T[other.n]; 
             for(int j=0; j<other.n; j++)  //copy contents to this object
                     *(array+j) = *(other.array+j);
             return (*this);
@@ -61,5 +61,7 @@ template <typename T> class Array
             return (array[i]);
         }
         
-};
+    
 
+
+};
