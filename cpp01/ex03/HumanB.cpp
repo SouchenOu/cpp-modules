@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/12 11:49:15 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:30:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ HumanB::HumanB(std::string Name)
    this->name=Name; 
 }
 
-void    HumanB::setWeapon(Weapon &x)
+void    HumanB::setWeapon(Weapon x)
  {
     this->wb= &x;  
  }

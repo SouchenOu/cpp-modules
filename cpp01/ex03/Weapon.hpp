@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 16:09:05 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:26:44 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class Weapon{
         void setType(std::string type);
    //getter
        // std::string getType();
-       const std::string &getType(void) const;
+       const std::string &getType(void);
 };  

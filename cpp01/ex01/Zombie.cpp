@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 13:36:02 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 09:04:01 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Zombie::~Zombie()
 {}
 //constructer
 Zombie::Zombie(){}
-//setter
 
+//setter
 void Zombie::setZombieName(std::string Nom)
 {
     (this->nom) = Nom;

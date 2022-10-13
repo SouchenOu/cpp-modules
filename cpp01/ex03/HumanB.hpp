@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/12 11:45:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:30:41 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanB {
      //constructeur
     HumanB();
     HumanB(std::string name);
-    void  setWeapon(Weapon &x);
+    void  setWeapon(Weapon x);
     //getters
     std::string getName();
     void attack();

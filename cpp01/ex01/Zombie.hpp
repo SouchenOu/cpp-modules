@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/19 14:14:43 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:00:20 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ class Zombie {
        std::string nom;
        int N;
    public:
-   Zombie();
-   ~Zombie();
-   //setter
-   void setZombieName(std::string Nom);
-    void setZombieN(int N);
+        Zombie();
+        ~Zombie();
+    //setter
+        void setZombieName(std::string Nom);
+        void setZombieN(int N);
    //getter
-   std::string getZombieName();
-   int getZombieN();
-   void announce( void );
-   Zombie* zombieHorde( int N, std::string name );
+        std::string getZombieName();
+        int getZombieN();
+        void announce( void );
+        Zombie* zombieHorde( int N, std::string name);
 };

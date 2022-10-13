@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/22 12:40:35 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 11:26:30 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int main()
 {
 	Harl harl;
 
-	std::cout << "DEBUG: " << std::endl;
+	std::cout << "DEBUG: " << "\n";
 	harl.complain("DEBUG");
-	std::cout << "INFO: " << std::endl;
+	std::cout << "INFO: " << "\n";
 	harl.complain("INFO");
-	std::cout << "WARNING: " << std::endl;
+	std::cout << "WARNING: " << "\n";
 	harl.complain("WARNING");
-	std::cout << "ERROR: " << std::endl;
+	std::cout << "ERROR: " << "\n";
 	harl.complain("ERROR");
 }

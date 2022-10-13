@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 14:54:39 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 09:56:59 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,54 +27,4 @@ int main()
     std::cout << "The value pointed to by stringPTR => " << *stringPTR << "\n";
     std::cout << "The value pointed to by stringREF => " << stringREF << "\n";
 }
-
-//passage par reference and passage par address:
-
-//void FOO(int *a)
-//{
-//    *a = 42;
-//}
-/*void FOO(int &a)
-{
-    a = 15; 
-}*/
-/*int main()
-{
-    int a = 10;
-    FOO(&a);
-    std::cout<< a << std::endl;
-    return 1;
-}*/
-///////////this is passage par reference int &n = nb;
-/*void square(int &n)
-{
-    //the same address
-    std::cout << "\nIn square " << &n << "\n";
-    n = n + 1;
-}
-int main()
-{
-    int nb = 8;
-    std::cout<< &nb << "\n";
-    std::cout<< nb << "\n";
-    square(nb);
-    std::cout << nb << "\n";
-    
-} */
-//////// this is passage par pointers
-
-/*void square(int *n)
-{
-    //difference address
-    std::cout << "\nIn square " << &n << "\n";
-    *n = *n + 1;
-}
-int main()
-{
-    int nb = 8;
-    std::cout<< &nb << "\n";
-    std::cout<< nb << "\n";
-    square(&nb);
-    std::cout << nb << "\n"; 
-}*/
 
