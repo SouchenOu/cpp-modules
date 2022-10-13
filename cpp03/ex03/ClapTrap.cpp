@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 11:30:32 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:11:32 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void    ClapTrap::attack(const std::string& target)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    std::cout << this->Energy_points << "\n";
     if (this->Energy_points == 0)
     {
         std::cout << "ClapTrap " << this->name << "  pas d'energie!\n";

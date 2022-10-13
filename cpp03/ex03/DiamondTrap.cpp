@@ -6,23 +6,23 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 12:22:03 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:13:20 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name", 50, 100, 30), FrapTrap(name + "_clap_name"),ScavTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name) : FrapTrap(name + "_clap_name"),ScavTrap(name + "_clap_name")
 {
     this->name = name;
-    std::cout << "DiamondTrap " << name << "  constructor called!\n";
+    std::cout << "DiamondTrap constructor called!\n";
 }
 
-void DiamondTrap::attack(std::string monstre)
+void DiamondTrap::attack(std::string Diamond)
 {
     std::cout << "Diamond" ;
-    this->ScavTrap::attack(monstre);
+    this->ScavTrap::attack(Diamond);
 }
 
 void DiamondTrap::whoAmI()

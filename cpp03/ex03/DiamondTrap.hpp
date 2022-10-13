@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 12:33:30 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:08:51 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : virtual public ClapTrap, public FrapTrap, public ScavTrap
+//Now only one copy of data/function member will be copied to class DiamondTrap.
+class DiamondTrap : public FrapTrap, public ScavTrap
 {
     private:
         std::string name;

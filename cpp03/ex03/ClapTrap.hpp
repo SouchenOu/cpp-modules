@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 11:11:14 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 20:58:53 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class ClapTrap
         //Constrecters and destructers
         ClapTrap();
         ClapTrap(std::string name);
+        ClapTrap(std::string name, int HitPoint);
         ClapTrap(std::string name, int Energy, int HitPoint, int AttackPoint);
         ~ClapTrap();
 };

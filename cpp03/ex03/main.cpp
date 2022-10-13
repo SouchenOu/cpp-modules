@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 12:14:40 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:10:43 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main()
     ScavTrap Scav2("friend2");
     FrapTrap frap1("souchen");
     DiamondTrap D1("diamonda");
+    D1.beRepaired(10);
+    //Clap1.attack(frap1.getname());
     D1.attack(frap1.getname());
     //std::cout << D1.getname() << "\n";
     //std::cout << frap1.getname() << "\n";
