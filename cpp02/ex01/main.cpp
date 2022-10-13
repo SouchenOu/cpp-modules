@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 10:59:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:34:22 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int main( void ) {
 Fixed a;
 //Fixed b;
 //a = b;// copy assigment operator
-Fixed const b( 10 );
-Fixed const c( 42.42f );
+//Fixed const b( 8 );
+Fixed const c( 0.5f );
 //Fixed const d( b );
-a = Fixed( 1234.4321f );
+//a = Fixed( 1234.4321f );
 ////Fixed c = a; // copy constructer
 //std::cout << "a is " << a << std::endl;
-std::cout << "b is " << b << std::endl;
+//std::cout << "b is " << b << std::endl;
 std::cout << "c is " << c << std::endl;
 //std::cout << "d is " << d << std::endl;
 //std::cout << "a is " << a.toInt() << " as integer" << std::endl;

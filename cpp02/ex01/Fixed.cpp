@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 11:05:19 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:44:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Fixed::Fixed(const float number)
     //The round() family of functions round a to the nearest integer
     std::cout << "Float constructor called\n";
     a =  (roundf(number * powf(2, b)));
+    std::cout << a << "\n";
     //a = (number * powf(2, b));
 }
 
@@ -38,9 +39,6 @@ Fixed::Fixed(const int number)
     std::cout << a << "\n";
     //a = (number * powf(2, b));
 }
-
-
-
 
 
 Fixed::~Fixed()

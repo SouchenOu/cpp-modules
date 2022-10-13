@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 18:50:11 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 19:35:21 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 
 
 
-ClapTrap::ClapTrap(){}
+ClapTrap::ClapTrap(){
+    cout << "Default constructor called!\n";
+}
 ClapTrap::ClapTrap(std::string name)
 {
     this->Hit_points = 10;
     this->Energy_points = 10;
     this->Attack_damage = 0;
     this->name = name;
-    cout << "Default constructor called!\n";
+    cout << "constructor with parametre called!\n";
 }
 
 ClapTrap::~ClapTrap()
@@ -32,14 +34,14 @@ ClapTrap::~ClapTrap()
 
 void    ClapTrap::attack(const std::string& target)
 {
-    if (this->Hit_points == 0)
+    if (this->Hit_points <= 0)
     {
         cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
         return ;
     }
     else if(this->Hit_points != 0)
         this->Hit_points--;
-    if (this->Energy_points == 0)
+    if (this->Energy_points <= 0)
     {
         cout << "ClapTrap " << this->name << "pas d'energie!!!!\n";
         return ;
@@ -51,20 +53,28 @@ void    ClapTrap::attack(const std::string& target)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->Energy_points == 0)
+    this->Hit_points += amount;
+    if (this->Energy_points <= 0)
     {
         cout << "ClapTrap " << this->name << "  pas d'energie!\n";
         return ;
+    }else {
+        this->Energy_points--;
     }
-    cout << "ClapTrap " << this->name << " a été réparer par " << amount << "\n";
+    cout << "ClapTrap " << this->name << " prendre " << amount << "\n";
 }
 
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    this->Hit_points += amount;
-    cout << "ClapTrap " << this->name << " prendre dammage " << amount << "\n";
-    this->Energy_points--;
+    if(Hit_points <= 0)
+    {
+        cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
+        return ;
+    }
+    this->Hit_points -= amount;
+    cout << "ClapTrap " << this->name << " lost dammage " << amount << "\n";
+    this->Hit_points--;
 }
 
 std::string ClapTrap::getname(void) const

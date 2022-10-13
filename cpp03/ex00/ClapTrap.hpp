@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 18:49:55 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 15:05:52 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         std::string getname(void) const;
-        //Constrecters and destructers
+        //Constructers and destructer
         ClapTrap();
         ClapTrap(std::string name);
         ~ClapTrap();

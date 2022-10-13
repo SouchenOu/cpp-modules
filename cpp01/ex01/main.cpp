@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/13 16:58:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:51:01 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main()
     i = 0;
     //z.setZombieName("samba");
     //z.announce();
-    test=z.zombieHorde((int)11111111, "zamba");
-    while(i < 11111111)
+    test=z.zombieHorde((int)-1, "zamba");
+    while(i < -1)
     {
         test[i].announce();
         i++;
