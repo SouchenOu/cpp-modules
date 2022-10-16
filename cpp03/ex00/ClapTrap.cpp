@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/13 19:35:21 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/16 21:50:13 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 
 ClapTrap::ClapTrap(){
-    cout << "Default constructor called!\n";
+    cout << "ClapTrap Default constructor called!\n";
 }
 ClapTrap::ClapTrap(std::string name)
 {
@@ -24,12 +24,29 @@ ClapTrap::ClapTrap(std::string name)
     this->Energy_points = 10;
     this->Attack_damage = 0;
     this->name = name;
-    cout << "constructor with parametre called!\n";
+    cout << "ClapTrap constructor with parametre called!\n";
+}
+ClapTrap &ClapTrap::operator= (const ClapTrap &x)
+{
+   this->Hit_points = x.Hit_points;
+    this->Energy_points = x.Energy_points;
+    this->Attack_damage = x.Attack_damage;
+    this->name = x.name;
+    std::cout << "ClapTrap Copy assignment operator called\n";
+    return (*this);
+}
+ClapTrap::ClapTrap(const ClapTrap &var)
+{
+    this->Hit_points = var.Hit_points;
+    this->Energy_points = var.Energy_points;
+    this->Attack_damage = var.Attack_damage;
+    this->name = var.name;
+    std::cout << "ClapTrap copy constructer called\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-    cout << "Destructor called!\n";
+    cout << "ClapTrap Destructor called!\n";
 }
 
 void    ClapTrap::attack(const std::string& target)

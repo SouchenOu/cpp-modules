@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 09:46:23 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/16 22:03:01 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FrapTrap : public ClapTrap{
+class FragTrap : public ClapTrap{
 
     public:
-    FrapTrap(std::string name);
-    ~FrapTrap();
+    FragTrap(std::string name);
+    FragTrap(const FragTrap &var);
+    FragTrap &operator= (const FragTrap &var);
+    ~FragTrap();
     void highFivesGuys(void);
 };

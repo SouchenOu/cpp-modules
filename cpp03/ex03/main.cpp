@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/13 21:10:43 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/16 22:54:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     //ScavTrap Scav1("friend1");  
     ClapTrap Clap1("test1");  
     ScavTrap Scav2("friend2");
-    FrapTrap frap1("souchen");
+    FragTrap frap1("souchen");
     DiamondTrap D1("diamonda");
     D1.beRepaired(10);
     //Clap1.attack(frap1.getname());
