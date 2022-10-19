@@ -1014,7 +1014,7 @@ int main(){
 
   Here we have created an object “t” of class “Test” with the value of 3. Now let us study the class and see what will be created.
 
-         ![word-image-227](https://user-images.githubusercontent.com/87101785/196676327-9f2503f4-84cf-437a-8bb6-2d33e12e6724.png)
+![word-image-227](https://user-images.githubusercontent.com/87101785/196676327-9f2503f4-84cf-437a-8bb6-2d33e12e6724.png)
          
          
 Here, the first constructor i.e. Test (int x) will be called as we are passing an integer value as an argument. Inside the constructor, a will assign to 3 and p will point to the address of 3 blocks of memory as we have created an array inside the heap of size a i.e. 3. Next, we will create another object that is t2 and we will pass t as an argument as follows.
@@ -1069,6 +1069,45 @@ And one more thing, if suppose already ‘t’ is having some elements in the ar
                                     p = t.p;
                               }
                         };
+                        int main()
+                        {
+                              Test t (5);
+                              t.p[0] = 1;
+                              Test t2 (t);
+                              cout << "t: " << t.a << " " << t.p[0] << endl;
+                              cout << "t2: " << t2.a << " " << t2.p[0] << endl;
+                        }
+
+      
+                        Example to Understand Deep Copy Constructor in C++:
+                       
+                        #include <iostream>
+                        using namespace std;
+      
+                        class Test
+                        {
+                              public:
+                              int a;
+                              int *p;
+                              Test (int x)
+                              {
+                                    a = x;
+                                    p = new int[a];
+                              }
+                              Test (Test & t)
+                              {
+                                    a = t.a;
+                                    p = new int[a];
+                                    if (p)
+                                    {
+                                          for (int i = 0; i < a; i++)
+                                          {
+                                                p[i] = t.p[i];
+                                          }
+                                    }
+                              }
+                        };
+                                                                
                         int main()
                         {
                               Test t (5);
