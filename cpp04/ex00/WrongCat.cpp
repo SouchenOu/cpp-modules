@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 18:22:17 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 18:00:13 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ WrongCat::WrongCat(WrongCat &var) : WrongAnimal("Cat")
     std::cout<< "WrongCat : Copy constructer\n";
     (void)var;
 }
-WrongCat *WrongCat::operator=(WrongCat &var)
+WrongCat &WrongCat::operator=(WrongCat &var)
 {
-    (void)var;
-    return (this);
+    if (&var == this)
+        return (*this);
+    this->type = var.type;
+    return (*this);
 }
 WrongCat::WrongCat() : WrongAnimal("Cat")
 {

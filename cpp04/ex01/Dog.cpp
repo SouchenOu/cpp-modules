@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/25 10:08:36 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 09:43:21 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,32 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog(std::string Type)  : Animal("Dog")
+Dog::Dog()
 {
+    this->type = "Dog";
     this->brain = new Brain();
-    std::cout<< "Dog constructer!\n";
-    std::cout << "Dog(\"" << type << "\") constructor called" << "\n";
-    (void)Type;
+    std::cout<< "Dog constructer called!\n";
 }
 
-Dog::Dog(Dog &var) : Animal("Dog")
+Dog::Dog(Dog &var)
 {
+    this->type = var.type;
 	this->brain = new Brain();
-    std::cout << "Dog copy constructer:!\n";
-    (void)var;
+    std::cout << "Dog copy constructer called:!\n";
 }
-Dog *Dog::operator=(Dog &var)
+Dog &Dog::operator=(Dog &var)
 {
+    if (&var == this)
+        return (*this);
 	this->brain = new Brain();
-    (void)var;
-    return (this);
-}
-Dog::Dog() : Animal("Dog")
-{
-	this->brain = new Brain();
-    std::cout << "Dog default constructer!\n";
+    this->type = var.type;
+    return (*this);
 }
 
 Dog::~Dog()
 {
 	delete this->brain;
-    std::cout<< "Dog Destructer!!\n";
+    std::cout<< "Dog Destructer called!!\n";
 }
 
 void Dog::makeSound(void) const

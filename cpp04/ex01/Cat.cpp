@@ -6,41 +6,42 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:04:33 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 11:01:27 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(std::string Type)  : Animal("Cat")
+Cat::Cat()
 {
     this->brain = new Brain();
-   	std::cout << "Cat(\"" << Type << "\") constructor called" << "\n";
+    this->type = "Cat";
+    std::cout << "Cat constructer called\n";
 }
 
-Cat::Cat(Cat &var) : Animal("Cat")
+Cat::Cat(Cat &var)
 {
-	this->brain = new Brain();
-    std::cout << "Cat copy constructor called on " << var.type << std::endl;
+	//this->brain = new Brain();
+    *(this->brain) = *(var.brain);
+     this->type = var.type;
+    std::cout << "Cat copy constructor called" << std::endl;
 
 }
-Cat *Cat::operator=(Cat &var)
+
+Cat &Cat::operator=(Cat &var)
 {
+    if (&var == this)
+        return (*this);
 	this->brain = new Brain();
-    (void)var;
-    return (this);
-}
-Cat::Cat() : Animal("Cat")
-{
-	 this->brain = new Brain();
-    std::cout << "Cat : Default constructer!\n";
+    this->type = var.type;
+    return (*this);
 }
 
 Cat::~Cat()
 {
 	delete this->brain;
-    std::cout << "Cat : destructer\n";
+    std::cout << "Cat : destructer called\n";
 }
 
 void Cat::makeSound(void) const

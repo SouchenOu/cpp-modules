@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 17:27:27 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:57:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
         Animal(Animal &var);
         Animal();
         ~Animal();
-        Animal *operator=(Animal &x);
+        Animal &operator=(Animal &x);
         std::string getType(void) const;
         void setType(std::string Type);
         virtual void makeSound(void) const;

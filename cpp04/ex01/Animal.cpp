@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 18:11:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:57:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ Animal:: Animal(Animal &var)
     this->type = var.type;
 }
 // operateur d'affectation
-Animal *Animal::operator=(Animal &var)
+Animal &Animal::operator=(Animal &var)
 {
+    if (&var == this)
+        return (*this);
     this->type = var.type;
-    return(this);
+    return(*this);
 }
 //Destructers
 

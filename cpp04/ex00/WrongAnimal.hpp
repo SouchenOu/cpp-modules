@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 18:10:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:58:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
         WrongAnimal(WrongAnimal &var);
         WrongAnimal();
         ~WrongAnimal();
-        WrongAnimal *operator=(WrongAnimal &x);
+        WrongAnimal &operator=(WrongAnimal &x);
         std::string getType(void) const;
         void setType(std::string Type);
         void makeSound(void) const;

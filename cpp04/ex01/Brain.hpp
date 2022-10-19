@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:04:06 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 09:56:03 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Brain
         void   setIdeas(std::string *idea, int nb);
         Brain(std::string *ideas, int nb);
         Brain(Brain &var);
-        Brain *operator=(Brain &var);
+        Brain &operator=(Brain &var);
         Brain();
         ~Brain();
 };

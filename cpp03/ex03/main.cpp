@@ -6,13 +6,15 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/16 22:54:06 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 12:24:28 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "DiamondTrap.hpp"
 
+
+//flags : it marks something so that the compiler pays attention to some specific request
 int main()
 {
     //ScavTrap Scav1("friend1");  
@@ -35,98 +37,6 @@ int main()
     
 }
 
-// To understand concept of heritage
-
-/*class mainClass {
-    public:
-        int i;
-    public:
-     mainClass(){}
-     mainClass(int x)
-     {
-         std::cout<< " mainClass :Default constructer\n";
-         this->i = x;
-    }
-     void test()
-     {
-         std::cout << "Hello main class\n";
-     }
-     
-};
-// herate class
-
-class h : public mainClass{
-    public:
-        int i;
-    public:
-        h(){std::cout<< "Default constructer\n";}
-        h(int x)
-        {
-            std::cout<< " h :Default constructer\n";
-            this->i = x;
-        }
-        void test()
-        {
-            std::cout << "Hello h class\n";
-        }
-};
-
-int main()
-{
-    mainClass test0(1);
-    h test1(2);
-    std::cout << test0.i << "\n";
-    std::cout << test1.i << "\n";
-    test1.test();
-  
-    
-    
-}*/
-
-
-#include<iostream>
-using namespace std;
-  
-class base {
-public:
-    virtual void print()
-    {
-        cout << "print base class\n";
-    }
-  
-    void show()
-    {
-        cout << "show base class\n";
-    }
-};
-  
-/*class derived : public base {
-public:
-    void print()
-    {
-        cout << "print derived class\n";
-    }
-  
-    void show()
-    {
-        cout << "show derived class\n";
-    }
-};
-  
-int main()
-{
-    base *bptr;
-    derived d;
-    bptr = &d;
-  
-    // Virtual function, binded at runtime
-    bptr->print();
-    // Non-virtual function, binded at compile time
-    bptr->show();
-    // Virtual function, binded at runtime
-    d.show();
-    // Non-virtual function, binded at compile time
-    d.show();
-    
-    return 0;
-}*/
+//flags: 
+//-Werror: Reject missing function prototypes
+//Wall: Recommended compiler warnings

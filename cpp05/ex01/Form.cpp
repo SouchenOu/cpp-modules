@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 12:09:20 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 11:33:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ Form::Form(const Form& var)
 
 Form& Form::operator=(const Form& var)
 {
-	(void)var;
+	//(void)var;
+	this->name = var.name;
+	this->signedOuNon = var.signedOuNon
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/16 21:50:13 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 11:41:13 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "ClapTrap.hpp"
 
 
-
 ClapTrap::ClapTrap(){
-    cout << "ClapTrap Default constructor called!\n";
+    
+    std::cout << "ClapTrap Default constructor called!\n";
 }
 ClapTrap::ClapTrap(std::string name)
 {
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(std::string name)
     this->Energy_points = 10;
     this->Attack_damage = 0;
     this->name = name;
-    cout << "ClapTrap constructor with parametre called!\n";
+    std::cout << "ClapTrap constructor with parametre called!\n";
 }
 ClapTrap &ClapTrap::operator= (const ClapTrap &x)
 {
@@ -46,51 +46,61 @@ ClapTrap::ClapTrap(const ClapTrap &var)
 
 ClapTrap::~ClapTrap()
 {
-    cout << "ClapTrap Destructor called!\n";
+    std::cout << "ClapTrap Destructor called!\n";
 }
 
 void    ClapTrap::attack(const std::string& target)
 {
     if (this->Hit_points <= 0)
     {
-        cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
+        std::cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
         return ;
     }
     else if(this->Hit_points != 0)
         this->Hit_points--;
     if (this->Energy_points <= 0)
     {
-        cout << "ClapTrap " << this->name << "pas d'energie!!!!\n";
+        std::cout << "ClapTrap " << this->name << "pas d'energie!!!!\n";
         return ;
     }
     else if(this->Energy_points != 0)
         this->Energy_points--;
-    cout << "ClapTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!\n";
+    std::cout << "ClapTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    this->Hit_points += amount;
+    if(Hit_points <= 0)
+    {
+        std::cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
+        return ;
+    }
     if (this->Energy_points <= 0)
     {
-        cout << "ClapTrap " << this->name << "  pas d'energie!\n";
+        std::cout << "ClapTrap " << this->name << "  pas d'energie!\n";
         return ;
     }else {
+        this->Hit_points += amount;
         this->Energy_points--;
     }
-    cout << "ClapTrap " << this->name << " prendre " << amount << "\n";
+    std::cout << "ClapTrap " << this->name << " gets  " << amount << " amount\n";
 }
 
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+    if (this->Energy_points <= 0)
+    {
+        std::cout << "ClapTrap " << this->name << "  pas d'energie!\n";
+        return ;
+    }
     if(Hit_points <= 0)
     {
-        cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
+        std::cout << "ClapTrap " << this->name << " a 0 point de vie!\n";
         return ;
     }
     this->Hit_points -= amount;
-    cout << "ClapTrap " << this->name << " lost dammage " << amount << "\n";
+    std::cout << "ClapTrap " << this->name << " lost dammage " << amount << "\n";
     this->Hit_points--;
 }
 

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/16 22:00:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 11:42:37 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ class ClapTrap
         ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &var);
-        ClapTrap *operator= (const ClapTrap &var);
-        ClapTrap(std::string name, int Hit_points, int Energy_points , int Attack_damage);
+        ClapTrap &operator= (const ClapTrap &var);
         ~ClapTrap();
 
         //getters

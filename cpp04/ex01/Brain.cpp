@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/25 09:38:49 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 11:19:26 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 #include <iostream>
 Brain::Brain()
 {
-    std::cout << "Brain: constructer!\n";
+    std::cout << "Brain: constructer called!\n";
 }
 
 Brain::~Brain()
 {
-    std::cout << "Brain:distructer!\n";
+    std::cout << "Brain:destructer called!\n";
 }
 
 std::string const *Brain::getIdeas() const
 {
     return (this->ideas);
 }
+
 void   Brain::setIdeas(std::string *Ideas, int nb)
 {
     try
@@ -77,8 +78,19 @@ Brain::Brain(Brain &Ideas)
         std::cout << "Brain: something went wrong!\n";
     }
 }
-Brain *Brain::operator=(Brain &x)
+
+Brain &Brain::operator=(Brain &var)
 {
-    (void) x;
-    return (this);
+    //int i = 0;
+    if (&var == this)
+        return (*this);
+        
+        /*while(i < this->ideas->size())
+        {
+            this->ideas[i] = var.ideas[i];
+        }*/
+        (void) var;
+   
+   
+    return (*this);
 }

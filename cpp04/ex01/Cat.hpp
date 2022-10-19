@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:03:01 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/19 09:41:15 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat : public Animal
         // copy constructer
         Cat(Cat &var);
          //operateur d'affectation
-        Cat *operator=(Cat &var);
+        Cat &operator=(Cat &var);
         //makesound function
         void makeSound(void) const;
 };

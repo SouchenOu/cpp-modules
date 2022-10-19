@@ -6,14 +6,13 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/16 21:50:34 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 10:21:08 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-using std::cout;
 
 class ClapTrap
 {
@@ -29,10 +28,11 @@ class ClapTrap
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &var);
         ClapTrap &operator= (const ClapTrap &var);
+        //getter
+        std::string getname(void) const;
         ~ClapTrap();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        std::string getname(void) const;
         
 };

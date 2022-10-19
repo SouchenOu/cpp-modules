@@ -6,36 +6,36 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 16:58:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 17:56:28 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(std::string Type)  : Animal("Cat")
+Cat::Cat()
 {
-    std::cout << "Cat : constructer\n";
-    (void)Type;
+    this->type = "Cat";
+    std::cout << "Cat : default constructer called\n";
 }
 
-Cat::Cat(Cat &var) : Animal("Cat")
+Cat::Cat(Cat &var)
 {
-    std::cout<< "Cat : Copy constructer\n";
-    (void)var;
+    this->type = var.type;
+    std::cout<< "Cat : Copy constructer called\n";
 }
-Cat *Cat::operator=(Cat &var)
+
+Cat &Cat::operator=(Cat &var)
 {
-    (void)var;
-    return (this);
-}
-Cat::Cat() : Animal("Cat")
-{
-    std::cout << "Cat : Default constructer!\n";
+    if (&var == this)
+        return (*this);
+    this->type = var.type;
+    std::cout << "Copy assignment operator called\n";
+    return (*this);
 }
 
 Cat::~Cat()
 {
-    std::cout << "Cat : destructer\n";
+    std::cout << "Cat : destructer called\n";
 }
 
 void Cat::makeSound(void) const

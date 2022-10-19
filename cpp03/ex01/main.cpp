@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/23 20:34:50 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/18 10:51:52 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,27 @@
 
 int main()
 {
-    ScavTrap Scav1("friend1");    
-    ScavTrap Scav2("friend2");
+    ScavTrap Scav1("friend1");
+    // std::cout << "Hit : " << Scav1.getHit_points() << "\n";  
+    // ClapTrap C1 ("Test");  
+     ScavTrap Scav2("friend2");
+    /*ScavTrap Scav3("friend3");    
+    ScavTrap Scav4("friend4");
+    ScavTrap S1(Scav1);
+    ClapTrap C2;
+    ClapTrap C1(S1);*/
+    //ScavTrap S2(C2);nop
+    
+    
 
     Scav1.attack(Scav2.getname());
-    Scav2.takeDamage(1);
+    /*Scav2.takeDamage(1);
     Scav1.guardGate();
-    Scav1.attack(Scav2.getname());
-    Scav2.takeDamage(1);
-    Scav1.beRepaired(10);
-    Scav2.attack(Scav1.getname());
+    Scav3.attack(Scav4.getname());
+    Scav3.takeDamage(1);
+    Scav3.beRepaired(10);
+
+    std::cout<< "test copy constructer\n";
+    S1.attack(Scav2.getname());
+    C1.attack(Scav2.getname());*/
 }
