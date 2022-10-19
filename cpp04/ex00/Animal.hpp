@@ -33,9 +33,22 @@ class Animal
 //A virtual function is a member function which is declared within a base class and is re-defined (overridden) by a derived class. 
 //The word “polymorphism” means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form. 
 
-//There two types of polymorphism:
-//-Compile-time Polymorphism.
+//*******There two types of polymorphism:
+//1:Compile-time Polymorphism.
 //A. Function Overloading
-/**When there are multiple functions with the same name but different parameters,then the functions are said to be overloaded*/
+//--When there are multiple functions with the same name but different parameters,then the functions are said to be overloaded*/
 //B. Operator Overloading
-//-Runtime Polymorphism.
+//2Runtime Polymorphism.
+//A. Function Overriding
+//--Function Overriding occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
+
+
+/*Virtual Function
+A virtual function is a member function that is declared in the base class using the keyword virtual and is re-defined (Overriden) in the derived class. 
+
+Some Key Points About Virtual Functions:
+Virtual functions are Dynamic in nature. 
+They are defined by inserting the keyword “virtual” inside a base class and are always declared with a base class and overridden in a child class
+A virtual function is called during Runtime*/
+
+
