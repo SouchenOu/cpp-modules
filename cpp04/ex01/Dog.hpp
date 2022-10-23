@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 09:39:50 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 18:56:01 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
         //constructers
         Dog();  
         //Destructer
-        ~Dog();
+        virtual ~Dog();
         // copy constructer
         Dog(Dog &var);
         //operateur d'affectation

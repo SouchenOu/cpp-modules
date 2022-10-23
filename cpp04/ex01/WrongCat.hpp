@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/24 18:19:32 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:09:32 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 class WrongCat : public WrongAnimal
 {
     public:
-        WrongCat(std::string Type);
         WrongCat(WrongCat &var);
-        WrongCat *operator=(WrongCat &var);
+        WrongCat &operator=(WrongCat &var);
         WrongCat();
         ~WrongCat();
         void makeSound(void) const;

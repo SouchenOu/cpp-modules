@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 12:55:12 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:48:27 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ DiamondTrap::DiamondTrap()
     std::cout << "DiamondTrap Default constructor called!\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
-    this->name = name;
+    //this->name = name + "_clap_name";
     this->Hit_points = 100;
     this->Energy_points = 50;
     this->Attack_damage = 30;
@@ -51,7 +51,6 @@ DiamondTrap &DiamondTrap::operator= (const DiamondTrap &x)
 
 void DiamondTrap::attack(std::string Diamond)
 {
-    std::cout << "Diamond" ;
     ScavTrap::attack(Diamond);
 }
 

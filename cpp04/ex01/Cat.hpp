@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 09:41:15 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 18:55:45 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
         Cat();  
         Cat(std::string Type);
         //Destructer
-        ~Cat();
+        virtual ~Cat();
         // copy constructer
         Cat(Cat &var);
          //operateur d'affectation

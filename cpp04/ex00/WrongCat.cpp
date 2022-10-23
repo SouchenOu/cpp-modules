@@ -6,33 +6,32 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 18:00:13 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:07:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(std::string Type)  : WrongAnimal("Cat")
+WrongCat::WrongCat()
 {
+    this->type = "WrongCat";
     std::cout << "WrongCat : constructer\n";
-    (void)Type;
+    
 }
 
-WrongCat::WrongCat(WrongCat &var) : WrongAnimal("Cat")
+WrongCat::WrongCat(WrongCat &var)
 {
+    this->type = var.type;
     std::cout<< "WrongCat : Copy constructer\n";
-    (void)var;
+   
 }
 WrongCat &WrongCat::operator=(WrongCat &var)
 {
+    std::cout << "WrongCat: assignment operater\n";
     if (&var == this)
         return (*this);
     this->type = var.type;
     return (*this);
-}
-WrongCat::WrongCat() : WrongAnimal("Cat")
-{
-    std::cout << "WrongCat : Default constructer!\n";
 }
 
 WrongCat::~WrongCat()

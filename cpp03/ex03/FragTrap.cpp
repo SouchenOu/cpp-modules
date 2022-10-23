@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 11:50:23 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:32:37 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ FragTrap::FragTrap(){
 FragTrap::FragTrap(std::string name)
 {
     this->name = name;
-    this->Hit_points = 50;
+    this->Hit_points = 100;
     this->Energy_points= 100;
-    this->Attack_damage=20;
+    this->Attack_damage=30;
     std::cout << "FrapTrap: constructer called!\n";
 }
 
@@ -57,4 +57,24 @@ void    FragTrap::highFivesGuys()
 FragTrap::~FragTrap()
 {
     std::cout << "FrapTrap: Destructer called!\n";
+}
+
+void    FragTrap::attack(const std::string& target)
+{
+  
+    if (this->Hit_points <= 0)
+    {
+        std::cout << "FragTrap " << this->name << " a 0 point de vie!\n";
+        return ;
+    }
+    else if(this->Hit_points != 0)
+        this->Hit_points--;
+    if (this->Energy_points <= 0)
+    {
+        std::cout << "FragTrap " << this->name << "pas d'energie!!!!\n";
+        return ;
+    }
+    else if(this->Energy_points != 0)
+        this->Energy_points--;
+    std::cout << "FragTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!\n";
 }

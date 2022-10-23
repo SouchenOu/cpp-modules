@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 12:11:28 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:26:44 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,25 @@ void    FragTrap::highFivesGuys()
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap: Destructer called!\n";
+}
+
+
+void    FragTrap::attack(const std::string& target)
+{
+  
+    if (this->Hit_points <= 0)
+    {
+        std::cout << "FragTrap " << this->name << " a 0 point de vie!\n";
+        return ;
+    }
+    else if(this->Hit_points != 0)
+        this->Hit_points--;
+    if (this->Energy_points <= 0)
+    {
+        std::cout << "FragTrap " << this->name << "pas d'energie!!!!\n";
+        return ;
+    }
+    else if(this->Energy_points != 0)
+        this->Energy_points--;
+    std::cout << "FragTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!\n";
 }

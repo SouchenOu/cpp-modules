@@ -6,11 +6,11 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 17:47:25 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:10:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#pragma once
 #include <string>
 #include "Animal.hpp"
 class Cat : public Animal

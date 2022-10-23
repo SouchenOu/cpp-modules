@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/09/27 10:10:19 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 22:07:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int main()
 {
 
-	const Animal* ANI1 = new Cat();
+	const Animal* ANI1  = new Cat();
 	Cat cat;
 	Animal *A = &cat;
     const Animal* ANI2 = new Dog();
@@ -32,6 +32,8 @@ int main()
     ANI2->makeSound();
 	A->makeSound();
 	B->makeSound();
+    delete ANI1;
+    delete ANI2;
     return 0;
 
 }

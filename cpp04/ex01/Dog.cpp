@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 09:43:21 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:59:42 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Dog::Dog(Dog &var)
 {
     this->type = var.type;
 	this->brain = new Brain();
+    //this->brain = var.brain;
     std::cout << "Dog copy constructer called:!\n";
 }
 Dog &Dog::operator=(Dog &var)

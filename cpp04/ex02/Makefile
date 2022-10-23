@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = BrainAbstract
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 

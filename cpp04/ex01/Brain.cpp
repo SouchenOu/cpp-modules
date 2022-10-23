@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 11:19:26 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 18:08:01 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,69 +28,58 @@ std::string const *Brain::getIdeas() const
     return (this->ideas);
 }
 
-void   Brain::setIdeas(std::string *Ideas, int nb)
+void   Brain::setIdeas(std::string *Ideas)
 {
-    try
-    {
+   
         int i = 0;
-        while (i < nb)
+        while (i < 100)
         {
             this->ideas[i] = Ideas[i];
             i++;
         }
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "Brain: something went wrong!\n";
-    } 
+    
+    
 }
-Brain::Brain(std::string *Ideas, int nb)
+
+Brain::Brain(std::string *Ideas)
 {
-    std::cout << "Brain: this is a constractor!\n";
-    try
-    {
-       int i = 0;
-        while (i < nb)
-        {
-            this->ideas[i] = Ideas[i];
-            i++;
-        }
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "Brain: something went wrong!\n";
-    }
-}
-Brain::Brain(Brain &Ideas)
-{
-    std::cout << "Brain: this is a constractor!\n";
-    try
-    {
+    std::cout << "Brain: this is a constructor!\n";
+    
        int i = 0;
         while (i < 100)
         {
-            this->ideas[i] = Ideas.ideas[i];
+            this->ideas[i] = Ideas[i];
             i++;
         }
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "Brain: something went wrong!\n";
-    }
+    
+}
+
+Brain::Brain(Brain &var)
+{
+    std::cout << "Brain: this is copy constructor!\n";
+   
+       int i = 0;
+        while (i < 100)
+        {
+            this->ideas[i] = var.ideas[i];
+            i++;
+        }
+    
 }
 
 Brain &Brain::operator=(Brain &var)
 {
-    //int i = 0;
+   std::cout << "Brain: this is assignment operator\n";
+    
     if (&var == this)
         return (*this);
         
-        /*while(i < this->ideas->size())
-        {
-            this->ideas[i] = var.ideas[i];
-        }*/
-        (void) var;
-   
+    int i = 0;
+    while (i < 100)
+    {
+        this->ideas[i] = var.ideas[i];
+            i++;
+    }
    
     return (*this);
 }

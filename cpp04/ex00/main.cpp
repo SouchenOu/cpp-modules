@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 09:33:27 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 18:00:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
+/*int main()
 {
   //const Animal* meta = new Animal();
   //const Animal mata;
@@ -25,8 +25,9 @@ int main()
   Dog D1;
   Dog j;
   Cat i;
-  //Animal *b = &D1;
-  const Animal *b = new Dog();
+  Animal *b = &D1;
+  const Animal *b = new Animal();
+  //const Animal *b = new Dog();
   //b = &i;
   //b = new Cat();
   b->makeSound();//(*b).makeSound()
@@ -53,73 +54,19 @@ int main()
   W1->makeSound();
   WrongCat1.makeSound();
   return 0;
-}
-
-/*using namespace std;
-
-class Shape {
-   public:
-      int width, height;
-      
-   public:
-      Shape( int a = 0, int b = 0){
-         width = a;
-         height = b;
-      }
-      void  virtual area();
-};
-void Shape::area() {
-         cout << "Parent class area :" << width * height << endl;
-      }
-class Rectangle: public Shape {
-   public:
-      Rectangle(){}
-      Rectangle( int a, int b) { 
-         this->width = a;
-         this->height = b;
-      }
-      void area () { 
-         cout << "Rectangle class area :" << width * height << endl;
-      }
-};
-
-class Triangle: public Shape {
-   public:
-      Triangle( int a, int b){ 
-        this->width = a;
-        this->height = b;
-      }
-      
-      void area () { 
-         cout << "Triangle class area :" << width * height << endl; 
-      }
-};
-
-// Main function for the program
-int main() {
-  
-   Rectangle rec(11,12);
-   Triangle  tri(10,5);
-   //Shape shape(10,3);
-    //Shape *shape = new Rectangle();
-    Shape *shape = &rec;
-    std::cout << "height here "<< rec.height << "\n";
-    std::cout << "height here " << shape->height << "\n";
-   // store the address of Rectangle
-   //shape = &rec;
-   
-   // call rectangle area.
-   shape->area();
-   rec.area();
-
-   // store the address of Triangle
-   //shape = &tri;
-   
-   // call triangle area.
-   //shape->area();
-   
-   return 0;
 }*/
 
-
-
+int main()
+{
+   const Animal* meta = new Animal();
+   const Animal* j = new Dog();
+   const Animal* i = new Cat();
+   std::cout << j->getType() << " " << std::endl;
+   std::cout << i->getType() << " " << std::endl;
+   i->makeSound(); //will output the cat sound!
+   j->makeSound();
+   meta->makeSound();
+  
+  //system("leaks Animal");
+    return 0;
+}

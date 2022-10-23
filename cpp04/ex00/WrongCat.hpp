@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 17:59:53 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:05:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class WrongCat : public WrongAnimal
 {
     public:
-        WrongCat(std::string Type);
         WrongCat(WrongCat &var);
         WrongCat &operator=(WrongCat &var);
         WrongCat();

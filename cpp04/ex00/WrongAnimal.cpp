@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 17:58:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:08:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ WrongAnimal:: WrongAnimal(WrongAnimal &var)
 // operateur d'affectation
 WrongAnimal &WrongAnimal::operator=(WrongAnimal &var)
 {
+    std::cout<< "WrongAnimal: assignment operator \n";
     if (&var == this)
         return (*this);
     this->type = var.type;

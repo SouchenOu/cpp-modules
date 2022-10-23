@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 09:34:47 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:28:14 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     ScavTrap Scav1("friend1");    
     ScavTrap Scav2("friend2");
     FragTrap Frag1("frag");
-    Scav1.attack(Scav2.getname());
+    Frag1.attack(Scav2.getname());
     Scav2.takeDamage(1);
     Scav1.guardGate();
     Scav1.attack(Scav2.getname());

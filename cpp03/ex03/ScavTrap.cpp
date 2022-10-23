@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 11:51:35 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:31:05 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ ScavTrap::ScavTrap(std::string name)
 {
     this->name = name;
     this->Hit_points = 100;
-    this->Energy_points = 100;
-    this->Attack_damage = 30;
+    this->Energy_points = 50;
+    this->Attack_damage = 20;
     std::cout << "ScavTrap: constructer called!\n";
 }
 
@@ -55,4 +55,24 @@ void    ScavTrap::guardGate()
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap: Destructer called!\n";
+}
+
+void    ScavTrap::attack(const std::string& target)
+{
+  
+    if (this->Hit_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->name << " a 0 point de vie!\n";
+        return ;
+    }
+    else if(this->Hit_points != 0)
+        this->Hit_points--;
+    if (this->Energy_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->name << "pas d'energie!!!!\n";
+        return ;
+    }
+    else if(this->Energy_points != 0)
+        this->Energy_points--;
+    std::cout << "ScavTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!\n";
 }

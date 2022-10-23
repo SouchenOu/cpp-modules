@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 11:17:15 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:14:52 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ class ScavTrap : public ClapTrap
 
         ScavTrap(const ScavTrap &var);
         ScavTrap &operator= (const ScavTrap &var);
+        void attack(const std::string& target);
 
 };

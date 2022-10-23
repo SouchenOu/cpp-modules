@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 11:44:36 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:26:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ class FragTrap : public ClapTrap{
         FragTrap &operator= (const FragTrap &var);
         ~FragTrap();
         void highFivesGuys(void);
+        void attack(const std::string& target);
+
 };

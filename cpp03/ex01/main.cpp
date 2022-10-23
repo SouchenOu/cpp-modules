@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 10:51:52 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:17:54 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main()
 {
     ScavTrap Scav1("friend1");
+    ClapTrap Clap1("me");
     // std::cout << "Hit : " << Scav1.getHit_points() << "\n";  
     // ClapTrap C1 ("Test");  
      ScavTrap Scav2("friend2");
@@ -28,6 +29,8 @@ int main()
     
 
     Scav1.attack(Scav2.getname());
+    Clap1.attack(Scav2.getname());
+    Scav1.guardGate();
     /*Scav2.takeDamage(1);
     Scav1.guardGate();
     Scav3.attack(Scav4.getname());

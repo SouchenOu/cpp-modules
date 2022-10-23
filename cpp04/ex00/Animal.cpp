@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/18 17:56:16 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:03:26 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Animal &Animal::operator=(Animal &var)
  }
 
  //getters
-std::string  Animal::getType(void)
+std::string  Animal::getType(void) const
  {
      return (this->type);
  }

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 11:28:08 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 16:52:05 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ Cat::Cat()
 Cat::Cat(Cat &var)
 {
 	this->brain = new Brain();
-    //*(this->brain) = *(var.brain);
-    this->type = var.type;
+    //(this->brain) = (var.brain);
+     this->type = var.type;
     std::cout << "Cat copy constructor called" << std::endl;
 
 }
@@ -33,6 +33,7 @@ Cat &Cat::operator=(Cat &var)
 {
     if (&var == this)
         return (*this);
+	this->brain = new Brain();
     this->type = var.type;
     return (*this);
 }

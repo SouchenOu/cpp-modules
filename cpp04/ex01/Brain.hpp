@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/19 09:56:03 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/22 16:43:09 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Brain
         std::string ideas[100];
     public:
         std::string const *getIdeas() const;
-        void   setIdeas(std::string *idea, int nb);
-        Brain(std::string *ideas, int nb);
+        void   setIdeas(std::string *idea);
+        Brain(std::string *ideas);
         Brain(Brain &var);
         Brain &operator=(Brain &var);
         Brain();
