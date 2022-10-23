@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 11:45:17 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 22:04:03 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ Form *Intern::makeForm(std::string name, std::string target) {
       if (name == typesForms[i]) return forms[i](target);
     }
 
-    std::cout << "There is just robotomy , presidential and shrubbery  types of forms\n";
     return NULL;
 };
 

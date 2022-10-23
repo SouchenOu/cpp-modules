@@ -6,12 +6,14 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/05 10:56:59 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 16:19:34 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -34,24 +36,21 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-		class GradeTooHighException : public std::exception
+		void signForm(Form& candidate);
+
+		//standard exception(exception)
+		class GradeTooHighException : public std::runtime_error
 		{
 			public:
 			//what to do if something out of the ordinary 
-				const char* what() const throw()
-				{
-					return ("Grade too high");
-				}
+				GradeTooHighException(const std::string& msg = "Grade too High") : runtime_error(msg){}
 		};
 
-		class GradeTooLowException : public std::exception
+		class GradeTooLowException : public std::runtime_error
 		{
 			public:
-				const char* what() const throw()
-				{
-					return ("Grade too low");
-				}
+				GradeTooLowException(const std::string& msg = "Grade too low") : runtime_error(msg){}
 		};
 
 };
-std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);

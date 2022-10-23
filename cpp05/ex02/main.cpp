@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 09:53:01 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 21:21:19 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-int main() {
+/*int main() {
   std::cout << "test1 : \n";
-      ShrubberyCreationForm S1("sh");
+      //ShrubberyCreationForm S1("sh");
       Bureaucrat b1("candid1", 139);
       b1.executeForm(S1);
 
@@ -38,4 +38,31 @@ std::cout << "test2: \n";
       b3.executeForm(R1);
 
 
+}*/
+int main()
+{
+    try{
+        Bureaucrat candida1("Ahmed", 80); //grade = 140
+        Form *f1 = new ShrubberyCreationForm("shrub1");
+        Form *f2 = new RobotomyRequestForm("Robo1");
+        Form *f3 = new PresidentialPardonForm("Pri1");
+        /*std::cout << f->getName() << "\n";
+        std::cout << f->getGradeSign()<< "\n";
+        std::cout << f->getGradeExecute()<< "\n";*/
+        candida1.signForm(*f1);
+        candida1.executeForm(*f1);
+        /*******Second form*/
+        candida1.signForm(*f2);
+        candida1.executeForm(*f2);
+        /********Third form*******/
+        candida1.signForm(*f3);
+        candida1.executeForm(*f3);
+        delete f1;
+        delete f2;
+        delete f3;
+    }catch(std::exception &e)
+    {
+        std::cout << e.what() << "\n";
+    }
+   return 0;
 }

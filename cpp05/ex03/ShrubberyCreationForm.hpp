@@ -6,10 +6,9 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 11:02:44 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 22:04:40 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #pragma once
 #include "Form.hpp"
@@ -17,10 +16,10 @@
 class ShrubberyCreationForm : public Form
 {
 	private:
-		ShrubberyCreationForm();
+		std::string target;
 	public:
 		// Constructors
-		ShrubberyCreationForm(const std::string& target);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& var);
 
 		// Assignment operator overload
@@ -28,8 +27,6 @@ class ShrubberyCreationForm : public Form
 
 		// Destructor
 		~ShrubberyCreationForm();
-
+		std::string getTarget() const;
 		void execute(const Bureaucrat& executor) const;
-
-
 };

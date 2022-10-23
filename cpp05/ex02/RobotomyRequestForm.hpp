@@ -6,25 +6,26 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/07 16:11:21 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 22:05:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "Form.hpp"
 
 class RobotomyRequestForm : public Form
 {
 	private:
-		RobotomyRequestForm();
+		std::string target;
 	public:
 		// Constructors
-		RobotomyRequestForm(const std::string& target);
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm& other);
 
 		// Assignment operator overload
-		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& var);
 		// Destructor
 		~RobotomyRequestForm();
-		void execute(const Bureaucrat& executor) const;
-
+		std::string getTarget() const;
+		void execute(Bureaucrat const & executor) const;
 };

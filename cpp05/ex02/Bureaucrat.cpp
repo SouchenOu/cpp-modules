@@ -6,20 +6,19 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 09:43:55 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 20:38:40 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-
 Bureaucrat::Bureaucrat():name("souchen")
 {
-	grade=150;
+	grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string const name,int grade):name(name)
+Bureaucrat::Bureaucrat(std::string const name, int grade):name(name)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -29,13 +28,37 @@ Bureaucrat::Bureaucrat(std::string const name,int grade):name(name)
 		this->grade = grade;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &var)
+{
+   if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		this->grade = var.grade;
+  std::cout<< "Bureaucrat copy constructer called\n";
+}
+
+Bureaucrat &Bureaucrat::operator= (const Bureaucrat &x)
+{
+	
+	std::cout<< "Bureaucrat Copy assignment operator called" << "\n";
+   if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		this->grade = x.grade;
+    return (*this);
+}
+
 Bureaucrat::~Bureaucrat()
 {
 }
 
 void Bureaucrat::incrementGrade()
 {
-	if (this->grade <= 1)
+	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->grade--;
@@ -43,7 +66,7 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-	if (this->grade >= 150)
+	if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade++;
@@ -64,6 +87,19 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& var)
 {
 	out << var.getName() << ", bureaucrat grade " << var.getGrade();
 	return out;
+}
+
+void Bureaucrat::signForm(Form& f)
+{
+	try 
+	{
+		f.beSigned(*this);
+		std::cout << this->name << " signed " << f.getName() << "\n";
+	}
+	catch (std::exception &e)
+	{
+		std::cout << Bureaucrat::getName() << " couldn't sign " << f.getName() << " " << e.what() << "\n";
+	}
 }
 
 void Bureaucrat::executeForm(Form const & form)

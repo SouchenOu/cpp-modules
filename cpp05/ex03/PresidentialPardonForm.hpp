@@ -6,11 +6,9 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 11:03:28 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 22:04:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #pragma once
 #include "Form.hpp"
@@ -19,10 +17,10 @@
 class PresidentialPardonForm : public Form
 {
 	private:
-		PresidentialPardonForm();
+		std::string target;
 	public:
 		// Constructors
-		PresidentialPardonForm(const std::string& target);
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 
 		// Assignment operator overload
@@ -30,6 +28,8 @@ class PresidentialPardonForm : public Form
 
 		// Destructor
 		~PresidentialPardonForm();
+		std::string getTarget() const;
 		//executor
-		void execute(const Bureaucrat& executor) const;
-};
+		void execute(Bureaucrat const & executor) const;
+	
+	};

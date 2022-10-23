@@ -6,10 +6,11 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 09:49:36 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/23 20:42:20 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
 #include "Form.hpp"
@@ -18,7 +19,8 @@ class Bureaucrat
 {
 	
 	private:
-	std::string const	name;
+
+	std::string const name;
 	int		grade;
 	public:
 		// Constructors
@@ -34,24 +36,22 @@ class Bureaucrat
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
-		void executeForm(Form const & form);
-		class GradeTooHighException : public std::exception
+		void signForm(Form& candidate);
+        void executeForm(Form const & form);
+
+		//standard exception(exception)
+		class GradeTooHighException : public std::runtime_error
 		{
 			public:
-				const char* what() const throw()
-				{
-					return ("Grade too high");
-				}
+			//what to do if something out of the ordinary 
+				GradeTooHighException(const std::string& msg = "Grade too High") : runtime_error(msg){}
 		};
 
-		class GradeTooLowException : public std::exception
+		class GradeTooLowException : public std::runtime_error
 		{
 			public:
-				const char* what() const throw()
-				{
-					return ("Grade too low");
-				}
+				GradeTooLowException(const std::string& msg = "Grade too low") : runtime_error(msg){}
 		};
 
 };
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& var);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& var);
