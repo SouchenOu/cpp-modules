@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 13:55:09 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:14:23 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,23 @@ Bureaucrat &Bureaucrat::operator= (const Bureaucrat &x)
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat: Destructer called\n";
 }
 
 void Bureaucrat::incrementGrade()
 {
+	this->grade--;
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	else
-		this->grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
+	this->grade++;
 	if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else
-		this->grade++;
+
+		
 }
 
 std::string const Bureaucrat::getName() const

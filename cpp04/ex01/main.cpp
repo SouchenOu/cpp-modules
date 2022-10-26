@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 22:08:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:48:22 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main()
 		else
 			animals[i] = new Cat();
 	}
+	animals[0] = animals[1];
+	
     for(int i = 0; i < 10 ; i++)
 	{
 		animals[i]->makeSound();
@@ -35,16 +37,16 @@ int main()
 	 //system("leaks Brain");
 	for (int i = 0; i < 10; i++)
 	{
-		if(animals[i] != animals[i + 1])
 			delete animals[i]; 
 	}
 	
 
-	/*Cat cat1;
+	Cat cat1;
 	Cat cat2(cat1);
+	Animal* A = new Animal();
 	std::cout <<  "Her cat 1:" << &(cat1.brain[0]) << "\n";
 	std::cout <<  "Her cat 2:" <<&(cat2.brain[0]) << "\n";
-	std::cout <<  "Her Dog 1:" <<&(d1.brain[0]) << "\n";
+	/*std::cout <<  "Her Dog 1:" <<&(d1.brain[0]) << "\n";
 	std::cout <<  "Her Dog 2:" <<&(d2.brain[0]) << "\n";*/
 
 }

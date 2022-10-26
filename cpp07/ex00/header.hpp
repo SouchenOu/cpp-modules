@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 15:35:51 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 13:46:43 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
-class Cat : public Animal
+
+template <typename T> 
+void swap ( T &a, T &b)
 {
-    public:
-        Brain *brain;
-    public:
-        //constructers
-        Cat();  
-        Cat(std::string Type);
-        //Destructer
-        virtual ~Cat();
-        // copy constructer
-        Cat(Cat &var);
-         //operateur d'affectation
-        Cat &operator=(Cat &var);
-        //makesound function
-        void makeSound(void) const;
-};
+    T x;
+        x = a;
+        a = b;
+        b = x;
+}
+
+template <typename T> 
+T min(T a , T b)
+{
+    if(a < b)
+        return a;
+    return b;
+}
+
+template <typename T> T max(T a, T b)
+{
+    if(a > b)
+        return a;
+    return b;
+}
+

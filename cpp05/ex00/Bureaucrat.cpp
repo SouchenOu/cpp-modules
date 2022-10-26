@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 09:48:58 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:11:41 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat():name("souchen")
 {
 	std::cout << "Bureaucrat Default constructer called\n";
-	this->grade = 0;
+	this->grade = 150;
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int grade):name(name)

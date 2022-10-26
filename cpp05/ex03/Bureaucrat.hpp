@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 21:59:51 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:17:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ class Bureaucrat
 {
 	
 	private:
-
-	std::string const name;
-	int		grade;
+		std::string const name;
+		int		grade;
 	public:
 		// Constructors
 		Bureaucrat();

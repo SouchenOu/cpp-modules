@@ -6,21 +6,23 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 21:59:10 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:16:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string name):name(name), gradeSign(0), gradeExecute(0)
+Form::Form():name("Test"), gradeSign(0), gradeExecute(0)
 {
+	std::cout << "Form default constructer called\n";
 	this->signedOuNon =false;
 }
 
 Form::Form(const std::string name, const int gradeSign, const int gradeExecute)
 	: name(name), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
+	std::cout << "Form : constructer called\n";
 	this->signedOuNon = false;
 	if (gradeSign < 1 || gradeExecute < 1)
 		throw Form::GradeTooHighException();
@@ -31,18 +33,21 @@ Form::Form(const std::string name, const int gradeSign, const int gradeExecute)
 Form::Form(const Form& var)
 	: name(var.name), gradeSign(var.gradeSign), gradeExecute(var.gradeExecute)
 {
+	std::cout << "Form copy constructer called\n";
 	this->signedOuNon = var.signedOuNon;
 }
 
 Form& Form::operator=(const Form& var)
 {
-	//(void)var;
+	
+	std::cout << "Form : assignement operater called\n";
 	this->signedOuNon = var.signedOuNon;
 	return (*this);
 }
 
 Form::~Form()
 {
+	std::cout << "Form : destructer called\n";
 }
 
 int Form::getGradeSign() const

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/12 13:33:50 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 17:00:37 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ template <typename T> class Array
     public:
         Array()
         {
+            std::cout << "Default constructer called\n";
             n = 0;
             array = NULL;
         }
         Array(unsigned int size)
         {
+            std::cout << "Constructer with parameter\n";;
             n = size;
             array = new T[size];
         }
@@ -36,15 +38,16 @@ template <typename T> class Array
         }
         Array (Array &var)
         {
+            std::cout << "Copy constructer called\n";
             int i;
             this->n = var.n; ////new one is same size
             this->array = new T[n]; ////get space for contents
             for (i = 0; i < n; i++)
-                this->array[i] = var.array[i];
-                //*(array+i) = *(var.array+j);
+                *(array+i) = *(var.array+i);
         }
         Array &operator=(Array &other)
         {
+            std::cout << "Assignement operater called\n";
             if (this == &other)
                 return (*this);
             delete [] array;
@@ -56,12 +59,18 @@ template <typename T> class Array
         }
         T &operator[](int i)
         {
-            if(i >= static_cast<int>(this->n) || i < 0)
-                throw std::invalid_argument( "index is out of bounds" );
+            try{
+                if(i >= static_cast<int>(this->n) || i < 0)
+                throw std::invalid_argument( "index is out of bounds\n" );
+            }catch(std::exception &e){
+                std::cout << e.what();
+                
+            }
+            
             return (array[i]);
         }
         
-    
+    //The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
 
-
+    // we can use class templates to create a single class to work with different data types.
 };

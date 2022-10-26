@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 22:07:42 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:47:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 int main()
 {
 
-	const Animal* ANI1  = new Cat();
+   
+	const Animal* ANI1  = new Animal();
 	Cat cat;
 	Animal *A = &cat;
     const Animal* ANI2 = new Dog();

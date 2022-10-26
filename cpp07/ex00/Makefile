@@ -5,9 +5,11 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
 FILES =  main.cpp 
+HED = header.hpp
 
 all : $(NAME)
-$(NAME): $(FILES)
+
+$(NAME): $(FILES) $(HED)
 		c++ $(FLAGS) $(FILES) -o $(NAME) 
 	
 clean:
