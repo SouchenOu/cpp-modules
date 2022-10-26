@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 11:28:21 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/25 09:28:45 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 #include "Intern.hpp"
 int main() 
 {
-Intern someRandomIntern;
-Form* rrf;
-rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    Intern someRandomIntern;
+    Form* rrf;
+    Form* rrf2;
+    Form* rrf3;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        rrf2 = someRandomIntern.makeForm("presidential request", "someone");
+        rrf3 = someRandomIntern.makeForm("shrubbery request", "anyone");
 
 }
 

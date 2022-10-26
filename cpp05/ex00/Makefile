@@ -12,11 +12,9 @@ all : $(NAME)
 $(NAME): $(FILES) $(HED)
 		c++ $(FLAGS) $(FILES) -o $(NAME) 
 	
-
 clean:
 	$(RM) $(NAME)
 	
-
 fclean: clean
 
 re: fclean all

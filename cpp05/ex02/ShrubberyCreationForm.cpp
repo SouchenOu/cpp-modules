@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 21:28:02 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:29:22 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& var) : Form(var)
 {	
-      std::cout<< "ShrubberyCreationForm copy constructer called\n";
+    this->target = var.target;
+    std::cout<< "ShrubberyCreationForm copy constructer called\n";
 
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& var)
 {
     std::cout<< "ShrubberyCreationForm Copy assignment operator called" << "\n";
+    this->target = var.target;
 	Form::operator=(var);
 	return *this;
 }

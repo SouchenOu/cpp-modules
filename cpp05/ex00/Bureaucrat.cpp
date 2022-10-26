@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 13:54:45 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:48:58 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 Bureaucrat::Bureaucrat():name("souchen")
 {
-	grade=150;
+	std::cout << "Bureaucrat Default constructer called\n";
+	this->grade = 0;
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int grade):name(name)
 {
+	std::cout << "Bureaucrat constructer called\n";
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else if (grade < 1)
@@ -29,18 +31,18 @@ Bureaucrat::Bureaucrat(std::string const name, int grade):name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &var)
 {
-   if (grade > 150)
+	std::cout<< "Bureaucrat copy constructer called\n";
+   if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else if (grade < 1)
+	else if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->grade = var.grade;
-  std::cout<< "Bureaucrat copy constructer called\n";
+	std::cout << "grade here =" << this->grade << "\n";
 }
 
 Bureaucrat &Bureaucrat::operator= (const Bureaucrat &x)
 {
-	
 	std::cout<< "Bureaucrat Copy assignment operator called" << "\n";
    if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -53,22 +55,22 @@ Bureaucrat &Bureaucrat::operator= (const Bureaucrat &x)
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat destructer called\n";
 }
 
 void Bureaucrat::incrementGrade()
 {
+	this->grade--;
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	else
-		this->grade--;
+	
 }
 
 void Bureaucrat::decrementGrade()
 {
+	this->grade++;
 	if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else
-		this->grade++;
 }
 
 std::string const Bureaucrat::getName() const
@@ -87,3 +89,8 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& var)
 	out << var.getName() << ", bureaucrat grade " << var.getGrade();
 	return out;
 }
+
+/*In C++, stream insertion operator “<<” is used for output and extraction operator “>>” is used for input. 
+We must know the following things before we start overloading these operators. 
+1) cout is an object of ostream class and cin is an object of istream class 
+2) These operators must be overloaded as a global function. And if we want to allow them to access private data members of the class, we must make them friend. */

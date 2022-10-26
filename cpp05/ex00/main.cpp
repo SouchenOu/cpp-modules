@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 13:46:32 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/25 11:45:50 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,14 @@ int main()
 	
 	try
 	{
-		Bureaucrat candida1("Ahmed", -1);
-		Bureaucrat candida2("souchen", 152);
+		Bureaucrat candida1("Ahmed", 100);
+		Bureaucrat candida2("souchen", 15);
+		Bureaucrat b1("pp" , 12);
+		//Bureaucrat b2 = b1;
+		b1 = candida1;
+		std::cout << b1.getName() << "\n";
+		std::cout << b1.getGrade() << "\n";
+		//std::cout << b2.getGrade() << "\n";
 		candida1.incrementGrade();
 		candida2.decrementGrade();
 	}

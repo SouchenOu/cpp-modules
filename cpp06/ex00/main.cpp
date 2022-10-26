@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 17:51:12 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:23:51 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,27 @@ bool FloatType(char* str)
     pos = 0;
     
     if(!strcmp(str, "-inff"))
-    {
         return true;
-    }
     if(!strcmp(str, "+inff"))
         return true;
     if(!strcmp(str, "nanf"))
         return true;
-        while(str[i] != '\0')
+    while(str[i] != '\0')
+    {
+        if (str[i] == '.')
         {
-            if (str[i] == '.')
-            {
-                pos = i;
-            }
-            i++;
+            pos = i;
         }
+        i++;
+    }
     i = 0;
     if(str[0] == '-')
         i++;
-    if(!isnumber(str[i]) || pos == strlen(str) || pos <= 1)
+    if(pos == 0)
     {
          return false;
     }
-    int j = strlen(str)- 1;
+    int j = strlen(str) - 1;
     while(i < j)
     {
         if(!isnumber(str[i]) && str[i] != '.')
@@ -56,8 +54,10 @@ bool FloatType(char* str)
         }
         i++;
     }
-    if(str[strlen(str)] != 'f' &&  !isnumber(str[strlen(str)]))
+    if(str[strlen(str) -1] != 'f')
+    {
         return false;
+    }
     return true;
 }
 
@@ -92,22 +92,22 @@ bool DoubleType(char *str)
         return true;
     if(!strcmp(str, "nan"))
         return true;
-        while(str[i] != '\0')
+    while(str[i] != '\0')
+    {
+        if (str[i] == '.')
         {
-            if (str[i] == '.')
-            {
-                pos = i;
-            }
-            i++;
+            pos = i;
         }
+        i++;
+    }
     i = 0;
     if(str[0] == '-')
         i++;
-    if(!isnumber(str[i]) || pos == strlen(str) || pos <= 1)
+    if(pos == 0)
     {
          return false;
     }
-    int j = strlen(str)- 1;
+    int j = strlen(str) - 1;
     while(i < j)
     {
         if(!isnumber(str[i]) && str[i] != '.')
@@ -132,15 +132,18 @@ void   convertTochar(double nb)
     try
     {
         if (nb < 0 || nb > 127)
-            throw std::invalid_argument( "char:impossible\n" );
-            char a = static_cast<char>(nb);
-        if (a < 32 && a > 127)
         {
-            std::cout << "char: Non displayable\n";
+           throw std::invalid_argument( "char: impossible\n" );
+        }
+        char a = static_cast<char>(nb);
+        
+        if (nb <= 32 || nb >= 127)
+        {
+             throw std::invalid_argument( "char: Non displayable\n");
         }
         else
         {
-            std::cout << "char: " << static_cast<char>(nb) << "\n";
+            std::cout << "char: " << a << "\n";
         }
     }
     catch(const std::exception& e)
@@ -152,17 +155,17 @@ void   convertTochar(double nb)
 
 void   convertToint(double nb)
 {
-    try
-    {
-        if (nb > 2147483647 || nb < -2147483648)
-        //thrown as exception. It reports errors that arise because an argument value has not been accepted.
-            throw std::invalid_argument( "int:impossible\n" );
+    //thrown as exception. It reports errors that arise because an argument value has not been accepted.
+    //try
+    //{
+        //if (nb > 2147483647 || nb < -2147483648)
+            //throw std::invalid_argument( "int:impossible\n");
         std::cout << "int: " << static_cast<int>(nb) << "\n";
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what();
-    }
+    //}
+   // catch(const std::exception& e)
+   // {
+    //    std::cout << e.what();
+    //}
     
 }
 
@@ -183,7 +186,7 @@ void    convertTofloat(double a)
 {
     try
     {
-        std::cout << "flaot: " << std::fixed << std::setprecision(1) << static_cast<float>(a) << "f\n";
+        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(a) << "f\n";
     }
     catch(const std::exception& e)
     {
@@ -206,8 +209,8 @@ void   FromInt(std::string str)
     try
     {
     //In C++, the stoi() function converts a string to an integer value
-       int nb = std::stoi(str);
-       convertTochar(static_cast<double>(nb));
+       int nb = std::stoi(str);//the stoi() function converts a string to an integer value
+        convertTochar(static_cast<double>(nb));
         convertToint(static_cast<double>(nb));
         convertTofloat(static_cast<double>(nb));
         convertTodouble(static_cast<float>(nb));
@@ -238,7 +241,7 @@ void    FromDouble(std::string x)
     try
     {
        double a = std::stold(x);
-        convertTochar(static_cast<int>(a));
+        convertTochar(a);
         convertToint(a);
         convertTofloat(a);
         convertTodouble(static_cast<float>(a));

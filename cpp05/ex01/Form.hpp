@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 16:18:57 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:50:13 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form
 		const int	gradeExecute;
 	public:
 		// Constructor
-		Form(const std::string name);
+		Form();
 		Form(const std::string name, const int gradeSign, const int gradeExecute);
 		Form(const Form& var);
 		// Destructor
@@ -37,7 +37,7 @@ class Form
 		// Getters
 		int getGradeSign() const;
 		int getGradeExecute() const;
-		std::string getName() const;
+		std::string const getName() const;
 		bool getSignedOuNon() const;
 
 		void beSigned(Bureaucrat& candidate);

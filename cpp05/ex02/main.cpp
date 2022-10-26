@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 21:21:19 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/25 13:25:05 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ std::cout << "test2: \n";
 int main()
 {
     try{
-        Bureaucrat candida1("Ahmed", 80); //grade = 140
+        Bureaucrat candida1("Ahmed", 45); //grade = 140
         Form *f1 = new ShrubberyCreationForm("shrub1");
         Form *f2 = new RobotomyRequestForm("Robo1");
         Form *f3 = new PresidentialPardonForm("Pri1");
@@ -53,6 +53,7 @@ int main()
         candida1.executeForm(*f1);
         /*******Second form*/
         candida1.signForm(*f2);
+        candida1.executeForm(*f2);
         candida1.executeForm(*f2);
         /********Third form*******/
         candida1.signForm(*f3);

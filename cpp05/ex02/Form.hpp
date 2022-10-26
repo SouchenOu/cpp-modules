@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 21:15:46 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:52:22 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Form
 		const int	gradeExecute;
 	public:
 		// Constructor
-		Form(const std::string name);
+		Form();
 		Form(const std::string name, const int gradeSign, const int gradeExecute);
 		Form(const Form& var);
 		// Destructor
