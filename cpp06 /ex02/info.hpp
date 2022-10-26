@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.cpp                                              :+:      :+:    :+:   */
+/*   info.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/10 10:01:56 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 13:24:24 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <iostream>
 
-A::A(){}
-A::~A(){}
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.hpp                                              :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/10 11:34:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:58:32 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #include "Base.hpp"
+#include "iostream"
 
-class A : public Base 
+
+Base::~Base ()
 {
-    public:
-    A();
-    ~A();
-    
-};
+    std::cout << "Base: Destructer called\n";
+
+}

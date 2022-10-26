@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data.cpp                                           :+:      :+:    :+:   */
+/*   A.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/09 21:09:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 12:00:58 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.hpp"
+#include "A.hpp"
+#include "iostream"
 
-uintptr_t serialize(Data* ptr)
-{
-    return (reinterpret_cast<uintptr_t>(ptr));
+A::A()
+{  
+    std::cout << "A: Default constructer \n";
 }
 
-Data* deserialize(uintptr_t raw)
+
+A::~A()
 {
-    return (reinterpret_cast<Data*>(raw));
+    std::cout << "A: Destructer called\n";
 }

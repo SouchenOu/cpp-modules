@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/25 18:23:51 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:29:03 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ bool FloatType(char* str)
 {
     int i;
     size_t pos;
+    size_t cmp;
     i = 0;
     pos = 0;
+    cmp = 0;
     
     if(!strcmp(str, "-inff"))
         return true;
@@ -35,29 +37,24 @@ bool FloatType(char* str)
         if (str[i] == '.')
         {
             pos = i;
+            cmp++;
         }
         i++;
     }
     i = 0;
-    if(str[0] == '-')
+    if(str[0] == '-' || str[0] == '+')
         i++;
-    if(pos == 0)
-    {
-         return false;
-    }
+    if(pos == 0 || cmp != 1)
+        return false; 
     int j = strlen(str) - 1;
     while(i < j)
     {
         if(!isnumber(str[i]) && str[i] != '.')
-        {
             return false;
-        }
         i++;
     }
     if(str[strlen(str) -1] != 'f')
-    {
         return false;
-    }
     return true;
 }
 
@@ -67,7 +64,7 @@ bool IntType(char *str)
     int i;
 
     i = 0;
-    if (str[i] == '-')
+    if (str[i] == '-' || str[i] == '+')
         i++;
     while (str[i])
     {
@@ -83,8 +80,10 @@ bool DoubleType(char *str)
 {
     int i;
     size_t pos;
+    size_t cmp;
     i = 0;
     pos = 0;
+    cmp = 0;
     
     if(!strcmp(str, "-inff"))
         return true;
@@ -97,13 +96,14 @@ bool DoubleType(char *str)
         if (str[i] == '.')
         {
             pos = i;
+            cmp++;
         }
         i++;
     }
     i = 0;
-    if(str[0] == '-')
+    if(str[0] == '-' || str[0] == '+')
         i++;
-    if(pos == 0)
+    if(pos == 0 || cmp != 1)
     {
          return false;
     }
@@ -156,42 +156,23 @@ void   convertTochar(double nb)
 void   convertToint(double nb)
 {
     //thrown as exception. It reports errors that arise because an argument value has not been accepted.
-    //try
-    //{
-        //if (nb > 2147483647 || nb < -2147483648)
-            //throw std::invalid_argument( "int:impossible\n");
-        std::cout << "int: " << static_cast<int>(nb) << "\n";
-    //}
-   // catch(const std::exception& e)
-   // {
-    //    std::cout << e.what();
-    //}
+    //an integer overflow occurs when an arithmetic operation attempts to create a numeric value that is outside of the range that can be represented with a given number of digits – either higher than the maximum or lower than the minimum representable value.
+     std::cout << "int: " << static_cast<int>(nb) << "\n";
     
 }
 
-void    convertTodouble(float nb)
+void    convertTodouble(double nb)
 {
-    try
-    {
-        std::cout << "double: "  << static_cast<double>(nb) << "\n";
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "double:impossible\n";
-    }
-    
+  
+        std::cout << "double: "  << static_cast<double>(nb) << "\n"; 
 }
 
 void    convertTofloat(double a)
 {
-    try
-    {
-        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(a) << "f\n";
-    }
-    catch(const std::exception& e)
-    {
-       std::cout << "float:impossible\n";
-    }
+   //setprecision(3) : used to format floating-point values
+   //value for the decimal precision.
+   //fixed: This flag sets the floatfield to fixed. It means that the floating-point values will be written in fixed point notations.
+     std::cout << "float: " << std::fixed <<std::setprecision(1) << static_cast<float>(a) << "f\n";
     
 }
 
@@ -201,7 +182,7 @@ void   FromChar(std::string x)
     convertTochar(static_cast<double>(a));
     convertToint(static_cast<double>(a));
     convertTofloat(static_cast<double>(a));
-    convertTodouble(static_cast<float>(a));
+    convertTodouble(static_cast<double>(a));
 }
 
 void   FromInt(std::string str)
@@ -209,17 +190,22 @@ void   FromInt(std::string str)
     try
     {
     //In C++, the stoi() function converts a string to an integer value
-       int nb = std::stoi(str);//the stoi() function converts a string to an integer value
-        convertTochar(static_cast<double>(nb));
-        convertToint(static_cast<double>(nb));
+        int nb = std::stoi(str);
+        convertTochar(nb);
+        convertToint(nb);
         convertTofloat(static_cast<double>(nb));
-        convertTodouble(static_cast<float>(nb));
+        convertTodouble(static_cast<double>(nb));
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "char: impossible\n";
+        std::cout << "int: impossible\n";
+        std::cout << "float: impossible\n";
+        std::cout << "double: impossible\n";
+            
     }
 }
+
 void   FromFloat(std::string x)
 {
     try
@@ -228,11 +214,14 @@ void   FromFloat(std::string x)
         convertTochar(static_cast<double>(a));
         convertToint(static_cast<double>(a));
         convertTofloat(static_cast<double>(a));
-        convertTodouble(a);
+        convertTodouble(static_cast<double>(a));
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "char: impossible\n";
+        std::cout << "int: impossible\n";
+        std::cout << "float: impossible\n";
+        std::cout << "double: impossible\n";
     }
 }
 
@@ -244,11 +233,14 @@ void    FromDouble(std::string x)
         convertTochar(a);
         convertToint(a);
         convertTofloat(a);
-        convertTodouble(static_cast<float>(a));
+        convertTodouble(static_cast<double>(a));
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "char: impossible\n";
+        std::cout << "int: impossible\n";
+        std::cout << "float: impossible\n";
+        std::cout << "double: impossible\n";
     }
 }
 
@@ -305,7 +297,13 @@ int main(int argc, char *argv[])
            std::cout << "This Type doesnt match to anyType here!\n";
        }
     }
+    else{
+        std::cout << "Tape ./castPro number\n";
+    }
     return 0;
 }
 
+
+
+//A Cast operator is an unary operator which forces one data type to be converted into another data type.
 

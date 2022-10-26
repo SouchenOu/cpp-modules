@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/10 13:58:29 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 13:23:49 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,24 @@ void identify(Base* p)
       it returns a null pointer of that type. 
       If the cast fails and new-type is a reference type, 
       it throws an exception that matches a handler of type std::bad_cast.*/
-  if (dynamic_cast<A*>(p) != nullptr) 
-    std::cout << "Type is A\n";
+      //nullptr / 0x0
+  if (dynamic_cast<A*>(p) != nullptr)
+        std::cout << "Type is A\n";
   else if (dynamic_cast<B*>(p) != nullptr) 
-    std::cout << "Type is B\n";
+        std::cout << "Type is B\n";
   else if (dynamic_cast<C*>(p) != nullptr) 
-    std::cout << "Type is C\n";
-};
+        std::cout << "Type is C\n";
+}
 
 void identify(Base& p)
 {
-    try {
+    try
+    {
         Base test1 = dynamic_cast<A&>(p);
-        std::cout<< "p here :" << &p << "\n";
-        std::cout<< "test here :" << &test1 << "\n";
         std::cout << "Type is A\n";
         //If the cast fails and new_type is a pointer type, it returns a null pointer of that type.
-    } catch (std::exception &e) {
+    } catch (std::exception &e) 
+    {
         try 
         {
             Base test2 = dynamic_cast<B&>(p);
@@ -67,6 +68,7 @@ void identify(Base& p)
               } 
               catch (std::exception &e) 
               {
+                //bad cast
                   std::cout << e.what() << '\n'; 
               }  
         }  

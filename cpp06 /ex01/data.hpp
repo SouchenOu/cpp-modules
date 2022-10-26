@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/10 10:02:56 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:34:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "C.hpp"
+#pragma once
+#include <cstdint>
+#include <string>
+#include <iostream>
 
-C::C()
-{}
+struct Data
+{
+    int data;
+};
 
-C::~C()
-{}
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
