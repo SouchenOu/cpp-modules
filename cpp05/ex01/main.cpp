@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/23 16:32:07 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:33:32 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 		Bureaucrat candida1("Ahmed", 141); //grade = 140
 		Bureaucrat candida2("souchen", 100);
 		Bureaucrat candid;
-		Form form1("Ahmed"); // here grade required = 0;
+		//Form form1("Ahmed"); // here grade required = 0;
 		Form form2("someone", 100 ,20); // here grade required = 100
 		Form form3("anyone" ,140, 80);
 		Form form4("anyone" ,80, 10);

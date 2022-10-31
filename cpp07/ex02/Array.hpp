@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 17:00:37 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/31 20:16:58 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ template <typename T> class Array
         Array (Array &var)
         {
             std::cout << "Copy constructer called\n";
-            int i;
+            unsigned int i;
             this->n = var.n; ////new one is same size
             this->array = new T[n]; ////get space for contents
             for (i = 0; i < n; i++)

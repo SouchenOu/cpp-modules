@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: souchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:30:30 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 08:30:32 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/31 21:44:54 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Span.hpp"
+#include "span.hpp"
 #include <iostream>
 
 int main()
@@ -26,45 +26,37 @@ int main()
                         sp.addNumber(17);
                         sp.addNumber(9);
                         sp.addNumber(11);
+                        
                 }
                 catch (const std::exception& e)
                 {
                         std::cerr << e.what() << std::endl;
                 }
 
-                std::cout << sp.shortestSpan() << std::endl;
-                std::cout << sp.longestSpan() << std::endl;
-}
-        {
-                Span sp = Span(10000);
-                std::vector<int> v;
-
-                // 1 to 9999
-                for (int i = 1; i < 10000; i++)
-                        v.push_back(i);
-                // 20000 at the very end, which means shortest span is 1 and longest span is 10001
-                v.push_back(20000);
-
-                try
-                {
-                        std::cout << sp.shortestSpan() << std::endl;
-                        std::cout << sp.longestSpan() << std::endl;
-                }
-                catch (const std::exception& e)
-                {
-                        std::cerr << e.what() << std::endl;
-                }
-
-                try
-                {
-                        sp.addNumber(v.begin(), v.end());
-                }
-                catch (const std::exception& e)
-                {
-                        std::cerr << e.what() << std::endl;
-                }
-
-                std::cout << sp.shortestSpan() << std::endl;
-                std::cout << sp.longestSpan() << std::endl;
+                std::cout << "Shortest span " <<sp.shortestSpan() << std::endl;
+                std::cout << "Longest span "<<sp.longestSpan() << std::endl;
         }
+        
+                Span sp2 = Span(10000);
+                std::vector<int> vector2;
+                std::vector<int>::iterator j;
+                
+                // 20000 at the very end, which means shortest span is 1 and longest span is 10001
+
+                try
+                {
+                        for (int i = 1; i < 10000; i++)
+                               sp2.addNumber(i);
+                        /*for(j = vector2.begin(); j < vector2.end(); j++)
+                        {
+                                std::cout << *j << "\n";
+                        }*/
+                        std::cout << "Shortest span :" <<sp2.shortestSpan() << "\n";
+                        std::cout << "Longest span :"<<sp2.longestSpan() << std::endl;
+                }
+                catch (const std::exception& e)
+                {
+                        std::cerr << e.what() << std::endl;
+                }
+        
 }

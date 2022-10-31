@@ -3,53 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: souchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:27 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 08:31:30 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/31 17:36:00 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#pragma once
 #include <exception>
 #include <vector>
 
 class Span
 {
-public:
-        // Constructors
-        Span(const unsigned int& N);
-        Span(const Span& other);
-
-        // Assignment operator overload
-        Span& operator=(const Span& rhs);
-
-        // Destructor
-        ~Span();
-
-        void addNumber(int x);
-        void addNumber(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end);
-        unsigned int shortestSpan() const;
-        unsigned int longestSpan() const;
-
-        class ContainerFullException : public std::exception
-        {
+        private:
+                std::vector<int>        vector;
+                unsigned int           N;
+        
         public:
-                const char* what() const throw()
-                {
-                        return ("Container full");
-                }
-        };
-class ContainerEmptyException : public std::exception
+                //default constructer
+                Span();
+                // constructer with parameter
+                Span(const unsigned int& N);
+                //copy constructer
+                Span(const Span& other);
+
+                // Assignment operator overload
+                Span& operator=(const Span& var);
+
+                // Destructor
+                ~Span();
+
+                void addNumber(int Num);
+                unsigned int shortestSpan() const;
+                unsigned int longestSpan() const;
+
+        class IsFullException : public std::exception
         {
-        public:
-                const char* what() const throw()
-                {
-                        return ("Container empty");
-                }
+                 public:
+                        const char* what() const throw()
+                        {
+                                return ("Container is full");
+                        }
+        };
+        class IsEmptyException : public std::exception
+        {
+                public:
+                        const char* what() const throw()
+                        {
+                                return ("Container is empty");
+                        }
         };
 
-private:
-        std::vector<int>        _v;
-        unsigned int            _size;
+
 };

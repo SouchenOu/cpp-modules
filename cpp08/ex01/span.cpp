@@ -1,85 +1,79 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: souchen <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 08:30:53 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 08:30:55 by souchen          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
-#include "Span.hpp"
+#include "span.hpp"
 #include <numeric>
 #include <iostream>
 #include <cstdlib>
 
-Span::Span(const unsigned int& N)
-        : _size(N)
+Span::Span(const unsigned int& N)      
 {
+    std::cout << "span: constructer with parameter\n";
+    this->N = N;
 }
 
-Span::Span(const Span& other)
-        : _v(other._v), _size(other._size)
+Span::Span(const Span& other)   
 {
+    std::cout << "Span: copy constructer called\n";
+    this->vector = other.vector;
+    this->N = other.N;
 }
 
 Span::~Span()
 {
+    std::cout << "Span: Destructer called\n";
 }
 
-Span& Span::operator=(const Span& rhs)
+Span& Span::operator=(const Span& var)
 {
-        if (this != &rhs)
-        {
-                this->_v = rhs._v;
-                this->_size = rhs._size;
-        }
+    std::cout << "Span : assignment operater called\n";
+        if (&var == this)
+            return (*this);
+        this->vector = var.vector;
+        this->N = var.N;
+        
         return *this;
 }
 
-void Span::addNumber(int x)
+void Span::addNumber(int number)
 {
-        if (this->_v.size() < this->_size)
-                this->_v.push_back(x);
+        if (this->vector.size() < this->N)
+                this->vector.push_back(number);
         else
-                throw ContainerFullException();
-}
-
-void Span::addNumber(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end)
-{
-        int distance = std::distance(begin, end);
-        if (distance + this->_v.size() > this->_size)
-        {
-                this->_v.insert(this->_v.end(), begin, begin + (this->_size - this->_v.size()));
-                throw ContainerFullException();
-        }
-        else
-                this->_v.insert(this->_v.end(), begin, end);
+                throw IsFullException();
 }
 
 unsigned int Span::shortestSpan() const
 {
-        std::vector<int> tmp;
+        std::vector<int>::iterator i;
+        std::vector<int> vect;
 
-        int (*iabs)(int) = &std::abs;
-        if (this->_v.size() <= 1)
-                throw ContainerEmptyException();
-        std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
-        return *min_element(tmp.begin(), tmp.end());
+        int (*varAbs)(int) = &std::abs;
+       
+        if (this->vector.size() <= 1)
+                throw IsEmptyException();
+        std::adjacent_difference(this->vector.begin(), this->vector.end(), std::back_inserter(vect));
+        /*std::cout << "Her vector after adjacent difference \n";
+        for (i = vect.begin(); i != vect.end(); ++i)
+        {
+                std::cout <<*i << "\n";
+        }
+         std::cout << "Finish output\n";*/
+        std::transform(vect.begin(), vect.end(), vect.begin(), varAbs);//Apply valAbs to all elements of vect[] and store the modified elements from vect.begin
+        /*std::cout << "Her vector after transform function \n";
+        for (i = vect.begin(); i != vect.end(); ++i)
+        {
+                std::cout <<*i << "\n";
+        }
+         std::cout << "Finish output\n";*/
+        return *min_element(vect.begin(), vect.end());
 }
 
 unsigned int Span::longestSpan() const
 {
-        std::vector<int> tmp;
+        std::vector<int> vect;
 
-        int (*iabs)(int) = &std::abs;
-        if (this->_v.size() <= 1)
-                throw ContainerEmptyException();
-        std::adjacent_difference(this->_v.begin(), this->_v.end(), std::back_inserter(tmp));
-        std::transform(tmp.begin(), tmp.end(), tmp.begin(), iabs);
-        return *max_element(tmp.begin(), tmp.end());
+        int (*varAbs)(int) = &std::abs;
+        if (this->vector.size() <= 1)
+                throw IsEmptyException();
+        std::adjacent_difference(this->vector.begin(), this->vector.end(), std::back_inserter(vect));
+        std::transform(vect.begin(), vect.end(), vect.begin(), varAbs);
+        return *max_element(vect.begin(), vect.end());
 }
