@@ -3,32 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: souchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:57 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 08:31:58 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:53:14 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "mutantstack.hpp"
+#include "MutantStack.hpp"
 #include <iostream>
-
 int main()
 {
-        std::cout << "--- PDF example ---" << std::endl;
-
         MutantStack<int> mstack;
 
         mstack.push(5);
         mstack.push(17);
 
-        std::cout << "top: " << mstack.top() << std::endl;
+         std::cout   << mstack.top() << std::endl;
 
         mstack.pop();
 
-        std::cout << "size: " << mstack.size() << std::endl;
-
+        std::cout << mstack.size() << std::endl;
+        //push() and pop() member functions are used for inserting and removing elements from stack.
         mstack.push(3);
         mstack.push(5);
         mstack.push(737);
@@ -40,54 +37,40 @@ int main()
         ++it;
         --it;
         while (it != ite)
-{
+        {
                 std::cout << *it << std::endl;
                 ++it;
         }
         std::stack<int> s(mstack);
 
-        std::cout << "--- Reverse iterator ---" << std::endl;
 
-        MutantStack<std::string> rev;
+        /*std::cout << "--- Copy constructor ---" << std::endl;
 
-        rev.push("one");
-        rev.push("two");
-        rev.push("three");
-        rev.push("four");
-        rev.push("five");
+        MutantStack<int> muta1(mstack);
+        MutantStack<int> muta2;
 
-        MutantStack<std::string>::reverse_iterator rev_itr = rev.rbegin();
-        for (; rev_itr != rev.rend(); rev_itr++)
-                std::cout << *rev_itr << std::endl;
+        muta1.pop();
+        muta1.pop();
+        muta1.pop();
+        muta1.push(1);
+        muta1.push(2);
+        muta1.push(3);
 
-        std::cout << "--- Copy constructor ---" << std::endl;
+        MutantStack<int>::iterator iter = muta1.begin();
+        for (iter = muta1.begin() ; iter <= muta1.end(); iter++)
+                std::cout << *iter << std::endl;
 
-        MutantStack<int> copy(mstack);
-        MutantStack<int> a_copy = mstack;
 
-        copy.pop();
-        copy.pop();
-        copy.pop();
-copy.push(64);
-        copy.push(65);
-        copy.push(66);
+        muta2.pop();
+        muta2.pop();
+        muta2.pop();
+        muta2.push(4);
+        muta2.push(5);
+        muta2.push(6);
 
-        MutantStack<int>::iterator copy_itr = copy.begin();
-        for (; copy_itr != copy.end(); copy_itr++)
-                std::cout << *copy_itr << std::endl;
-
-        std::cout << "--- Assignment operator ---" << std::endl;
-
-        a_copy.pop();
-        a_copy.pop();
-        a_copy.pop();
-        a_copy.push(128);
-        a_copy.push(129);
-        a_copy.push(130);
-
-        MutantStack<int>::iterator a_copy_itr = a_copy.begin();
-        for (; a_copy_itr != a_copy.end(); a_copy_itr++)
-                std::cout << *a_copy_itr << std::endl;
+        MutantStack<int>::iterator iter2= muta2.begin();
+        for (iter2  = muta1.begin(); iter2 <= muta2.end(); iter2++)
+                std::cout << *iter2 << std::endl;*/
 
         return 0;
 }

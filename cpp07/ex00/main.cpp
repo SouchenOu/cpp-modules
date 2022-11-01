@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 14:34:33 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/01 12:06:40 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 
-int main( void ) 
+/*int main( void ) 
 {
     int a = 2;
     int b = 3;
@@ -31,11 +31,7 @@ int main( void )
     std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return 0;
-}
-
-
-
-
+}*/
 
 
 
@@ -106,5 +102,47 @@ int main(void)
     std::cout << a << " " << b << std::endl;
     std::cout<< ::max(a,b) << std::endl;
     std::cout<< ::min(a,b) << std::endl;
+    return 0;
+}*/
+
+//There  are two ways we can implement templates:
+
+//Function Templates
+//Class Templates
+
+//Similar to function templates, we can use class templates to create a single class to work with different data types.
+
+
+// C++ program to demonstrate the use of class templates
+
+/*#include <iostream>
+using namespace std;
+
+// Class template
+template <class T>
+class Number {
+   private:
+    // Variable of type T
+    T num;
+
+   public:
+    Number(T n) : num(n) {}   // constructor
+
+    T getNum() {
+        return num;
+    }
+};
+
+int main() {
+
+    // create object with int type
+    Number<int> numberInt(7);
+
+    // create object with double type
+    Number<double> numberDouble(7.7);
+
+    cout << "int Number = " << numberInt.getNum() << endl;
+    cout << "double Number = " << numberDouble.getNum() << endl;
+
     return 0;
 }*/

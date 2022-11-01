@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 15:20:25 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/29 04:46:07 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ template <typename T> void iter(T *array, int length, void  (f)(T const &ele))
         f(array[i]);
     }
 }
-template <typename T> 
+/*template <typename T> 
 void inc(T const &num)
 {
     //num = num + 1; je peux pas changer un const
     std::cout << num << "\n";
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:27 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 17:36:00 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/01 10:05:15 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,16 @@ class Span
                 Span(const unsigned int& N);
                 //copy constructer
                 Span(const Span& other);
-
                 // Assignment operator overload
                 Span& operator=(const Span& var);
-
                 // Destructor
                 ~Span();
-
                 void addNumber(int Num);
                 unsigned int shortestSpan() const;
                 unsigned int longestSpan() const;
-
         class IsFullException : public std::exception
         {
-                 public:
+                public:
                         const char* what() const throw()
                         {
                                 return ("Container is full");

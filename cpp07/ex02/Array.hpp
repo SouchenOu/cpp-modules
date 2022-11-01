@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 20:16:58 by souchen          ###   ########.fr       */
+/*   Updated: 2022/10/29 05:20:06 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ template <typename T> class Array
         {
             std::cout << "Default constructer called\n";
             n = 0;
-            array = NULL;
+            array = new T[1];
         }
         Array(unsigned int size)
         {
@@ -53,7 +53,7 @@ template <typename T> class Array
             delete [] array;
             n = other.n;  
             array = new T[other.n]; 
-            for(int j=0; j<other.n; j++)  //copy contents to this object
+            for(unsigned int j=0; j<other.n; j++)  //copy contents to this object
                     *(array+j) = *(other.array+j);
             return (*this);
         }
@@ -63,11 +63,15 @@ template <typename T> class Array
                 if(i >= static_cast<int>(this->n) || i < 0)
                 throw std::invalid_argument( "index is out of bounds\n" );
             }catch(std::exception &e){
-                std::cout << e.what();
-                
+                std::cout << e.what();   
             }
             
             return (array[i]);
+        }
+        ~Array ()
+        {
+            delete [] array;
+            std::cout << "Destructer called\n";
         }
         
     //The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
