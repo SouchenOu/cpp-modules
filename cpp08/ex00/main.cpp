@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:29:40 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 14:17:01 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 10:59:43 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,3 +112,7 @@ int main()
 }*/
 
 //Foreach loop is used to iterate over the elements of a containers (array, vectors etc) quickly without performing initialization, testing and increment/decrement. The working of foreach loops is to do something for every element rather than doing something n times.
+//continers:
+/* there is vector, stack , queues, list, trees , array */
+//What is iterater ; is a way to idetifier an element in a container
+//with vectors we specifier the type not the size

@@ -6,14 +6,15 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:57 by souchen           #+#    #+#             */
-/*   Updated: 2022/11/01 11:53:14 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 10:31:54 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "MutantStack.hpp"
 #include <iostream>
-int main()
+#include <stack>
+/*int main()
 {
         MutantStack<int> mstack;
 
@@ -44,7 +45,7 @@ int main()
         std::stack<int> s(mstack);
 
 
-        /*std::cout << "--- Copy constructor ---" << std::endl;
+        std::cout << "--- Copy constructor ---" << std::endl;
 
         MutantStack<int> muta1(mstack);
         MutantStack<int> muta2;
@@ -70,7 +71,26 @@ int main()
 
         MutantStack<int>::iterator iter2= muta2.begin();
         for (iter2  = muta1.begin(); iter2 <= muta2.end(); iter2++)
-                std::cout << *iter2 << std::endl;*/
+                std::cout << *iter2 << std::endl;
 
         return 0;
+}*/
+int main() {
+
+  // create a stack of strings
+  std::stack<std::string> colors;
+
+  // push elements into the stack
+  colors.push("Red");
+  colors.push("Orange");
+  
+  std::cout << "Stack: ";
+
+  // print elements of stack
+   while(!colors.empty()) {
+    std::cout << colors.top() << ", ";
+    colors.pop();
+  }
+ 
+  return 0;
 }

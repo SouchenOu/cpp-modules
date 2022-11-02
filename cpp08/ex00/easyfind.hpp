@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:29:31 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/31 14:12:38 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 10:20:22 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 class NotFound : public std::exception
 {
-public:
-        const char* what() const throw()
-        {
-                return ("Infortunatly dosn't exist in this container\n");
-        }
+        public:
+                const char* what() const throw()
+                {
+                        return ("Infortunatly dosn't exist in this container\n");
+                }
 };
 
 template <typename T>
