@@ -6,14 +6,14 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/29 04:46:07 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 08:50:31 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iostream"
 #pragma once
 
-template <typename T> void iter(T *array, int length, void  (f)(T const &ele))
+template <typename T> void iter(T *array, int length, void  (*f)(T const &ele))
 {
     int i;
     for (i = 0; i < length; i++)

@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/26 13:46:43 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 08:35:55 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,4 @@ template <typename T> T max(T a, T b)
     return b;
 }
 
+//In the above code, T is a template argument that accepts different data types (int, float, etc.), and typename is a keyword.

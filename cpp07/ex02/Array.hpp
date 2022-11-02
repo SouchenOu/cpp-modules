@@ -6,13 +6,14 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:33:56 by souchen           #+#    #+#             */
-/*   Updated: 2022/10/29 05:20:06 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 09:40:12 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Class templates are especially useful for “containers”, data structures that serve mainly as collections of other
+//This is a class template that behaves like an array 
 
 #pragma once
-
 template <typename T> class Array
 {
     private:
@@ -59,13 +60,9 @@ template <typename T> class Array
         }
         T &operator[](int i)
         {
-            try{
+           
                 if(i >= static_cast<int>(this->n) || i < 0)
-                throw std::invalid_argument( "index is out of bounds\n" );
-            }catch(std::exception &e){
-                std::cout << e.what();   
-            }
-            
+                    throw std::invalid_argument( "index is out of bounds\n" );
             return (array[i]);
         }
         ~Array ()
@@ -74,7 +71,12 @@ template <typename T> class Array
             std::cout << "Destructer called\n";
         }
         
-    //The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
-
-    // we can use class templates to create a single class to work with different data types.
+    
 };
+//This is a class template that behaves like an array 
+//The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
+// we can use class templates to create a single class to work with different data types.
+//The simple idea is to pass data type as a parameter so that we don’t need to write the same code for different data types.
+//when a class defines something that is independent of the data type.
+
+/**we can use class templates to create a single class to work with different data types.*/
