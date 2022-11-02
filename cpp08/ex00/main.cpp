@@ -6,7 +6,7 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:29:40 by souchen           #+#    #+#             */
-/*   Updated: 2022/11/02 10:59:43 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:24:43 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-using namespace std;
+#include <array>
 
 void printx(int i)
 {
@@ -25,7 +25,14 @@ void printx(int i)
 
 int main()
 {
-        std::vector<int> vector2 = { 1, 2, 3, 4, 5, 6 , 7 };;
+          //std::array<int, 3> a1 = {1, 2, 3};
+         //std::vector<int> vector2 (a1.begin(), a1.end());
+int i = 0;
+std::vector<int> vector2;
+while (i > 10)
+{
+      vector2[i] = i; 
+}
 
         try
         {
@@ -34,7 +41,7 @@ int main()
                 std::cout << "our Vector:" << "\n";
                 for (i = vector2.begin(); i != vector2.end(); ++i)
                 {   
-                        cout << *i << " ";
+                        std::cout << *i << " ";
                 }
                 std::cout << "\nOur result\n";
                 for_each(vector1, vector2.end(), printx); //from the number that vector1 point for to the end of vector2

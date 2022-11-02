@@ -6,13 +6,14 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:57 by souchen           #+#    #+#             */
-/*   Updated: 2022/11/01 11:46:48 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:54:28 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <stack>
-
+#include <iostream>
+//We then use this syntax to define the std::stack:
 template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
@@ -47,6 +48,9 @@ class MutantStack : public std::stack<T, Container>
                 iterator                        begin() { return this->c.begin(); };
                 iterator                        end() { return this->c.end(); };
 };
+
+//The std::stack class is a container adaptor that gives the programmer the functionality of a stack - specifically, a LIFO (last-in, first-out) data structure.
+
 
 //0:std::stack class is a container adapter that gives the programmer the functionality of a stack 
 //1:Internally it uses std::deque STL container.

@@ -6,26 +6,29 @@
 /*   By: souchen <souchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:31:57 by souchen           #+#    #+#             */
-/*   Updated: 2022/11/02 10:31:54 by souchen          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:50:24 by souchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "MutantStack.hpp"
 #include <iostream>
 #include <stack>
-/*int main()
+#include <algorithm>
+int main()
 {
         MutantStack<int> mstack;
 
         mstack.push(5);
         mstack.push(17);
+        while(!mstack.empty())
+        {
+                std::cout   << "Top here:"<<mstack.top() << std::endl;
+                mstack.pop(); // remove top element
+        }
 
-         std::cout   << mstack.top() << std::endl;
+        //mstack.pop();
 
-        mstack.pop();
-
-        std::cout << mstack.size() << std::endl;
+        std::cout << "size here :"<<mstack.size() << std::endl;
         //push() and pop() member functions are used for inserting and removing elements from stack.
         mstack.push(3);
         mstack.push(5);
@@ -43,54 +46,29 @@
                 ++it;
         }
         std::stack<int> s(mstack);
-
-
-        std::cout << "--- Copy constructor ---" << std::endl;
-
+        std::cout << "stack s::\n";
+        while(!s.empty())
+        {
+                std::cout << s.top() << "\n";
+                s.pop();
+        }
+        std::cout << "Copy constructor:" << std::endl;
+        
         MutantStack<int> muta1(mstack);
-        MutantStack<int> muta2;
-
-        muta1.pop();
-        muta1.pop();
-        muta1.pop();
-        muta1.push(1);
-        muta1.push(2);
-        muta1.push(3);
-
+        std::cout << "stack muta1::\n";
+        while(!muta1.empty())
+        {
+                std::cout << muta1.top() << "\n";
+                muta1.pop();
+        }
+        
+        /*std::cout << "Other way to print stack \n";
         MutantStack<int>::iterator iter = muta1.begin();
         for (iter = muta1.begin() ; iter <= muta1.end(); iter++)
-                std::cout << *iter << std::endl;
-
-
-        muta2.pop();
-        muta2.pop();
-        muta2.pop();
-        muta2.push(4);
-        muta2.push(5);
-        muta2.push(6);
-
-        MutantStack<int>::iterator iter2= muta2.begin();
-        for (iter2  = muta1.begin(); iter2 <= muta2.end(); iter2++)
-                std::cout << *iter2 << std::endl;
-
+                std::cout << *iter << std::endl;*/
         return 0;
-}*/
-int main() {
-
-  // create a stack of strings
-  std::stack<std::string> colors;
-
-  // push elements into the stack
-  colors.push("Red");
-  colors.push("Orange");
-  
-  std::cout << "Stack: ";
-
-  // print elements of stack
-   while(!colors.empty()) {
-    std::cout << colors.top() << ", ";
-    colors.pop();
-  }
- 
-  return 0;
 }
+
+ 
+
+/**The pop() function is used to remove or 'pop' an element from the top of the stack(newest or the topmost element in the stack). This is an inbuilt function from C++ Standard Template Library(STL). This function belongs to the <stack> header file.*/

@@ -1,6 +1,6 @@
 NAME = easyfind
 
-FLAGS = -Wall -Werror -Wextra -std=c++11
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
