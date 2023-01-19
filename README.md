@@ -817,6 +817,10 @@ Like we specified in the previous chapter; Inheritance lets us inherit attribute
 For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
 
 
+      
+      
+      Polymorphism in C++ means, the same entity (function or object) behaves differently in different scenarios.
+      
                   // Base class
                   class Animal 
                   {
@@ -846,6 +850,89 @@ For example, think of a base class called Animal that has a method called animal
                                     cout << "The dog says: bow wow \n";
                               }
                   };
+      
+      Polymorphism in C++ is categorized into two types. The figure below shows the types:
+      
+      I. Function Overloading:
+            
+            Function overloading means one function can perform many tasks. In C++, a single function is used to perform many tasks with the same name             and different types of arguments.
+      
+                        for example :
+                  
+                        int ADD(int X,int Y)   // Function with parameter 
+                        {
+                                    return X+Y;     // this function is performing addition of  two Integer value
+                        }
+                        int ADD() 
+                        {             
+                              // Function with same name but without parameter
+                              string a= "HELLO";
+                              string b="SAM";   // in this function concatenation is performed
+                              string c = a + b;
+                              cout<<c<<endl;
+                        }
+      II. Function overriding :
+            
+            In function overriding, we give the new definition to base class function in the derived class. At that time, we can say the base function             has been overridden. It can be only possible in the ‘derived class’. In function overriding, we have two definitions of the same function,             one in the superclass and one in the derived class. The decision about which function definition requires calling happens at runtime. That             is the reason we call it ‘Runtime polymorphism’.
+      
+      
+                        #include <iostream>  
+                        using namespace std;  
+                        class Animal 
+                        {  
+                              public:  
+                                    void function()
+                                    {    
+                                          cout<<"Eating..."<<endl;    
+                                    }      
+                        };   
+                        class Man: public Animal    
+                        {    
+                              public:  
+                                    void function()    
+                                    {    
+                                          cout<<"Walking ..."<<endl;    
+                                    }    
+                        };  
+                        int main(void) 
+                        {  
+                              Animal A =Animal();
+                              A.function();   //parent class object 
+                              Man m = Man();    
+                              m.function();   // child class object
+   
+                              return 0;  
+                        }
+      (We have the same function in the base class and in the derived class so When we declare a virtual function, the compiler determines which             function to invoke at runtime.)
+      
+      #include <iostream>  
+                        using namespace std;  
+                        class Animal 
+                        {  
+                              public:  
+                                    virtual void function()
+                                    {    
+                                          cout<<"Eating..."<<endl;    
+                                    }      
+                        };   
+                        class Man: public Animal    
+                        {    
+                              public:  
+                                    void function()    
+                                    {    
+                                          cout<<"Walking ..."<<endl;    
+                                    }    
+                        };  
+                        int main(void) 
+                        {  
+                              Animal A =Animal();
+                              A.function();   //parent class object 
+                              Man m = Man();    
+                              m.function();   // child class object
+   
+                              return 0;  
+                        }
+      
       
 5 : 👨‍ Classe abstraite:
 
